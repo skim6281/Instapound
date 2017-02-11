@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.heroku.com
-[trello]: https://trello.com
+[trello]: https://trello.com/b/YThFg8b8/instapound
 
 ##Minimum Viable Product
 
@@ -52,9 +52,9 @@ Instapound is a web application for foodies inspired by Instagram built using Ru
 
 ### Phase 5: Following & Photo Feed (2 days)
 
-**Objective:** User can have many followings and a photo feed that can be created and destroyed through the API.
+**Objective:** User can have a photo feed and many followings that can be created and destroyed through the API.
 
 
 ### Bonus Features (TBD)
-- [ ] Direct messaging
+- [ ] Direct Messaging
 - [ ] Hashtags
