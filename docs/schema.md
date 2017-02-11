@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## Users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -10,7 +10,7 @@ password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 profile_url     | string    |
 
-## images
+## Images
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -19,14 +19,14 @@ caption         | string    |
 location        | string    |
 user_id         | string    | not null, foreign key (references users), indexed
 
-## likes
+## Likes
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed, unique [image_id]
 image_id        | integer   | not null, foreign key (references images), indexed
 
-## comments
+## Comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -34,20 +34,20 @@ body        | string    | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 image_id    | integer   | not null, foreign key (references images), indexed
 
-## followings
+## Followings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 followee_id | integer   | not null, foreign key (references users), indexed, unique [follower_id]
 follower_id | integer   | not null, foreign key (references users), indexed
 
-## tags
+## Tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null, indexed
 
-## taggings
+## Taggings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
