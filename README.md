@@ -42,17 +42,19 @@ Instapound is a web application for foodies inspired by Instagram built using Ru
 
 **Objective:** Images can be created and destroyed through the API
 
-### Phase 3: Likes (1 day)
+### Phase 3: Following & Photo Feed (2 days)
+
+**Objective:** User can have a photo feed and many followings that can be created and destroyed through the API.
+
+
+### Phase 4: Likes (1 day)
 
 **Objective:** Images can have many likes that can be created and destroyed through the API
 
-### Phase 4: Comments (1 day)
+### Phase 5: Comments (1 day)
 
 **Objective:** Images can have many comments that can be created and destroyed through the API
 
-### Phase 5: Following & Photo Feed (2 days)
-
-**Objective:** User can have a photo feed and many followings that can be created and destroyed through the API.
 
 
 ### Bonus Features (TBD)
