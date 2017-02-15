@@ -5,18 +5,14 @@ import AuthFormContainer from './auth_form/auth_form_container';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {formType: 'login'};
-  }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({formType: newProps.formType})
+    this.state = {formType: 'Log in'};
   }
 
   render(){
-    if (this.state.formType === 'login' || this.state.formType === 'signup'){
+    if (!window.currentUser){
       return (
         <div>
-          <AuthFormContainer formType={this.state.formType}/>
+          <AuthFormContainer/>
         </div>
       )
     } else {

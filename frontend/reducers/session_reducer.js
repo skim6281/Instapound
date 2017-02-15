@@ -1,26 +1,27 @@
 import {
   RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS } from '../actions/session_actions';
+  RECEIVE_ERRORS,
+  REMOVE_ERRORS,
+  RECEIVE_FORM_TYPE} from '../actions/session_actions';
 import merge from 'lodash/merge';
 
-const _nullUser = Object.freeze({
+const initialState = {
   currentUser: null,
-  errors: []
-});
+  errors: [],
+  formType: 'Log in'
+};
 
-const SessionReducer = (state = _nullUser, action) => {
+const SessionReducer = (state = initialState, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      const currentUser = action.currentUser;
-      return merge({}, _nullUser, {
-        currentUser
-      });
+      return Object.assign({}, state, {currentUser: action.currentUser, errors: [], formType: null});
     case RECEIVE_ERRORS:
-      const errors = action.errors;
-      return merge({}, _nullUser, {
-        errors
-      });
+      return Object.assign({}, state, { errors: action.errors});
+    case REMOVE_ERRORS:
+      return Object.assign({}, state, { errors: [] });
+    case RECEIVE_FORM_TYPE:
+      return Object.assign({}, state, { formType: action.formType})
     default:
       return state;
   }

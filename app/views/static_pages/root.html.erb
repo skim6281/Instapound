@@ -1,8 +1,15 @@
-<script id="bootstrap-current-user" type="text/javascript">
+<script type="text/javascript">
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
+  window.images = {
+    logo="<%= image_path("instapound.png") %>",
+    logoText="<%= image_path("instapound_text.png") %>",
+    mobileImage="<%= image_path("instapound-mobile-interface.png") %>"
+  }
+  <img src = { window.images.logoText }/>
+
 </script>
 
 <main id='root'></main>
