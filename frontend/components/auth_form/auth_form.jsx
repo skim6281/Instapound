@@ -22,7 +22,6 @@ class AuthForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		debugger
 		const user = this.state;
 		if (this.props.formType === 'Log in') {
 			this.props.login(user);
