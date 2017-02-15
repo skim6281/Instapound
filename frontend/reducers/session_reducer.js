@@ -15,7 +15,7 @@ const SessionReducer = (state = initialState, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, {currentUser: action.currentUser, errors: [], formType: null});
+      return Object.assign({}, state, {currentUser: action.currentUser, errors: []});
     case RECEIVE_ERRORS:
       return Object.assign({}, state, { errors: action.errors});
     case REMOVE_ERRORS:

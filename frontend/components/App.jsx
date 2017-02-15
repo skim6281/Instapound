@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import AuthFormContainer from './auth_form/auth_form_container';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends React.Component {
   }
 
   render(){
-    if (!window.currentUser){
+    if (!this.props.currentUser){
       return (
         <div>
           <AuthFormContainer/>
@@ -25,4 +26,12 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    currentUser: state.session.currentUser
+  });
+};
+
+export default connect(
+  mapStateToProps
+)(App);

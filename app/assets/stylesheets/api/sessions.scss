@@ -1,3 +1,139 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: #fafafa;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+article {
+  max-width: 935px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10vh;
+
+}
+
+.phone-image > img {
+  width: 454px;
+}
+
+.sign-up-message, .submit-form, .or {
+  font-weight: 600;
+}
+
+.sign-up-message {
+  text-align: center;
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  color: #999;
+}
+
+.auth-form-container {
+  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+}
+
+.error-list {
+  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
+  color: #ed4956;
+  text-align: center;
+  margin: 20px;
+}
+
+logo > img {
+  width: 60%;
+  margin: 0 auto 8px;
+}
+
+.auth-form-box {
+  margin: -35px auto 8px;
+}
+
+.change-auth-form, .auth-form-box {
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  background-color: #fff;
+}
+
+.auth-form {
+  margin: 0 auto 35px;
+  width: 268px;
+}
+
+.auth-input, .submit-form {
+  padding: 7px 9px 8px;
+  width: 270px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.auth-input {
+  border: 1px solid #dbdbdb;
+  margin: 3px 0;
+  color: black;
+  font-size: 14px;
+}
+
+.submit-form {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background: #3897f0;
+  color: #fff;
+  border: 1px solid #3897f0;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.auth-form-container > logo > img {
+  width: 60%;
+  margin: 22px auto 8px;
+}
+
+.change-auth-form {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 22px auto 8px;
+  font-size: 14px;
+}
+
+.change-auth-form button {
+  margin-left: 5px;
+  color: #3897f0;
+}
+
+.line-or-line{
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 15px;
+  color: #999;
+}
+
+.or{
+  font-size: 13px;
+  line-height: 15px;
+  margin: 0 18px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.line {
+  background-color: #c7c7c7;
+  height: 1px;
+  position: relative;
+  top: .45em;
+  flex-grow: 1;
+}
