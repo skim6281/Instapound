@@ -11,9 +11,9 @@
 
 Instapound is a web application for foodies inspired by Instagram built using Ruby on Rail and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-- [ ] New account creation, login, and guest/demo login
-- [ ] Production README [sample](docs/production_readme.md)
-- [ ] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
+- [x] Production README [sample](docs/production_readme.md)
+- [x] Hosting on Heroku
 - [ ] Images
 - [ ] Likes
 - [ ] Commenting on Images
