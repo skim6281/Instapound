@@ -22,17 +22,17 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "instapound.png"
+  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "user.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
   has_many :images
 
   has_many :follower_followings,
-    class_name: "Follow",
+    class_name: "Following",
     foreign_key: :follower_id
 
-  has_many :followee_following,
-    class_name: "Follow",
+  has_many :followee_followings,
+    class_name: "Following",
     foreign_key: :followee_id
 
   has_many :followees,
@@ -40,7 +40,7 @@ class User < ApplicationRecord
     source: :followee
 
   has_many :followers,
-    through: :followee_following,
+    through: :followee_followings,
     source: :follower
 
   attr_reader :password
