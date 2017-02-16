@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: https://instapoundd.herokuapp.com/
+[heroku]: https://instalb.herokuapp.com/#/
 [trello]: https://trello.com/b/YThFg8b8/instapound
 
 ##Minimum Viable Product
