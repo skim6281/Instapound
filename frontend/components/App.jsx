@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
-import AuthFormContainer from './auth_form/auth_form_container';
 import { connect } from 'react-redux';
+import AuthFormContainer from './auth_form/auth_form_container';
+import PhotoFeedContainer from './photo_feed/photo_feed_container';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends React.Component {
     } else {
       return (
         <div>
-          Render MainContainer here
+          <PhotoFeedContainer/>
         </div>
       );
     }

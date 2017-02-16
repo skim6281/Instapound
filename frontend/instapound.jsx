@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { login, logout } from './actions/session_actions';
+import { logout } from './actions/session_actions';
+import { fetchImages } from './actions/photo_feed_actions';
 
-window.login = login;
 window.logout = logout;
+window.fetchImages = fetchImages;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
