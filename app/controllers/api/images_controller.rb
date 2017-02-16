@@ -2,8 +2,15 @@ class Api::ImagesController < ApplicationController
   before_filter :require_login!
 
   def index
-    @images = current_user.images
-    render :index
+    users = []
+    if logged_in?
+      users << current_user
+      current_user.followees.each do |user|
+        users << user
+      end
+      @images = Image.where({user: users})
+    end
+    render 'api/images/index'
   end
 
   def new
@@ -20,7 +27,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    render :show
+    @images = current_user.images
+    render '/api/images/show'
   end
 
   def destroy
