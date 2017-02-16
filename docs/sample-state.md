@@ -1,18 +1,17 @@
 ```js
 
 {
-  currentUser: {
-    id: 1,
-    username: "bot"
-  },
-  forms: {
-    signUp: {errors, []},
-    logIn: {errors, []},
-    createImage: {errors: ["must select image"]}
+  session: {
+    currentUser: {
+      id: 1,
+      username: "guest"
+    },
+    errors: [],
+    formType: "Log in"
   },
   user: {
     id: 1,
-    username: "bot",
+    username: "guest",
     profilePic_url: "app/assets/images/bot.png",
     followers: [2, 3, 4],
     following: [2, 3, 5, 6],
@@ -26,14 +25,14 @@
       likes: 3,
       comments: {
         1: {
-          username: "tob",
+          username: "bot",
           body: "mmmmm"
         }
       },
       likes: {
         1: {
           id: 1,
-          username: "bot"
+          username: "guest"
         }
       }
     }
