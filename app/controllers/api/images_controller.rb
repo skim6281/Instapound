@@ -3,6 +3,7 @@ class Api::ImagesController < ApplicationController
 
   def index
     @images = current_user.images
+    render :index
   end
 
   def new
@@ -19,9 +20,13 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
+    render :show
   end
 
   def destroy
+    @image = current_user.images.find(params[:id])
+    @image.destroy
+    render :index
   end
 
   private
