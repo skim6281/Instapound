@@ -2,14 +2,17 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  profile_url     :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  email           :string
+#  id                       :integer          not null, primary key
+#  username                 :string           not null
+#  password_digest          :string           not null
+#  session_token            :string           not null
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  email                    :string
+#  profile_pic_file_name    :string
+#  profile_pic_content_type :string
+#  profile_pic_file_size    :integer
+#  profile_pic_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -18,6 +21,11 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
+
+  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "instapound.png"
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
+
+  has_many :images
 
   attr_reader :password
 
