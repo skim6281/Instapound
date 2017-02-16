@@ -27,6 +27,22 @@ class User < ApplicationRecord
 
   has_many :images
 
+  has_many :follower_followings,
+    class_name: "Follow",
+    foreign_key: :follower_id
+
+  has_many :followee_following,
+    class_name: "Follow",
+    foreign_key: :followee_id
+
+  has_many :followees,
+    through: :follower_followings,
+    source: :followee
+
+  has_many :followers,
+    through: :followee_following,
+    source: :follower
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)
