@@ -1,0 +1,41 @@
+.navbar-container{
+  height: 77px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.nav{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 355px;
+  max-width: 980px;
+  /*padding: 26px 40px;*/
+}
+
+.logos{
+  margin-top: 18px;
+  display: flex;
+}
+
+.logo-image{
+  margin-top: 6px;
+  max-height: 31px;
+  max-width: 37px;
+  padding-right: 20px;
+  border-right: 1px solid black;
+}
+
+.logo-text{
+  max-height: 42px;
+  max-width: 124px;
+  margin-left: 18px;
+}
+
+.nav-icons{
+  margin-top: 28px;
+}
+
+.icon-list{
+
+}

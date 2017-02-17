@@ -11,16 +11,17 @@ class App extends React.Component {
   }
 
   render(){
-    if (!this.props.currentUser){
+    if (this.props.currentUser){
       return (
         <div>
-          <AuthFormContainer/>
+          
+          <PhotoFeedContainer/>
         </div>
-      )
+      );
     } else {
       return (
         <div>
-          <PhotoFeedContainer/>
+          <AuthFormContainer/>
         </div>
       );
     }

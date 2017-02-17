@@ -13,10 +13,11 @@ body{
   border: 0 solid #000;
   box-sizing: border-box;
   flex-direction: column;
-  position: relative;
+  // position: relative;
 }
 
 .post-container {
+  background-color: #fff;
   margin: 60px 0;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
@@ -39,7 +40,6 @@ body{
   background-color: #fafafa;
   border: 1px solid #dbdbdb;
   border-radius: 50%;
-  box-sizing: 50%;
   box-sizing: border-box;
   display: block;
   object-fit: cover;
@@ -55,6 +55,7 @@ body{
 
 .name {
   font-weight: bold;
+  margin-right: .3em;
 }
 
 .post-author-name {
@@ -64,7 +65,7 @@ body{
   overflow: hidden;
 }
 
-.post-author-name > a {
+.author-name {
   text-decoration: none;
   display: inline-block;
   max-width: 100%;
@@ -73,6 +74,11 @@ body{
   white-space: nowrap;
   padding-left: 10px;
   padding-top: 5px;
+}
+
+.comment-name{
+  text-decoration: none;
+  display: inline-block;
 }
 
 .post-image {
@@ -92,5 +98,5 @@ body{
 }
 
 .caption{
-  margin-left: 5px;
+
 }
