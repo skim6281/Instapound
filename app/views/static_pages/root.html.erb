@@ -7,10 +7,15 @@
     logo: "<%= image_path("instapound.png") %>",
     logoText: "<%= image_path("instapound_text.png") %>",
     mobileImage: "<%= image_path("instapound-mobile-interface.png") %>",
-    navUser: ""
+    navUser: "<%= image_path("nav-user.png") %>"
   }
-  
-
 </script>
-
+<script type="text/css">
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src:url('<%=ActionController::Base.helpers.asset_path('fonts/Montserrat-Regular.otf')%>') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+</script>
 <main id='root'></main>

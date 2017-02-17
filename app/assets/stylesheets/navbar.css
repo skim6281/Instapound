@@ -35,5 +35,10 @@
 }
 
 .icon-list{
+  display: flex;
+}
 
+.icon {
+  max-width: 30px;
+  margin-right: 10px;
 }

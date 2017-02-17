@@ -20,5 +20,6 @@ module Instapound
         :s3_region => ENV["s3_region"]
       }
     }
+
   end
 end

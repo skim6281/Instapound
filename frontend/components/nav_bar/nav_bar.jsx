@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link, hashHistory } from 'react-router';
 
 class NavBar extends React.Component{
   render(){
@@ -7,13 +7,17 @@ class NavBar extends React.Component{
     return (
       <div className='navbar-container'>
         <div className='nav'>
-          <div className='logos'>
+          <Link to="/" className='logos'>
             <img className="logo-image" src={window.images.logo}/>
             <img className="logo-text" src={window.images.logoText}/>
-          </div>
+          </Link>
           <div className='nav-icons'>
             <ul className='icon-list'>
-              <li className='icon'></li>
+              <li className='icon'>
+                <Link to={`${currentUser.username}`}>
+                  <img src={window.images.navUser}/>
+                </Link>
+              </li>
               <li className='logout'>
                 <button onClick={logout}>Log out</button>
               </li>

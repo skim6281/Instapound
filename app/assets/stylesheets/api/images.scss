@@ -1,13 +1,6 @@
 // Place all the styles related to the Api::Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@font-face {
-  font-family: 'Montserrat-Regular';
-  src: url('/assets/fonts/Montserrat-Regular.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body{
   background-color: #fafafa;
   width: 100%;
@@ -21,7 +14,6 @@ body{
   box-sizing: border-box;
   flex-direction: column;
   font-family: 'Montserrat-Regular','proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
-  // font-family: 'Montserrat-Regular';
   // position: relative;
 }
 
@@ -118,8 +110,4 @@ body{
 
 .image-caption {
   display: flex;
-}
-
-.caption{
-
 }

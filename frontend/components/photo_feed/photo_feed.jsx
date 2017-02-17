@@ -1,6 +1,5 @@
 import React from 'react';
 import Post from './post';
-import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -20,9 +19,6 @@ class PhotoFeed extends React.Component {
   render() {
     return(
       <div>
-        <div>
-          <NavBarContainer/>
-        </div>
         <div className='photo-feed-container'>
           <div>
             {this.renderPosts()}

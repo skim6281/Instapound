@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 import AuthFormContainer from './auth_form/auth_form_container';
-import PhotoFeedContainer from './photo_feed/photo_feed_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,12 +10,20 @@ class App extends React.Component {
     this.state = {formType: 'Log in'};
   }
 
+  redirectToHome(){
+    hashHistory.push('/');
+  }
+
   render(){
     if (this.props.currentUser){
       return (
         <div>
-          
-          <PhotoFeedContainer/>
+          <div>
+            <NavBarContainer/>
+          </div>
+          <div>
+            {this.props.children}
+          </div>
         </div>
       );
     } else {
