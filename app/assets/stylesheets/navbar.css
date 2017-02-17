@@ -8,9 +8,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin: 0 355px;
-  max-width: 980px;
-  /*padding: 26px 40px;*/
+  max-width: 925px;
 }
 
 .logos{
