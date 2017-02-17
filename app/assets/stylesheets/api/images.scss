@@ -13,6 +13,7 @@ body{
   border: 0 solid #000;
   box-sizing: border-box;
   flex-direction: column;
+  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
   // position: relative;
 }
 
@@ -32,6 +33,19 @@ body{
   padding: 14px 20px;
   display: flex;
   border-bottom: 1px solid #e6e6e6;
+  justify-content: space-between;
+}
+
+.post-user {
+  display: flex;
+  margin-top: 2px;
+}
+
+.time-ago{
+  margin-top: 9px;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999
 }
 
 .post-author-profile-pic{
@@ -50,7 +64,7 @@ body{
   color: #262626;
   font-size: 15px;
   line-height: 17px;
-  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
+
 }
 
 .name {
@@ -74,6 +88,7 @@ body{
   white-space: nowrap;
   padding-left: 10px;
   padding-top: 5px;
+  font-weight: 600;
 }
 
 .comment-name{
