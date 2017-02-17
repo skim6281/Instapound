@@ -18,10 +18,10 @@ class PhotoFeed extends React.Component {
 
   render() {
     return(
-      <div>
-        <ul>
+      <div className='photo-feed-container'>
+        <div>
           {this.renderPosts()}
-        </ul>
+        </div>
       </div>
     );
   }

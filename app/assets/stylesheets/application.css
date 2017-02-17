@@ -12,5 +12,6 @@
  *
  *= require reset
  *= require api/sessions
+ *= require api/images
  *= require_self
  */

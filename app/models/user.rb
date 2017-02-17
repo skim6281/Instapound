@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "user.png"
+  has_attached_file :profile_pic, default_url: "user.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
   has_many :images

@@ -5,10 +5,9 @@ import { selectAllImages } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return ({
-    images: selectAllImages(state.images)
+    images: selectAllImages(state.photoFeed.images)
   });
 };
-
 
 const mapDispatchToProps = (dispatch) => {
   return ({
