@@ -1,4 +1,5 @@
 json.id image.id
+json.author image.user
 json.author_name image.user.username
 json.location image.location
 json.caption image.caption

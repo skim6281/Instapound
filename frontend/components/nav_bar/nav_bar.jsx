@@ -14,7 +14,7 @@ class NavBar extends React.Component{
           <div className='nav-icons'>
             <ul className='icon-list'>
               <li className='icon'>
-                <Link to={`${currentUser.username}`}>
+                <Link to={`${currentUser.username}/`}>
                   <img src={window.images.navUser}/>
                 </Link>
               </li>

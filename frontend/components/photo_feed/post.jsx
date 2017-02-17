@@ -1,5 +1,6 @@
 import React from 'react';
 import { time_ago } from '../../util/time_ago_util';
+import { Link } from 'react-router';
 
 class Post extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Post extends React.Component {
           <div className="post-user">
             <img className="post-author-profile-pic" src={image.author_profile_pic_url}/>
             <div className="post-author-name">
-              <a className="author-name text">{image.author_name}</a>
+              <Link to={`${image.author_name}/`} className="author-name text">{image.author_name}</Link>
             </div>
           </div>
           <a className="time-ago">
@@ -26,7 +27,7 @@ class Post extends React.Component {
           <div className="likes text">Likes</div>
           <div className="image-caption">
             <h1 className="caption-head">
-              <a className="comment-name name text">{image.author_name}</a>
+              <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
               <span className="caption text">{image.caption}</span>
             </h1>
           </div>
