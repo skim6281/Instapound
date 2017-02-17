@@ -10,8 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:username])
-    @user_images = @user.images
+    @user = User.find(params[:id])
     render 'api/users/show'
   end
 
