@@ -10,8 +10,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    render 'api/users/show'
+    @user = User.find_by(username: params[:username])
+    if @user == current_user
+      render 'api/users/show_current_user'
+    else
+      render 'api/users/show'
+    end
   end
 
   private

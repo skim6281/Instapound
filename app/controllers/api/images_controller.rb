@@ -1,5 +1,5 @@
 class Api::ImagesController < ApplicationController
-  before_filter :require_login!
+  before_action :require_login!
 
   def index
     users = []
@@ -27,19 +27,18 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    @images = current_user.images
+    @image = Image.find(params[:id])
     render '/api/images/show'
   end
 
   def destroy
     @image = current_user.images.find(params[:id])
     @image.destroy
-    render :index
   end
 
   private
 
   def image_params
-    params.require(:image).permit(:caption, :location)
+    params.require(:image).permit(:caption, :location, :photo)
   end
 end
