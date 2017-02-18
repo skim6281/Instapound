@@ -11,13 +11,16 @@ class Profile extends React.Component {
   }
 
   renderImages() {
-    return this.props.user.images.map(image => {
+    return this.props.images.map(image => {
       return <Image key={image.id} image={image}/>
     });
   }
 
   render() {
     if (this.props.user) {
+      this.props.user.images.forEach(image => {
+        this.props.fetchImage(image.id);
+      });
       return (
         <div>
           <article>
