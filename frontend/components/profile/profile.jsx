@@ -5,6 +5,10 @@ class Profile extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.params.username);
+  }
+
   render() {
     return (
       <div>
@@ -13,7 +17,7 @@ class Profile extends React.Component {
 
           </header>
           <section>
-            
+
           </section>
         </article>
       </div>
