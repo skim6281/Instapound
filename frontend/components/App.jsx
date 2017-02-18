@@ -10,10 +10,6 @@ class App extends React.Component {
     this.state = {formType: 'Log in'};
   }
 
-  redirectToHome(){
-    hashHistory.push('/');
-  }
-
   render(){
     if (this.props.currentUser){
       return (

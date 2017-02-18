@@ -13,6 +13,6 @@
  *= require reset
  *= require api/sessions
  *= require navbar
- *= require api/images
+ *= require photo_feed
  *= require_self
  */
