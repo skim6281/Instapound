@@ -54,9 +54,12 @@ h1 {
   width: 935px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
+div.profile-image:nth-child(3n+3) {
+  margin-right: 0;
+}
 .profile-image {
   width: 293px;
   max-height: 293px;
@@ -64,6 +67,7 @@ h1 {
   margin-bottom: 30px;
   position: relative;
   overflow: hidden;
+  margin: 0 28px 28px 0;
 }
 
 .profile-image > a > img{
