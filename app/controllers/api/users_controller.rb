@@ -1,8 +1,4 @@
 class Api::UsersController < ApplicationController
-  def index
-
-  end
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -15,7 +11,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
-    if (@user)
+    if @user
       if @user == current_user
         render 'api/users/show_current_user'
       else
@@ -28,7 +24,7 @@ class Api::UsersController < ApplicationController
 
   def followings
     user = User.find_by(username: params[:username])
-    if (user)
+    if user
       @followings = user.followings
       render 'api/users/followings'
     else
@@ -38,7 +34,7 @@ class Api::UsersController < ApplicationController
 
   def followers
     user = User.find_by(username: params[:username])
-    if (user)
+    if user
       @followers = user.followees
       render 'api/users/followers'
     else
