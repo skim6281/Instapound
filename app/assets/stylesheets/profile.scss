@@ -4,11 +4,39 @@ body{
   background-color: #fafafa;
 }
 
+
 .profile-container {
   width: 935px;
   box-sizing: border-box;
   margin: 0 auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
 }
+
+.user-details {
+  margin-bottom: 44px;
+  display: flex;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  box-sizing: border-box;
+  object-fit: cover;
+  margin: 0 85px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: lighter;
+}
+
 
 .profile-image-section{
   width: 935px;
