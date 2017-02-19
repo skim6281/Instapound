@@ -16,12 +16,12 @@ body{
 }
 
 .user-details {
+  margin-left: 85px;
   margin-bottom: 44px;
   display: flex;
 }
 
 .profile-pic-button {
-  margin: 0 85px;
   width: 150px;
   height: 150px;
   border: 1px solid #dbdbdb;
@@ -37,7 +37,10 @@ body{
   border-radius: 50%;
   box-sizing: border-box;
   object-fit: cover;
+}
 
+.user-info {
+  margin-left: 85px;
 }
 
 h1 {
