@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+  def index
+
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -11,10 +15,34 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
-    if @user == current_user
-      render 'api/users/show_current_user'
+    if (@user)
+      if @user == current_user
+        render 'api/users/show_current_user'
+      else
+        render 'api/users/show'
+      end
     else
-      render 'api/users/show'
+      render json: ["User not found"], status: 422
+    end
+  end
+
+  def followings
+    user = User.find_by(username: params[:username])
+    if (user)
+      @followings = user.followings
+      render 'api/users/followings'
+    else
+      render json: ["User not found"], status: 422
+    end
+  end
+
+  def followers
+    user = User.find_by(username: params[:username])
+    if (user)
+      @followers = user.followees
+      render 'api/users/followers'
+    else
+      render json: ["User not found"], status: 422
     end
   end
 
