@@ -68,6 +68,23 @@ h1 {
   display: block;
 }
 
+.user-info-row-2 {
+  display: flex;
+}
+
+.user-info-row-2 > li {
+  margin-right: 40px;
+}
+
+.bold {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.user-info-row-2 > li > a:hover {
+  cursor: pointer;
+}
+
 .profile-image-section{
   width: 935px;
   display: flex;

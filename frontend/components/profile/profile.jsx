@@ -64,9 +64,36 @@ class Profile extends React.Component {
                   {this.getEditButton()}
                   <button>. . .</button>
                 </div>
-                <div className="user-info-row-2">
-                  
-                </div>
+                <ul className="user-info-row-2">
+                  <li>
+                    <span className="bold">
+                      {this.props.images.length}
+                    </span>
+                    <span>
+                      posts
+                    </span>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="bold">
+                        {this.props.user.followers.length}
+                      </span>
+                      <span>
+                        followers
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="bold">
+                        {this.props.user.followings.length}
+                      </span>
+                      <span>
+                        followings
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </header>
             <content className="profile-image-section">
