@@ -29,14 +29,16 @@ article {
 
 .sign-up-message {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 20px;
   margin: 0 40px 10px;
   color: #999;
+  font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 .auth-form-container {
-  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'proxima-nova','Helvitica Neue', Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +46,7 @@ article {
 }
 
 .error-list {
-  font-family: 'proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'proxima-nova','Helvitica Neue', Arial, Helvetica, sans-serif;
   color: #ed4956;
   text-align: center;
   margin: 20px;
