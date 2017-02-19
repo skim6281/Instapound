@@ -11,17 +11,36 @@ class Profile extends React.Component {
     this.props.fetchUserImages(this.props.params.username);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.params.username !== this.props.params.username) {
+      this.props.fetchUser(newProps.params.username);
+      this.props.fetchUserImages(newProps.params.username);
+    }
+  }
+
   getProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
         <button className="profile-pic-button">
-          <img className="profile-pic" src={this.props.user.profile_pic_url}/>
+          <img className="curr-user-pic" src={this.props.user.profile_pic_url}/>
         </button>
       );
     } else {
       return (
         <img className="profile-pic" src={this.props.user.profile_pic_url} />
       )
+    }
+  }
+
+  getEditButton() {
+    if (this.props.currentUser.username === this.props.user.username) {
+      return (
+        <button>Edit Profile</button>
+      );
+    }else {
+      return (
+        <button>Follow/Unfollow</button>
+      );
     }
   }
 
@@ -40,8 +59,10 @@ class Profile extends React.Component {
                 {this.getProfilePic()}
               </div>
               <div className="user-info">
-                <div>
+                <div className="user-info-row-1">
                   <h1>{this.props.user.username}</h1>
+                  {this.getEditButton()}
+                  <button>. . .</button>
                 </div>
               </div>
             </header>
