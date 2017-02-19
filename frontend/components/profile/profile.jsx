@@ -33,14 +33,22 @@ class Profile extends React.Component {
   }
 
   getEditButton() {
-    if (this.props.currentUser.username === this.props.user.username) {
+    const user = this.props.user;
+    const currentUser = this.props.currentUser;
+    if (currentUser.username === user.username) {
       return (
         <button className="profile-button">Edit Profile</button>
       );
     }else {
-      return (
-        <button className="profile-button">Follow/Unfollow</button>
-      );
+      if (currentUser.followings.includes(user)) {
+        return (
+          <button className="profile-button">Unfollow</button>
+        );
+      }else {
+        return (
+          <button className="profile-button">Follow</button>
+        )
+      }
     }
   }
 
