@@ -41,14 +41,32 @@ body{
 
 .user-info {
   margin-left: 85px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-row-1 {
+  display: flex;
+  margin-bottom: 20px;
 }
 
 h1 {
   font-size: 34px;
   line-height: 40px;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
+.profile-button {
+  margin: 7px 20px 0 20px;
+  padding: 0 24px;
+  height: 30px;
+  font-size: 14px;
+  color: #262626;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-weight: 500;
+  display: block;
+}
 
 .profile-image-section{
   width: 935px;
@@ -60,6 +78,7 @@ h1 {
 div.profile-image:nth-child(3n+3) {
   margin-right: 0;
 }
+
 .profile-image {
   width: 293px;
   max-height: 293px;

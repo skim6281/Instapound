@@ -35,11 +35,11 @@ class Profile extends React.Component {
   getEditButton() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
-        <button>Edit Profile</button>
+        <button className="profile-button">Edit Profile</button>
       );
     }else {
       return (
-        <button>Follow/Unfollow</button>
+        <button className="profile-button">Follow/Unfollow</button>
       );
     }
   }
@@ -63,6 +63,9 @@ class Profile extends React.Component {
                   <h1>{this.props.user.username}</h1>
                   {this.getEditButton()}
                   <button>. . .</button>
+                </div>
+                <div className="user-info-row-2">
+                  
                 </div>
               </div>
             </header>
