@@ -10,7 +10,7 @@ class Image extends React.Component {
     const { image } = this.props;
     return (
       <div className="profile-image">
-        <img src={image.photo_url}/>
+        <a><img src={image.photo_url}/></a>
       </div>
     );
   }
