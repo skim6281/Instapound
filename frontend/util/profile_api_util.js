@@ -4,9 +4,9 @@ export const fetchUser = username => {
     url: `api/users/${username}`
   });
 };
- export const fetchImage = id => {
+ export const fetchUserImages = username => {
    return $.ajax({
      method: 'GET',
-     url: `api/images/${id}`
+     url: `api/images/${username}`
    });
  };

@@ -27,8 +27,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
-    render '/api/images/show'
+    @images = User.find_by(username: params[:username]).images
+    render '/api/images/index'
   end
 
   def destroy

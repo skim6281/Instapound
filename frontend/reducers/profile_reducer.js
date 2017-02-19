@@ -1,4 +1,4 @@
-import { RECEIVE_USER, RECEIVE_IMAGE } from '../actions/profile_actions';
+import { RECEIVE_USER, RECEIVE_USER_IMAGES } from '../actions/profile_actions';
 import merge from 'lodash/merge';
 
 const initialState = {
@@ -11,10 +11,8 @@ const ProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return Object.assign({}, state, {user: action.user});
-    case RECEIVE_IMAGE:
-      let newState = Object.assign({}, state);
-      newState.images.push(action.image);
-      return newState;
+    case RECEIVE_USER_IMAGES:
+      return Object.assign({}, state, {images: action.images});
     default:
       return state;
   }

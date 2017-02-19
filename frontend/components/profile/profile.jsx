@@ -8,6 +8,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.params.username);
+    this.props.fetchUserImages(this.props.params.username);
   }
 
   renderImages() {
@@ -18,16 +19,15 @@ class Profile extends React.Component {
 
   render() {
     if (this.props.user) {
-      this.props.user.images.forEach(image => {
-        this.props.fetchImage(image.id);
-      });
       return (
-        <div>
+        <div className="profile-container">
           <article>
             <header>
+              <div>
 
+              </div>
             </header>
-            <section>
+            <section className="profile-image-section">
               {this.renderImages()}
             </section>
           </article>

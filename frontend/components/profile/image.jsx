@@ -7,19 +7,12 @@ class Image extends React.Component {
   }
 
   render() {
-    const { image, fetchImage } = this.props;
-    if(image.photo_url){
-      return (
-        <div>
-          <img src={image.photo_url}/>
-        </div>
-      )
-    } else {
-      return (
-        <div>no photo_url</div>
-      )
-    }
-
+    const { image } = this.props;
+    return (
+      <div className="profile-image">
+        <img src={image.photo_url}/>
+      </div>
+    );
   }
 }
 
