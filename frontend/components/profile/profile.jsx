@@ -32,7 +32,7 @@ class Profile extends React.Component {
     }
   }
 
-  getEditButton() {
+  getProfileButton() {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
     if (currentUser.username === user.username) {
@@ -69,7 +69,7 @@ class Profile extends React.Component {
               <div className="user-info">
                 <div className="user-info-row-1">
                   <h1>{this.props.user.username}</h1>
-                  {this.getEditButton()}
+                  {this.getProfileButton()}
                   <button>. . .</button>
                 </div>
                 <ul className="user-info-row-2">

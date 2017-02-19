@@ -8,7 +8,7 @@ class Api::ImagesController < ApplicationController
       current_user.followees.each do |user|
         users << user
       end
-      @images = Image.where(user: users)
+      @images = Image.includes(:user).where(user: users)
     end
     render 'api/images/index'
   end

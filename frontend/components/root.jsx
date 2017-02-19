@@ -20,7 +20,9 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={PhotoFeedContainer}/>
-          <Route path=":username" component={ProfileContainer} />
+          <Route path=":username" component={ProfileContainer}>
+            
+          </Route>
         </Route>
       </Router>
     </Provider>
