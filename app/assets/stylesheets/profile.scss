@@ -20,6 +20,15 @@ body{
   display: flex;
 }
 
+.profile-pic-button {
+  margin: 0 85px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .profile-pic {
   width: 150px;
   height: 150px;
@@ -28,7 +37,7 @@ body{
   border-radius: 50%;
   box-sizing: border-box;
   object-fit: cover;
-  margin: 0 85px;
+
 }
 
 h1 {

@@ -14,7 +14,7 @@ class Profile extends React.Component {
   getProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
-        <button>
+        <button className="profile-pic-button">
           <img className="profile-pic" src={this.props.user.profile_pic_url}/>
         </button>
       );
