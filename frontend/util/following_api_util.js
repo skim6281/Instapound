@@ -1,4 +1,4 @@
-export const createFollowing => follloweeId => {
+export const createFollowing = follloweeId => {
   return $.ajax({
     method: "POST",
     url: "/api/followings",
@@ -6,7 +6,7 @@ export const createFollowing => follloweeId => {
   });
 };
 
-export const deleteFollowing => followeeId => {
+export const deleteFollowing = followeeId => {
   return $.ajax({
     method: "DELETE",
     url: `/api/followings/${id}`
