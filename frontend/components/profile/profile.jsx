@@ -6,10 +6,14 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      uploadModalIsOpen: false
     }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openUploadModal = this.openUploadModal.bind(this);
+    this.closeUploadModal = this.closeUploadModal.bind(this);
+
   }
 
   componentDidMount() {
@@ -32,6 +36,14 @@ class Profile extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
+  openUploadModal() {
+    this.setState({uploadModalIsOpen: true});
+  }
+
+  closeUploadModal() {
+    this.setState({uploadModalIsOpen: false});
+  }
+
   getProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
@@ -46,7 +58,7 @@ class Profile extends React.Component {
     }
   }
 
-  getProfileButton() {
+  renderProfileButton() {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
     if (currentUser.username === user.username) {
@@ -66,7 +78,17 @@ class Profile extends React.Component {
     }
   }
 
-  getLogoutButton() {
+  renderUploadButton() {
+    if (this.props.currentUser.username === this.props.user.username) {
+      return (
+        <button className="upload-button">
+          <img src={window.images.upload} />
+        </button>
+      )
+    }
+  }
+
+  renderLogoutButton() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
         <button onClick={this.openModal} className="logout-button">
@@ -93,8 +115,10 @@ class Profile extends React.Component {
               <div className="user-info">
                 <div className="user-info-row-1">
                   <h1>{this.props.user.username}</h1>
-                  {this.getProfileButton()}
-                  {this.getLogoutButton()}
+                  {this.renderProfileButton()}
+                  {this.renderUploadButton()}
+                  {this.renderLogoutButton()}
+
                   <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
@@ -109,8 +133,11 @@ class Profile extends React.Component {
                         <button className="logout-button-modal" onClick={this.closeModal}>Cancel</button>
                       </li>
                     </ul>
-                    <button className="exit" onClick={this.closeModal}>X</button>
+                    <button className="exit" onClick={this.closeModal}>
+                      <img src={window.images.exit}/>
+                    </button>
                   </Modal>
+
                 </div>
                 <ul className="user-info-row-2">
                   <li>

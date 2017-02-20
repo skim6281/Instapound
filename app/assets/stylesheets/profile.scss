@@ -68,6 +68,19 @@ h1 {
   display: block;
 }
 
+.upload-button {
+  width: 25px;
+  margin-right: 17px;
+}
+
+.logout-button {
+  width: 44px;
+}
+
+.logout-button > img {
+  width: 75%;
+}
+
 .user-info-row-2 {
   display: flex;
 }

@@ -29,17 +29,6 @@
 .logout-modal > ul {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  border: 1px solid #dbdbdb;
-  width: 100%;
-}
-
-.logout-modal > ul > li {
-  background-color: #fff;
-  height: 50px;
-  width: 510px;
-  display: flex;
-  justify-content: center;
 }
 
 .logout-button-modal{
@@ -64,4 +53,6 @@
   right: 0;
   color: #fff;
   font-weight: bold;
+  margin: 13px 13px 0 0;
+  width: 17px;
 }
