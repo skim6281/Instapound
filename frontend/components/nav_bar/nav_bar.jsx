@@ -18,9 +18,6 @@ class NavBar extends React.Component{
                   <img src={window.images.navUser}/>
                 </Link>
               </li>
-              <li className='logout'>
-                <button onClick={logout}>Log out</button>
-              </li>
             </ul>
           </div>
         </div>
