@@ -21,7 +21,6 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRoute component={PhotoFeedContainer}/>
           <Route path=":username" component={ProfileContainer}>
-            
           </Route>
         </Route>
       </Router>
