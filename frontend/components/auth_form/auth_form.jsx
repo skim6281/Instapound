@@ -63,12 +63,12 @@ class AuthForm extends React.Component {
 		const {formType} = this.props;
 		let formChangeText;
 		let text;
-		if (formType === 'Log in'){
-			formChangeText = 'Sign up';
-			text = "Don't have an account? ";
-		} else if (formType === 'Sign up'){
+		if (formType === 'Sign up'){
 			formChangeText = 'Log in';
 			text = "Have an account? ";
+		} else {
+			formChangeText = 'Sign up';
+			text = "Don't have an account? ";
 		}
 
 		return (
