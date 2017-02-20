@@ -17,6 +17,5 @@ export const time_ago = (upload_date) => {
     return seconds + "s";
   }
 
-
   return(upload_date);
 };
