@@ -17,11 +17,11 @@ class ImageForm extends React.Component {
   }
 
   updateCaption(e){
-    this.setState({caption: e.target.value});
+    this.setState({caption: e.currentTarget.value});
   }
 
   updateLocation(e){
-    this.setState({location: e.target.value});
+    this.setState({location: e.currentTarget.value});
   }
 
   updateFile(e) {
@@ -44,7 +44,7 @@ class ImageForm extends React.Component {
     formData.append("image[photo]", this.state.imageFile);
     this.props.createImage(formData);
     this.props.closeUploadModal();
-    this.props.hashHistory.push(`${this.props.currentUser.username}`)
+    // this.props.hashHistory.push(`${this.currentUser.username}`);
   }
 
   render() {

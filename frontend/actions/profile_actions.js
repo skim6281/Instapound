@@ -14,10 +14,12 @@ export const receiveUserImages = images => ({
   images
 });
 
-export const receiveImage = image => ({
-  type: RECEIVE_IMAGE,
-  image
-});
+export const receiveImage = image => {
+  return{
+    type: RECEIVE_IMAGE,
+    image
+  }
+};
 
 export const fetchUser = (username) => dispatch => {
   return ProfileAPIUtil.fetchUser(username)

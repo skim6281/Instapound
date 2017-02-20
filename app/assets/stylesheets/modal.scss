@@ -15,9 +15,8 @@
   align-items: center;
 }
 
-.logout-modal{
+.logout-modal, .profile-pic-modal{
   width: 510px;
-  height: 100px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -26,24 +25,41 @@
   font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
 }
 
+.profile-pic-modal {
+  height: 150px;
+}
+
+.no-click{
+  display: block;
+  font-weight: bold;
+  color: #999;
+}
+
+.logut-modal {
+  height: 100px;
+}
+
 .logout-modal > ul {
   display: flex;
   flex-direction: column;
 }
 
-.logout-button-modal{
-  color: #262626;
+.button-modal, .no-click{
   text-align: center;
   font-size: 16px;
   line-height: 50px;
   width: 510px;
 }
 
+.button-modal {
+  color: #262626;
+}
+
 .logout-modal > ul > li:first-child{
   border-bottom: 1px solid #dbdbdb;
 }
 
-.logout-button-modal:hover {
+.button-modal:hover {
   background-color: #efefef
 }
 

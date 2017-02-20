@@ -8,12 +8,15 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      uploadModalIsOpen: false
+      uploadModalIsOpen: false,
+      profilePicModalIsOpen: false
     }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openUploadModal = this.openUploadModal.bind(this);
     this.closeUploadModal = this.closeUploadModal.bind(this);
+    this.openProfilePicModal = this.openProfilePicModal.bind(this);
+    this.closeProfilePicModal = this.closeProfilePicModal.bind(this);
   }
 
   componentDidMount() {
@@ -44,10 +47,18 @@ class Profile extends React.Component {
     this.setState({uploadModalIsOpen: false});
   }
 
+  openProfilePicModal() {
+    this.setState({profilePicModalIsOpen: true});
+  }
+
+  closeProfilePicModal() {
+    this.setState({profilePicModalIsOpen: false});
+  }
+
   getProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
-        <button className="profile-pic-button">
+        <button onClick={this.openProfilePicModal} className="profile-pic-button">
           <img className="curr-user-pic" src={this.props.user.profile_pic_url}/>
         </button>
       );
@@ -116,6 +127,27 @@ class Profile extends React.Component {
                 <div className="user-info-row-1">
                   <h1>{this.props.user.username}</h1>
                   {this.renderProfileButton()}
+                  <Modal
+                    isOpen={this.state.profilePicModalIsOpen}
+                    onRequestClose={this.closeProfilePicModal}
+                    className="profile-pic-modal"
+                    overlayClassName="overlay"
+                    contentLabel="profilepic">
+                    <ul>
+                      <li>
+                        <span className="no-click">Change Profile Picture</span>
+                      </li>
+                      <li>
+                        <button className="button-modal">Upload Photo</button>
+                      </li>
+                      <li>
+                        <button className="button-modal" onClick={this.closeProfilePicModal}>Cancel</button>
+                      </li>
+                    </ul>
+                    <button className="exit" onClick={this.closeProfilePicModal}>
+                      <img src={window.images.exit}/>
+                    </button>
+                  </Modal>
                   {this.renderUploadButton()}
                   <Modal
                     isOpen={this.state.uploadModalIsOpen}
@@ -137,10 +169,10 @@ class Profile extends React.Component {
                     contentLabel="logout">
                     <ul>
                       <li>
-                        <button className="logout-button-modal" onClick={this.props.logout}>Log out</button>
+                        <button className="button-modal" onClick={this.props.logout}>Log out</button>
                       </li>
                       <li>
-                        <button className="logout-button-modal" onClick={this.closeModal}>Cancel</button>
+                        <button className="button-modal" onClick={this.closeModal}>Cancel</button>
                       </li>
                     </ul>
                     <button className="exit" onClick={this.closeModal}>

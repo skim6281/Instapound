@@ -14,7 +14,8 @@ const ProfileReducer = (state = initialState, action) => {
     case RECEIVE_USER_IMAGES:
       return Object.assign({}, state, {images: action.images});
     case RECEIVE_IMAGE:
-      let newImages = Object.assign([], state.images);
+      debugger
+      let newImages = state.images.slice();
       newImages.unshift(action.image);
       return Object.assign({}, state, {images: newImages})
     default:
