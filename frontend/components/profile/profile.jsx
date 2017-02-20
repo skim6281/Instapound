@@ -1,9 +1,15 @@
 import React from 'react';
 import Image from './image';
+import Modal from 'react-modal';
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalIsOpen: false
+    }
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +22,14 @@ class Profile extends React.Component {
       this.props.fetchUser(newProps.params.username);
       this.props.fetchUserImages(newProps.params.username);
     }
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   getProfilePic() {
@@ -52,6 +66,16 @@ class Profile extends React.Component {
     }
   }
 
+  getLogoutButton() {
+    if (this.props.currentUser.username === this.props.user.username) {
+      return (
+        <button onClick={this.openModal} className="logout-button">
+          <img src={window.images.dotdotdot}/>
+        </button>
+      )
+    }
+  }
+
   renderImages() {
     return this.props.images.map(image => {
       return <Image key={image.id} image={image}/>
@@ -70,7 +94,23 @@ class Profile extends React.Component {
                 <div className="user-info-row-1">
                   <h1>{this.props.user.username}</h1>
                   {this.getProfileButton()}
-                  <button>. . .</button>
+                  {this.getLogoutButton()}
+                  <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    className="logout-modal"
+                    overlayClassName="overlay"
+                    contentLabel="logout">
+                    <ul>
+                      <li>
+                        <button className="logout-button-modal" onClick={this.props.logout}>Log out</button>
+                      </li>
+                      <li>
+                        <button className="logout-button-modal" onClick={this.closeModal}>Cancel</button>
+                      </li>
+                    </ul>
+                    <button className="exit" onClick={this.closeModal}>X</button>
+                  </Modal>
                 </div>
                 <ul className="user-info-row-2">
                   <li>
@@ -111,7 +151,7 @@ class Profile extends React.Component {
       );
     } else {
       return (
-        <div></div>
+        <div>so slowww</div>
       )
     }
   }
