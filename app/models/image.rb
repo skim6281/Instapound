@@ -17,7 +17,10 @@
 class Image < ApplicationRecord
   validates :user, presence: true
 
-  has_attached_file :photo, default_url: "/images/:style/missing.png"
+  has_attached_file :photo,
+                    styles: { thumb: "100x100>" },
+                    processors: [:thumbnail, :paperclip_optimizer],
+                    default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
