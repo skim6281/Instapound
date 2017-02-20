@@ -23,7 +23,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_attached_file :profile_pic,
-                    styles: { thumb: "100x100>" },
+                    styles: { thumb: "100x100>", croppable: "600x600>" },
                     processors: [:thumbnail, :paperclip_optimizer],
                     default_url: ActionController::Base.helpers.asset_path("user.png")
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
