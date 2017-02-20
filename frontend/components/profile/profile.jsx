@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from './image';
 import Modal from 'react-modal';
+import ImageForm from './image_form';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Profile extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openUploadModal = this.openUploadModal.bind(this);
     this.closeUploadModal = this.closeUploadModal.bind(this);
-
   }
 
   componentDidMount() {
@@ -81,7 +81,7 @@ class Profile extends React.Component {
   renderUploadButton() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
-        <button className="upload-button">
+        <button onClick={this.openUploadModal} className="upload-button">
           <img src={window.images.upload} />
         </button>
       )
@@ -117,8 +117,18 @@ class Profile extends React.Component {
                   <h1>{this.props.user.username}</h1>
                   {this.renderProfileButton()}
                   {this.renderUploadButton()}
+                  <Modal
+                    isOpen={this.state.uploadModalIsOpen}
+                    onRequestClose={this.closeUploadModal}
+                    className="upload-modal"
+                    overlayClassName="overlay"
+                    contentLabel="upload">
+                    <ImageForm
+                      currentUser={this.props.currentUser}
+                      closeUploadModal={this.closeUploadModal}
+                      createImage={this.props.createImage} />
+                  </Modal>
                   {this.renderLogoutButton()}
-
                   <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}

@@ -8,7 +8,7 @@ class Api::ImagesController < ApplicationController
       current_user.followees.each do |user|
         users << user
       end
-      @images = Image.includes(:user).where(user: users)
+      @images = Image.includes(:user).where(user: users).order('created_at DESC')
     end
     render 'api/images/index'
   end
@@ -27,7 +27,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    @images = User.find_by(username: params[:username]).images
+    @images = User.find_by(username: params[:username]).images.order('created_at DESC')
     render '/api/images/index'
   end
 

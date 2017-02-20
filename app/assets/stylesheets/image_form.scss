@@ -1,0 +1,55 @@
+.upload-modal{
+  height: 750px;
+  background-color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+}
+
+.image-form {
+  display: flex;
+  height: 750px;
+  width: 1000px;
+}
+
+.image-field {
+  overflow: hidden;
+  width: 600px;
+  max-height: 750px;
+  background-color: #dbdbdb;
+}
+
+.image-form-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 400px;
+}
+
+.image-input-fields {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.choose-file {
+  margin: 10px 0;
+}
+
+.upload-modal-text-input {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.share-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #3897f0;
+  line-height: 20px;
+  padding: 20px;
+  color: #fff;
+}
