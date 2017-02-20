@@ -15,5 +15,6 @@
  *= require navbar
  *= require photo_feed
  *= require profile
+ *= require modal
  *= require_self
  */
