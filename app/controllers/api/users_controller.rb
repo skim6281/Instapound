@@ -31,26 +31,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def followings
-    user = User.find_by(username: params[:username])
-    if user
-      @followings = user.followings
-      render 'api/users/followings'
-    else
-      render json: ["User not found"], status: 422
-    end
-  end
-
-  def followers
-    user = User.find_by(username: params[:username])
-    if user
-      @followers = user.followees
-      render 'api/users/followers'
-    else
-      render json: ["User not found"], status: 422
-    end
-  end
-
   private
 
   def user_params

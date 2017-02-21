@@ -2,18 +2,18 @@ class Api::ImagesController < ApplicationController
   before_action :require_login!
 
   def index
-    users = []
-    if logged_in?
-      users << current_user
-      current_user.followees.each do |user|
-        users << user
+    if params[:user_username]
+      user = User.find_by(username: params[:user_username])
+      if user
+        @images = user.images.order('created_at DESC')
+      else
+        @images = []
       end
+    else
+      users = [current_user] + current_user.followees
       @images = Image.includes(:user).where(user: users).order('created_at DESC')
     end
     render 'api/images/index'
-  end
-
-  def new
   end
 
   def create
@@ -24,11 +24,6 @@ class Api::ImagesController < ApplicationController
     else
       render json: @image.errors.full_messages, status: 422
     end
-  end
-
-  def show
-    @images = User.find_by(username: params[:username]).images.order('created_at DESC')
-    render '/api/images/index'
   end
 
   def destroy
