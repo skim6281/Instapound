@@ -1,0 +1,41 @@
+.image-modal {
+  background-color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+}
+
+.image-modal-section {
+  width: 935px;
+  max-height: 750px;
+  display: flex;
+}
+
+.image-modal-photo {
+  width: 600px;
+  overflow: hidden;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-modal-fields {
+  width: 335px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-modal-header {
+  height: 64px;
+  padding: 20px 0;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+}
+
+.author-name:hover {
+  cursor: pointer;
+}

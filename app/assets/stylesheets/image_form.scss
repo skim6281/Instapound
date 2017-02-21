@@ -15,6 +15,9 @@
 }
 
 .image-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   width: 600px;
   max-height: 750px;
