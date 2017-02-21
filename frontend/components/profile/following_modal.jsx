@@ -1,9 +1,26 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
+import { userIncluded } from '../../util/util';
 
 class FollowingModal extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  renderFollowButton(user) {
+    if (userIncluded(this.prop.currentUser.followings, user.id)) {
+      return (
+        <button className="follow-button">
+          Following
+        </button>
+      );
+    } else {
+      return (
+        <button className="follow-button follow">
+          Follow
+        </button>
+      )
+    }
   }
 
   renderUsers(users) {
@@ -25,11 +42,11 @@ class FollowingModal extends React.Component {
   }
 
   render() {
-    const { users, currentUser, closeFollowingsModal } = this.props;
+    const { users, currentUser, closeModal, type } = this.props;
     return (
       <main className="follow-modal-main">
         <header className="follow-modal-header">
-          <span>Following</span>
+          <span>{type}</span>
         </header>
         <section className="follow-modal-section">
           <div>
@@ -38,7 +55,7 @@ class FollowingModal extends React.Component {
             </ul>
           </div>
         </section>
-        <button className="exit" onClick={closeFollowingsModal}>
+        <button className="exit" onClick={closeModal}>
           <img src={window.images.exit}/>
         </button>
       </main>

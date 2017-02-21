@@ -1,20 +1,3 @@
-/* Remove scroll on the body when react-modal is open */
-.ReactModal__Body--open {
-    overflow: hidden;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .logout-modal, .profile-pic-modal{
   width: 510px;
   background-color: #fff;
