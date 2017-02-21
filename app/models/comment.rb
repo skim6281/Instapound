@@ -11,4 +11,12 @@
 #
 
 class Comment < ApplicationRecord
+  validates :body, :commenter, :image, presence: true
+
+  belongs_to :image
+
+  belongs_to :commenter,
+    class_name: "User",
+    foreign_key: :user_id
+    
 end
