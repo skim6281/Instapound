@@ -1,0 +1,70 @@
+.follow-modal {
+  background-color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+}
+
+.follow-modal-main {
+  width:600px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.follow-modal-header, .follow-button {
+  font-weight: bold;
+  color: #262626;
+  font-size: 14px;
+}
+
+.follow-modal-header {
+  width: 600px;
+  padding: 16px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.follow-row {
+  padding: 16px 20px;
+  border-bottom: 1px solid #efefef;
+  height: 60px;
+}
+
+.follow-name {
+  text-decoration: none;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 10px;
+  padding-top: 5px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.follow-modal-section {
+  height: 100%;
+}
+
+.follow-modal-list {
+  height: 100%;
+  overflow: scroll;
+}
+
+.follow-modal-list > li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow-modal-user-details{
+  display: flex;
+}
+
+.follow-button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 8px;
+  box-sizing: border-box;
+}

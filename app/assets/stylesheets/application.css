@@ -17,6 +17,7 @@
  *= require profile
  *= require image_form
  *= require image_modal
+ *= require follow_modal
  *= require modal
  *= require_self
  */

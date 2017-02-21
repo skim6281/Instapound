@@ -2,6 +2,7 @@ import React from 'react';
 import Image from './image';
 import Modal from 'react-modal';
 import ImageForm from './image_form';
+import FollowingModal from './following_modal';
 import { userIncluded } from '../../util/util';
 
 class Profile extends React.Component {
@@ -10,7 +11,9 @@ class Profile extends React.Component {
     this.state = {
       modalIsOpen: false,
       uploadModalIsOpen: false,
-      profilePicModalIsOpen: false
+      profilePicModalIsOpen: false,
+      followersModalIsOpen: false,
+      followingsModalIsOpen: false
     }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -18,6 +21,10 @@ class Profile extends React.Component {
     this.closeUploadModal = this.closeUploadModal.bind(this);
     this.openProfilePicModal = this.openProfilePicModal.bind(this);
     this.closeProfilePicModal = this.closeProfilePicModal.bind(this);
+    this.openFollowersModal = this.openFollowersModal.bind(this);
+    this.closeFollowersModal = this.openFollowersModal.bind(this);
+    this.openFollowingsModal = this.openFollowingsModal.bind(this);
+    this.closeFollowingsModal = this.closeFollowingsModal.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
   }
@@ -56,6 +63,22 @@ class Profile extends React.Component {
 
   closeProfilePicModal() {
     this.setState({profilePicModalIsOpen: false});
+  }
+
+  openFollowersModal() {
+    this.setState({followersModalIsOpen: true});
+  }
+
+  closeFollowersModal() {
+    this.setState({followersModalIsOpen: false});
+  }
+
+  openFollowingsModal() {
+    this.setState({followingsModalIsOpen: true});
+  }
+
+  closeFollowingsModal() {
+    this.setState({followingsModalIsOpen: false});
   }
 
   getProfilePic() {
@@ -221,7 +244,7 @@ class Profile extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a>
+                    <a onClick={this.openFollowingsModal}>
                       <span className="bold">
                         {this.props.user.followings.length}
                       </span>
@@ -229,6 +252,17 @@ class Profile extends React.Component {
                         followings
                       </span>
                     </a>
+                    <Modal
+                      isOpen={this.state.followingsModalIsOpen}
+                      onRequestClose={this.closeFollowingsModal}
+                      className="follow-modal"
+                      overlayClassName="overlay"
+                      contentLabel="follow">
+                      <FollowingModal
+                        users={this.props.user.followings}
+                        currentUser={this.props.currentUser}
+                        closeFollowingsModal={this.closeFollowingsModal}/>
+                    </Modal>
                   </li>
                 </ul>
               </div>
