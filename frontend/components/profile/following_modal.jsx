@@ -32,9 +32,11 @@ class FollowingModal extends React.Component {
           <span>Following</span>
         </header>
         <section className="follow-modal-section">
-          <ul className="follow-modal-list">
-            {this.renderUsers(users)}
-          </ul>
+          <div>
+            <ul className="follow-modal-list">
+              {this.renderUsers(users)}
+            </ul>
+          </div>
         </section>
         <button className="exit" onClick={closeFollowingsModal}>
           <img src={window.images.exit}/>

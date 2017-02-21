@@ -10,7 +10,6 @@
 .follow-modal-main {
   width:600px;
   height: 600px;
-  overflow: hidden;
 }
 
 .follow-modal-header, .follow-button {
@@ -45,12 +44,16 @@
 }
 
 .follow-modal-section {
+  height: 550px;
+}
+
+.follow-modal-section > div {
   height: 100%;
 }
 
 .follow-modal-list {
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .follow-modal-list > li {
@@ -65,6 +68,6 @@
 .follow-button {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  padding: 8px;
-  box-sizing: border-box;
+  padding: 0 8px;
+  line-height: 27px;
 }
