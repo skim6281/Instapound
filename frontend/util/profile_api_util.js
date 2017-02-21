@@ -8,7 +8,7 @@ export const fetchUser = username => {
 export const fetchUserImages = username => {
  return $.ajax({
    method: 'GET',
-   url: `api/images/${username}`
+   url: `api/users/${username}/images`
  });
 };
 

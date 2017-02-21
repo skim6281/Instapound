@@ -81,7 +81,7 @@ class Profile extends React.Component {
     this.setState({followingsModalIsOpen: false});
   }
 
-  getProfilePic() {
+  renderProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
         <button onClick={this.openProfilePicModal} className="profile-pic-button">
@@ -164,7 +164,7 @@ class Profile extends React.Component {
         <div className="profile-container">
             <header className="user-details">
               <div>
-                {this.getProfilePic()}
+                {this.renderProfilePic()}
               </div>
               <div className="user-info">
                 <div className="user-info-row-1">
