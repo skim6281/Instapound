@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :images, only: [:create, :destroy, :index, :new]
     resources :images, param: :username, only: [:show]
-    resource :followings, only: [:create, :destroy]
+    resources :followings, only: [:create, :destroy]
   end
 
 end
