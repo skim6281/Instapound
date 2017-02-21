@@ -1,5 +1,5 @@
 import React from 'react';
-import { time_ago } from '../../util/time_ago_util';
+import { time_ago } from '../../util/util';
 import { Link } from 'react-router';
 
 class Post extends React.Component {

@@ -1,28 +1,28 @@
 import * as FollowingAPIUtil from '../util/following_api_util';
 
-export const RECEIVE_FOLLOWING = 'RECEIVE_FOLLOWING';
-export const REMOVE_FOLLOWING = 'REMOVE_FOLLOWING';
+export const RECEIVE_FOLLOWER = 'RECEIVE_FOLLOWER';
+export const REMOVE_FOLLOWER = 'REMOVE_FOLLOWER';
 
-export const receiveFollowing = following => {
+export const receiveFollower = follower => {
   return {
-    type: RECEIVE_FOLLOWING,
-    following
+    type: RECEIVE_FOLLOWER,
+    follower
   };
 };
 
-export const removeFollowing = following => {
+export const removeFollower = follower => {
   return {
-    type: REMOVE_FOLLOWING,
-    following
+    type: REMOVE_FOLLOWER,
+    follower
   };
 };
 
-export const createFollowing = (followeeId) => {
+export const createFollowing = (followeeId) => dispatch => {
   return FollowingAPIUtil.createFollowing(followeeId)
-    .then(following => dispatch(receiveFollowing(following)));
+    .then(follower => dispatch(receiveFollower(follower)));
 };
 
-export const deleteFollowing = (followeeId) => {
+export const deleteFollowing = (followeeId) => dispatch => {
   return FollowingAPIUtil.deleteFollowing(followeeId)
-    .then(following => dispatch(removeFollowing(following)));
+    .then(follower => dispatch(removeFollower(follower)));
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from './image';
 import Modal from 'react-modal';
 import ImageForm from './image_form';
+import { userIncluded } from '../../util/util';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class Profile extends React.Component {
     this.closeUploadModal = this.closeUploadModal.bind(this);
     this.openProfilePicModal = this.openProfilePicModal.bind(this);
     this.closeProfilePicModal = this.closeProfilePicModal.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -69,21 +72,38 @@ class Profile extends React.Component {
     }
   }
 
+  handleFollow() {
+    this.props.createFollowing(this.props.user.id);
+  }
+
+  handleUnfollow() {
+    this.props.deleteFollowing(this.props.user.id);
+  }
+
   renderProfileButton() {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
+
     if (currentUser.username === user.username) {
       return (
         <button className="profile-button">Edit Profile</button>
       );
     }else {
-      if (currentUser.followings.includes(user)) {
+      if (userIncluded(user.followers, currentUser.id)) {
         return (
-          <button className="profile-button">Unfollow</button>
+          <button
+            className="profile-button"
+            onClick={this.handleUnfollow}>
+            Unfollow
+          </button>
         );
       }else {
         return (
-          <button className="profile-button">Follow</button>
+          <button
+            className="profile-button"
+            onClick={this.handleFollow}>
+            Follow
+          </button>
         )
       }
     }
