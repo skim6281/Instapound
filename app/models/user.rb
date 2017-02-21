@@ -29,6 +29,8 @@ class User < ApplicationRecord
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
   has_many :images
+  has_many :likes
+  has_many :comments
 
   has_many :follower_followings,
     class_name: "Following",

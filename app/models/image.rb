@@ -24,4 +24,6 @@ class Image < ApplicationRecord
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
+  has_many :likes
+  has_many :comments
 end
