@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { hashHistory, Link } from 'react-router';
 import CommentForm from '../comment_form';
+import {time_ago} from '../../util/util';
 
 class Image extends React.Component {
   constructor(props) {
@@ -116,7 +117,12 @@ class Image extends React.Component {
                   </div>
                 </header>
                 <section className="image-comments-body">
-                  <div className="likes text">{image.likes.length} likes</div>
+                  <div className="likes-time-div">
+                    <div className="text">{image.likes.length} likes</div>
+                    <div className="image-time-ago">
+                      {time_ago(image.uploaded_at)}
+                    </div>
+                  </div>
                   <section className="image-comments-section">
                     <div className="image-comments-list-container">
                       <ul className="image-comments-list">

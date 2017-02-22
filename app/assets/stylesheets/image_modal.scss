@@ -96,3 +96,16 @@
   float: right;
   margin-left: 10px;
 }
+
+.likes-time-div {
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.image-time-ago{
+  font-size: 15px;
+  line-height: 18px;
+  color: #999
+}

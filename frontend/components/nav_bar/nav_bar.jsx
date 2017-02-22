@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
 class NavBar extends React.Component{
+  renderProfileButton() {
+  }
+
   render(){
     const {currentUser, logout} = this.props
     return (
@@ -24,7 +27,6 @@ class NavBar extends React.Component{
       </div>
     );
   }
-
 };
 
 export default NavBar;

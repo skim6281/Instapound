@@ -14,7 +14,7 @@ export const time_ago = (upload_date) => {
     const minutes = Math.floor(seconds/60);
     return minutes + "m";
   } else {
-    return seconds + "s";
+    return Math.ceil(seconds) + "s";
   }
 
   return(upload_date);

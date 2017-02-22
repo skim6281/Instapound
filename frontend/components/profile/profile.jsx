@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ImageForm from './image_form';
 import FollowingModal from './following_modal';
 import { userIncluded } from '../../util/util';
+import { hashHistory } from 'react-router';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Profile extends React.Component {
     this.closeFollowingsModal = this.closeFollowingsModal.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.redirectAndLogout = this.redirectAndLogout.bind(this);
   }
 
   componentDidMount() {
@@ -142,6 +144,11 @@ class Profile extends React.Component {
     }
   }
 
+  redirectAndLogout() {
+    hashHistory.push('/');
+    this.props.logout();
+  }
+
   renderLogoutButton() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
@@ -219,7 +226,7 @@ class Profile extends React.Component {
                     contentLabel="logout">
                     <ul>
                       <li>
-                        <button className="button-modal" onClick={this.props.logout}>Log out</button>
+                        <button className="button-modal" onClick={this.redirectAndLogout}>Log out</button>
                       </li>
                       <li>
                         <button className="button-modal" onClick={this.closeModal}>Cancel</button>

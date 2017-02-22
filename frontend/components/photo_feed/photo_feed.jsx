@@ -7,19 +7,23 @@ class PhotoFeed extends React.Component {
   }
 
   componentDidMount(){
+    // debugger
     this.props.fetchImages();
   }
 
   renderPosts() {
     return this.props.images.map(image => {
-      return <Post
-                key={image.id}
-                image={image}
-                currentUser={this.props.currentUser}
-                createLike={this.props.createLike}
-                deleteLike={this.props.deleteLike}
-                createComment={this.props.createComment}
-                deleteComment={this.props.deleteComment}/>
+      return (
+        <Post
+          key={image.id}
+          image={image}
+          currentUser={this.props.currentUser}
+          createLike={this.props.createLike}
+          deleteLike={this.props.deleteLike}
+          createComment={this.props.createComment}
+          deleteComment={this.props.deleteComment}
+        />
+      )
     });
   }
 

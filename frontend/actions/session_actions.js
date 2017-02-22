@@ -39,6 +39,5 @@ export const login = user => dispatch => {
 
 export const logout = () => dispatch => {
   return SessionAPIUtil.logout()
-    .then(user => dispatch(receiveCurrentUser(null)))
-      .then(hashHistory.push('/'));
+    .then(user => dispatch(receiveCurrentUser(null)));
 };
