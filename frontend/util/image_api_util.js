@@ -1,21 +1,33 @@
-export const fetchImage = id => {
+export const fetchImages = () => {
   return $.ajax({
     method: 'GET',
-    url: `/api/images/${id}`
+    url: '/api/images'
   });
 };
 
-export const createImage = image => {
+export const fetchUserImages = username => {
+ return $.ajax({
+   method: 'GET',
+   url: `api/users/${username}/images`
+ });
+};
+
+export const createImage = formData => {
   return $.ajax({
     method: 'POST',
-    url: '/api/images',
-    data: { image }
+    url: 'api/images',
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };
 
-export const deleteImage = id => {
+export const updateUserProfilePic = formData => {
   return $.ajax({
-    method: 'DELETE',
-    url: `/api/images/${id}`
+    method: 'PATCH',
+    url: `api/users/${formData.get("user[username]")}`,
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };

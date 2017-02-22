@@ -9,29 +9,7 @@ export const receiveUser = user => ({
   user
 });
 
-export const receiveUserImages = images => ({
-  type: RECEIVE_USER_IMAGES,
-  images
-});
-
-export const receiveImage = image => {
-  return{
-    type: RECEIVE_IMAGE,
-    image
-  }
-};
-
 export const fetchUser = (username) => dispatch => {
   return ProfileAPIUtil.fetchUser(username)
     .then(user => dispatch(receiveUser(user)));
 };
-
-export const fetchUserImages = (username) => dispatch => {
-  return ProfileAPIUtil.fetchUserImages(username)
-    .then(images => dispatch(receiveUserImages(images)));
-};
-
-export const createImage = (image) => dispatch => {
-  return ProfileAPIUtil.createImage(image)
-    .then(image => dispatch(receiveImage(image)));
-}

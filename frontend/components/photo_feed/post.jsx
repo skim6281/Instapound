@@ -70,7 +70,6 @@ class Post extends React.Component {
             </div>
           </section>
         </footer>
-
       </div>
     )
   }

@@ -1,4 +1,4 @@
-import { RECEIVE_IMAGES } from '../actions/photo_feed_actions';
+import { RECEIVE_IMAGES } from '../actions/image_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import { getIndex } from '../util/util';
 import merge from 'lodash/merge';

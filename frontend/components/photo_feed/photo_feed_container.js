@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchImages } from '../../actions/photo_feed_actions';
+import { fetchImages } from '../../actions/image_actions';
 import PhotoFeed from './photo_feed';
 import { selectAllImages } from '../../reducers/selectors';
 import { createLike, deleteLike } from '../../actions/like_actions';

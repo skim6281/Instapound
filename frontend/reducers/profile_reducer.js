@@ -1,5 +1,8 @@
-import { RECEIVE_USER, RECEIVE_USER_IMAGES, RECEIVE_IMAGE } from '../actions/profile_actions';
+import { RECEIVE_USER } from '../actions/profile_actions';
+import {  RECEIVE_USER_IMAGES, RECEIVE_IMAGE } from '../actions/image_actions';
 import { RECEIVE_FOLLOWER, REMOVE_FOLLOWER } from '../actions/following_actions';
+import { RECEIVE_IMAGE_LIKE, REMOVE_IMAGE_LIKE } from '../actions/like_actions';
+import { getIndex } from '../util/util';
 import merge from 'lodash/merge';
 
 const initialState = {
@@ -25,16 +28,21 @@ const ProfileReducer = (state = initialState, action) => {
       return Object.assign({}, state, {user: newUser});
     case REMOVE_FOLLOWER:
       let newRemoveFollowers = state.user.followers.slice();
-      let i;
-      newRemoveFollowers.forEach((follower,index)  => {
-        if (follower.id === action.follower.id) {
-          i = index;
-          return;
-        }
-      });
+      let i = getIndex(newRemoveFollowers, action.follower.id);
       newRemoveFollowers.splice(i, 1);
       let newRemoveUser = Object.assign({}, state.user, {followers: newRemoveFollowers})
       return Object.assign({}, state, {user: newRemoveUser});
+    case RECEIVE_IMAGE_LIKE:
+      let newImages1 = state.images.slice();
+      let ind = getIndex(newImages1, action.like.imageId);
+      newImages1[ind].likes.push(action.like.userId);
+      return Object.assign({}, state, {images: newImages1});
+    case REMOVE_IMAGE_LIKE:
+      let newImages2 = state.images.slice();
+      let j = getIndex(newImages2, action.like.imageId);
+      let likeIndex = newImages2[j].likes.indexOf(action.like.userId);
+      newImages2[j].likes.splice(likeIndex, 1);
+      return Object.assign({}, state, {images: newImages2});
     default:
       return state;
   }

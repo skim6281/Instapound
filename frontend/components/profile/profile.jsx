@@ -154,7 +154,12 @@ class Profile extends React.Component {
 
   renderImages() {
     return this.props.images.map(image => {
-      return <Image key={image.id} image={image}/>
+      return <Image
+                key={image.id}
+                image={image}
+                currentUser={this.props.currentUser}
+                createImageLike={this.props.createImageLike}
+                deleteImageLike={this.props.deleteImageLike}/>
     });
   }
 

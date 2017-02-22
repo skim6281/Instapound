@@ -5,16 +5,18 @@
   flex-direction: column;
   justify-content: center;
   font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+  max-height: 750px;
 }
 
 .image-modal-section {
-  width: 935px;
-  max-height: 750px;
+  max-width: 935px;
+  // max-height: 750px;
+  height: 100%;
   display: flex;
+  position: relative;
 }
 
 .image-modal-photo {
-  width: 600px;
   overflow: hidden;
   max-height: 750px;
   display: flex;
@@ -38,4 +40,22 @@
 
 .author-name:hover {
   cursor: pointer;
+}
+
+.image-comments-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-comments-list {
+  margin-top: 20px;
+}
+
+.image-comment-footer {
+  display: flex;
+  bottom: 0;
+  height: 68px;
+  width: 100%;
+  position: absolute;
 }
