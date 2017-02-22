@@ -1,6 +1,7 @@
 import React from 'react';
 import { time_ago } from '../../util/util';
 import { Link } from 'react-router';
+import CommentForm from '../comment_form';
 
 class Post extends React.Component {
   constructor(props) {
@@ -33,8 +34,19 @@ class Post extends React.Component {
     }
   }
 
+  renderComments() {
+    return this.props.image.comments.map(comment => {
+      return (
+        <li key={comment.id}>
+          <span>{comment.author_name}</span>
+          {comment.body}
+        </li>
+      );
+    })
+  }
+
   render() {
-    const { image, createLike, deleteLike } = this.props;
+    const { image, createLike, deleteLike, createComment, currentUser } = this.props;
     return(
       <div className="post-container">
         <header className="post-header">
@@ -59,6 +71,9 @@ class Post extends React.Component {
                 <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
                 <span className="caption text">{image.caption}</span>
               </h1>
+              <ul className="comments-list">
+                {this.renderComments()}
+              </ul>
             </div>
           </section>
           <section className="comment-section">
@@ -66,7 +81,10 @@ class Post extends React.Component {
               {this.renderLikeButton()}
             </div>
             <div className="comment-div">
-              Add a comment...
+              <CommentForm
+                imageId={image.id}
+                currentUserId={currentUser.id}
+                createComment={createComment}/>
             </div>
           </section>
         </footer>

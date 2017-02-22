@@ -3,6 +3,7 @@ import { fetchImages } from '../../actions/image_actions';
 import PhotoFeed from './photo_feed';
 import { selectAllImages } from '../../reducers/selectors';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
   return ({
     fetchImages: () => dispatch(fetchImages()),
     createLike: (imageId) => dispatch(createLike(imageId)),
-    deleteLike: (imageId) => dispatch(deleteLike(imageId))
+    deleteLike: (imageId) => dispatch(deleteLike(imageId)),
+    createComment: (comment) => dispatch(createComment(comment))
   });
 };
 

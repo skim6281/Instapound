@@ -6,6 +6,8 @@ import { fetchUserImages, createImage } from '../../actions/image_actions';
 import { createFollowing, deleteFollowing } from '../../actions/following_actions';
 import { selectAllImages } from '../../reducers/selectors';
 import { createImageLike, deleteImageLike } from '../../actions/like_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
+
 
 const mapStateToProps = (state) => {
   return ({

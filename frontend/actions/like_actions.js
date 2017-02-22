@@ -1,4 +1,4 @@
-import * as ImageAPIUtil from '../util/like_api_util';
+import * as LikeAPIUtil from '../util/like_api_util';
 
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const REMOVE_LIKE = "REMOVE_LIKE";
@@ -26,21 +26,21 @@ export const removeImageLike = like => ({
 });
 
 export const createLike = (imageId) => dispatch => {
-  return ImageAPIUtil.createLike(imageId)
+  return LikeAPIUtil.createLike(imageId)
     .then(like => dispatch(receiveLike(like)));
 };
 
 export const deleteLike = (imageId) => dispatch => {
-  return ImageAPIUtil.deleteLike(imageId)
+  return LikeAPIUtil.deleteLike(imageId)
     .then(like => dispatch(removeLike(like)));
 };
 
 export const createImageLike = (imageId) => dispatch => {
-  return ImageAPIUtil.createImageLike(imageId)
+  return LikeAPIUtil.createImageLike(imageId)
     .then(like => dispatch(receiveImageLike(like)));
 };
 
 export const deleteImageLike = (imageId) => dispatch => {
-  return ImageAPIUtil.deleteImageLike(imageId)
+  return LikeAPIUtil.deleteImageLike(imageId)
     .then(like => dispatch(removeImageLike(like)));
 };
