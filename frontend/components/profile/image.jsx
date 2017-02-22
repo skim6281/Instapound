@@ -53,7 +53,7 @@ class Image extends React.Component {
     return this.props.image.comments.map(comment => {
       return (
         <li key={comment.id}>
-          <h2 className="comment-head">
+          <h2 className="image-comment-head">
             <span className="comment-name name text">{comment.author_name}</span>
             <span className="caption text">{comment.body}</span>
           </h2>
@@ -118,9 +118,11 @@ class Image extends React.Component {
                 <section className="image-comments-body">
                   <div className="likes text">{image.likes.length} likes</div>
                   <section className="image-comments-section">
-                    <ul className="image-comments-list">
-                      {this.renderComments()}
-                    </ul>
+                    <div className="image-comments-list-container">
+                      <ul className="image-comments-list">
+                        {this.renderComments()}
+                      </ul>
+                    </div>
                   </section>
                   <footer className="image-comment-footer">
                     <div className="heart">
