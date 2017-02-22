@@ -10,7 +10,6 @@
 
 .image-modal-section {
   max-width: 935px;
-  // max-height: 750px;
   height: 100%;
   display: flex;
   position: relative;
@@ -19,6 +18,7 @@
 .image-modal-photo {
   overflow: hidden;
   max-height: 750px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
