@@ -22,7 +22,7 @@ class CommentForm extends React.Component {
     e.which = e.which || e.keyCode;
     if (e.which == 13) {
       this.props.createComment(comment);
-      this.setState({body: ""});
+      document.getElementById("comment-form-input").value = "";
     }
   }
 
@@ -30,6 +30,7 @@ class CommentForm extends React.Component {
     return (
       <form className="comment-form">
         <input
+          id="comment-form-input"
           className="comment-input"
           type="text"
           onKeyUp={this.handleSubmit}

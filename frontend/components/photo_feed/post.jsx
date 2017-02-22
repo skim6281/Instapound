@@ -38,11 +38,29 @@ class Post extends React.Component {
     return this.props.image.comments.map(comment => {
       return (
         <li key={comment.id}>
-          <span>{comment.author_name}</span>
-          {comment.body}
+          <h2 className="comment-head">
+            <Link
+              to={`${comment.author_name}`}
+              className="comment-name name text">
+              {comment.author_name}
+            </Link>
+            <span className="caption text">{comment.body}</span>
+          </h2>
         </li>
       );
     })
+  }
+
+  renderCaption() {
+    const image = this.props.image
+    if (image.caption) {
+      return (
+        <h1 className="caption-head">
+          <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
+          <span className="caption text">{image.caption}</span>
+        </h1>
+      )
+    }
   }
 
   render() {
@@ -67,10 +85,7 @@ class Post extends React.Component {
               {image.likes.length} likes
             </div>
             <div className="image-caption">
-              <h1 className="caption-head">
-                <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
-                <span className="caption text">{image.caption}</span>
-              </h1>
+              {this.renderCaption()}
               <ul className="comments-list">
                 {this.renderComments()}
               </ul>

@@ -6,9 +6,24 @@ export const createComment = comment => {
   });
 };
 
-export const deleteComment = comment => {
+export const deleteComment = commentId => {
   return $.ajax({
     method: "DELETE",
-    url: `api/images/${comment.image_id}/comments/${comment.id}`
+    url: `api/comments/${commentId}`
+  });
+};
+
+export const createImageComment = comment => {
+  return $.ajax({
+    method: "POST",
+    url: `api/images/${comment.image_id}/comments`,
+    data: { comment }
+  });
+};
+
+export const deleteImageComment = commentId => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/comments/${commentId}`
   });
 };

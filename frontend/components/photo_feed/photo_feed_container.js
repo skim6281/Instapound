@@ -3,7 +3,7 @@ import { fetchImages } from '../../actions/image_actions';
 import PhotoFeed from './photo_feed';
 import { selectAllImages } from '../../reducers/selectors';
 import { createLike, deleteLike } from '../../actions/like_actions';
-import { createComment, deleteComment } from '../../actions/comment_actions';
+import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
   return ({

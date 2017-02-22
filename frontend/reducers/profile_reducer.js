@@ -2,6 +2,7 @@ import { RECEIVE_USER } from '../actions/profile_actions';
 import {  RECEIVE_USER_IMAGES, RECEIVE_IMAGE } from '../actions/image_actions';
 import { RECEIVE_FOLLOWER, REMOVE_FOLLOWER } from '../actions/following_actions';
 import { RECEIVE_IMAGE_LIKE, REMOVE_IMAGE_LIKE } from '../actions/like_actions';
+import { RECEIVE_IMAGE_COMMENT, REMOVE_IMAGE_COMMENT } from '../actions/comment_actions';
 import { getIndex } from '../util/util';
 import merge from 'lodash/merge';
 
@@ -43,6 +44,17 @@ const ProfileReducer = (state = initialState, action) => {
       let likeIndex = newImages2[j].likes.indexOf(action.like.userId);
       newImages2[j].likes.splice(likeIndex, 1);
       return Object.assign({}, state, {images: newImages2});
+    case RECEIVE_IMAGE_COMMENT:
+      let newRecCommentImages = state.images.slice();
+      let recComImageInd = getIndex(newRecCommentImages, action.comment.imageId);
+      newRecCommentImages[recComImageInd].comments.push(action.comment);
+      return Object.assign({}, state, {images: newRecCommentImages});
+    case REMOVE_IMAGE_COMMENT:
+      let newRemCommentImages = state.images.slice();
+      let remComImageInd = getIndex(newRemCommentImages, action.comment.imageId);
+      let commentIndex = getIndex(newRemCommentImages[remComImageInd].comments, action.comment.id);
+      newRemCommentImages[remComImageInd].comments.splice(commentIndex, 1);
+      return Object.assign({}, state, {images: newRemCommentImages });
     default:
       return state;
   }

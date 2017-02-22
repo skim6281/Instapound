@@ -159,7 +159,9 @@ class Profile extends React.Component {
                 image={image}
                 currentUser={this.props.currentUser}
                 createImageLike={this.props.createImageLike}
-                deleteImageLike={this.props.deleteImageLike}/>
+                deleteImageLike={this.props.deleteImageLike}
+                createImageComment={this.props.createImageComment}
+                deleteImageComment={this.props.deleteImageComment}/>
     });
   }
 
@@ -173,7 +175,7 @@ class Profile extends React.Component {
               </div>
               <div className="user-info">
                 <div className="user-info-row-1">
-                  <h1>{this.props.user.username}</h1>
+                  <h1 id="username-header-1">{this.props.user.username}</h1>
                   {this.renderProfileFollowButton()}
                   <Modal
                     isOpen={this.state.profilePicModalIsOpen}

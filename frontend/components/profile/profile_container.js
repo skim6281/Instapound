@@ -6,7 +6,7 @@ import { fetchUserImages, createImage } from '../../actions/image_actions';
 import { createFollowing, deleteFollowing } from '../../actions/following_actions';
 import { selectAllImages } from '../../reducers/selectors';
 import { createImageLike, deleteImageLike } from '../../actions/like_actions';
-import { createComment, deleteComment } from '../../actions/comment_actions';
+import { createImageComment, deleteImageComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state) => {
@@ -26,6 +26,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteFollowing: (followeeId) => dispatch(deleteFollowing(followeeId)),
     createImageLike: (imageId) => dispatch(createImageLike(imageId)),
     deleteImageLike: (imageId) => dispatch(deleteImageLike(imageId)),
+    createImageComment: (comment) => dispatch(createImageComment(comment)),
+    deleteImageComment: (commentId) => dispatch(deleteImageComment(commentId)),
     logout: () => dispatch(logout())
   });
 };

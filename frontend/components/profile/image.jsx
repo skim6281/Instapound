@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { hashHistory, Link } from 'react-router';
+import CommentForm from '../comment_form';
 
 class Image extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Image extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleImageLike = this.handleImageLike.bind(this);
     this.handleImageUnlike = this.handleImageUnlike.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
     // this.linkToAuthor = this.linkToAuthor.bind(this);
   }
 
@@ -47,13 +49,48 @@ class Image extends React.Component {
     }
   }
 
+  renderComments() {
+    return this.props.image.comments.map(comment => {
+      return (
+        <li key={comment.id}>
+          <div className="comment-div">
+            <span className="author-name">{comment.author_name}</span>
+            <span className="comment-body">{comment.body}</span>
+          </div>
+          <div>
+            {this.renderDeleteComment(comment.id)}
+          </div>
+        </li>
+      );
+    })
+  }
+
+  handleDeleteComment(commentId) {
+    return e => {
+      this.props.deleteImageComment(commentId);
+    }
+  }
+
+  renderDeleteComment(commentId) {
+    const currentUser = this.props.currentUser;
+    const image = this.props.image;
+    if (currentUser.username === image.author_name) {
+      return (
+        <button
+          className="delete-comment"
+          onClick={this.handleDeleteComment(commentId)}>
+          X
+        </button>
+      )
+    }
+  }
   // linkToAuthor() {
   //   hashHistory.push(`${this.props.image.author_name}`);
   //   this.closeModal();
   // }
 
   render() {
-    const { image, createImageLike, deleteImageLike } = this.props;
+    const { image, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
     return (
       <div className="profile-image">
         <a onClick={this.openModal}>
@@ -79,10 +116,10 @@ class Image extends React.Component {
                   </div>
                 </header>
                 <section className="image-comments-body">
+                  <div className="likes text">{image.likes.length} likes</div>
                   <section className="image-comments-section">
-                    <div className="likes text">{image.likes.length} likes</div>
                     <ul className="image-comments-list">
-
+                      {this.renderComments()}
                     </ul>
                   </section>
                   <footer className="image-comment-footer">
@@ -90,7 +127,10 @@ class Image extends React.Component {
                       {this.renderImageLikeButton()}
                     </div>
                     <div className="comment-div">
-                      Add a comment...
+                      <CommentForm
+                        imageId={image.id}
+                        currentUserId={currentUser.id}
+                        createComment={createImageComment}/>
                     </div>
                   </footer>
                 </section>
