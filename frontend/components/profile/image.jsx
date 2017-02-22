@@ -53,10 +53,10 @@ class Image extends React.Component {
     return this.props.image.comments.map(comment => {
       return (
         <li key={comment.id}>
-          <div className="comment-div">
-            <span className="author-name">{comment.author_name}</span>
-            <span className="comment-body">{comment.body}</span>
-          </div>
+          <h2 className="comment-head">
+            <span className="comment-name name text">{comment.author_name}</span>
+            <span className="caption text">{comment.body}</span>
+          </h2>
           <div>
             {this.renderDeleteComment(comment.id)}
           </div>
@@ -79,7 +79,7 @@ class Image extends React.Component {
         <button
           className="delete-comment"
           onClick={this.handleDeleteComment(commentId)}>
-          X
+          <img src={window.images.deleteButton}/>
         </button>
       )
     }
@@ -90,7 +90,7 @@ class Image extends React.Component {
   // }
 
   render() {
-    const { image, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
+    const { image, currentUser, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
     return (
       <div className="profile-image">
         <a onClick={this.openModal}>
