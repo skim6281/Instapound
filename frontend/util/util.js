@@ -28,3 +28,13 @@ export const userIncluded = (users, userId) => {
     return false;
   }
 };
+
+export const getIndex = (array, id) => {
+  let ind;
+  array.forEach((el, index) => {
+    if (el.id === id) {
+      ind = index;
+    }
+  });
+  return ind;
+}
