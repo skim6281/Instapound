@@ -145,8 +145,7 @@ class Profile extends React.Component {
   }
 
   redirectAndLogout() {
-    hashHistory.push('/');
-    this.props.logout();
+    this.props.logout().then(() => hashHistory.push('/'));
   }
 
   renderLogoutButton() {
