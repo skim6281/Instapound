@@ -6,3 +6,7 @@ json.caption image.caption
 json.uploaded_at image.created_at.to_s
 json.photo_url image.photo.url
 json.likes image.likes.pluck(:user_id)
+json.comments image.comments.each do |comment|
+  json.id comment.id
+  json.author_name comment.user.username
+end
