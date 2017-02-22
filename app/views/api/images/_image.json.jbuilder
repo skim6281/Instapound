@@ -1,6 +1,6 @@
 json.id image.id
 json.author_name image.user.username
-json.author_profile_pic_url image.user.profile_pic.url
+json.author_profile_pic_url asset_path(image.user.profile_pic.url)
 json.location image.location
 json.caption image.caption
 json.uploaded_at image.created_at.to_s
