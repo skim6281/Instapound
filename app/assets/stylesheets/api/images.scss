@@ -63,7 +63,7 @@ body{
 .text{
   color: #262626;
   font-size: 15px;
-  line-height: 17px;
+  // line-height: 17px;
 
 }
 
@@ -81,7 +81,8 @@ body{
 
 .author-name {
   text-decoration: none;
-  display: inline-block;
+  vertical-align: baseline;
+  // display: inline-block;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -89,6 +90,7 @@ body{
   padding-left: 10px;
   padding-top: 5px;
   font-weight: 600;
+  margin-right: 5px;
 }
 
 .comment-name{

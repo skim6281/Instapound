@@ -26,7 +26,7 @@
 
 .image-modal-fields {
   width: 335px;
-  padding: 0 24px;
+  padding-left: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +34,7 @@
 .image-modal-header {
   height: 64px;
   padding: 20px 0;
+  margin-right: 24px;
   display: flex;
   border-bottom: 1px solid #efefef;
 }
@@ -48,8 +49,21 @@
   justify-content: space-between;
 }
 
+.image-comments-section {
+  height: 100%;
+}
+
 .image-comments-list {
   margin-top: 20px;
+  overflow-y: scroll;
+}
+
+.image-comments-list > li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  position: relative;
+  word-wrap: break-word;
 }
 
 .image-comment-footer {

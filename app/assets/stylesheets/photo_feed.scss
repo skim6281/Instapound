@@ -90,9 +90,14 @@ body{
   font-weight: 600;
 }
 
+.caption-head {
+  vertical-align: baseline;
+  margin-bottom: 5px;
+}
+
 .comment-name{
   text-decoration: none;
-  display: inline-block;
+  // display: inline-block;
 }
 
 .post-image {
@@ -109,13 +114,52 @@ body{
 
 .image-caption {
   display: flex;
+  flex-direction: column;
+}
+
+.comments-list > li {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.comment-head {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.comments-list > li:last-child {
+  margin-bottom: 0px;
+}
+
+.comments-list > li > span {
+  // width: 92%;
+  word-wrap: break-word;
 }
 
 .comment-section {
+  width: 100%;
   display: flex;
+  border-top: 1px solid #dbdbdb;
+  padding-top: 20px;
+  margin-top: 15px;
+}
+
+
+
+.comment-div {
+  width: 100%;
 }
 
 .heart {
   width: 24px;
   margin-right: 15px;
+}
+
+.comment-form {
+  width: 100%;
+}
+
+.comment-input {
+  width: 100%;
 }
