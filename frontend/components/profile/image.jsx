@@ -91,7 +91,7 @@ class Image extends React.Component {
   // }
 
   render() {
-    const { image, currentUser, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
+    const { image, user, currentUser, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
     return (
       <div className="profile-image">
         <a onClick={this.openModal}>
@@ -111,7 +111,7 @@ class Image extends React.Component {
               </div>
               <div className="image-modal-fields">
                 <header className="image-modal-header">
-                  <img className="post-author-profile-pic" src={image.author_profile_pic_url}/>
+                  <img className="post-author-profile-pic" src={user.profile_pic_url}/>
                   <div>
                     <a className="author-name" >{image.author_name}</a>
                   </div>

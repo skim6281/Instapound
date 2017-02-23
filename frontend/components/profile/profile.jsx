@@ -177,6 +177,7 @@ class Profile extends React.Component {
       return <Image
                 key={image.id}
                 image={image}
+                user={this.props.user}
                 currentUser={this.props.currentUser}
                 createImageLike={this.props.createImageLike}
                 deleteImageLike={this.props.deleteImageLike}
@@ -209,7 +210,7 @@ class Profile extends React.Component {
                       </li>
                       <li>
                         <div className="button-modal">
-                          <div className="upload-photo-label">
+                          <div className="upload-photo-div">
                             Upload Photo
                           </div>
                           <input id='file' type='file' onChange={this.handleChange}/>

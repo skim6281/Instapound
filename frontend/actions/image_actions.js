@@ -4,7 +4,6 @@ import { receiveUser } from './profile_actions';
 export const RECEIVE_IMAGES = 'RECEIVE_IMAGES';
 export const RECEIVE_USER_IMAGES = 'RECEIVE_USER_IMAGES';
 export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
-export const RECEIVE_PROFILE_IMAGE = 'RECEIVE_PROFILE_IMAGE';
 
 export const receiveImages = images => ({
   type: RECEIVE_IMAGES,
@@ -23,16 +22,10 @@ export const receiveImage = image => {
   }
 };
 
-export const receiveProfileImage = image => ({
-  type: RECEIVE_PROFILE_IMAGE,
-  image
-});
-
 export const fetchImages = () => dispatch => {
   return ImageAPIUtil.fetchImages()
     .then(images => dispatch(receiveImages(images)));
 };
-
 
 export const fetchUserImages = (username) => dispatch => {
   return ImageAPIUtil.fetchUserImages(username)
