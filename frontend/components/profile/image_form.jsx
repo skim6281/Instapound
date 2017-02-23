@@ -55,7 +55,11 @@ class ImageForm extends React.Component {
         </section>
         <section className="image-form-inputs">
           <div className="image-input-fields">
-            <input className="choose-file" type="file" onChange={this.updateFile} />
+            <input
+              className="choose-file"
+              type="file"
+              value="lkjadf"
+              onChange={this.updateFile} />
             <input className="upload-modal-text-input" type="text" onChange={this.updateCaption} placeholder="Write a caption..."/>
             <input className="upload-modal-text-input" type="text" onChange={this.updateLocation}placeholder="Add a location..."/>
           </div>

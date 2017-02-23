@@ -1,5 +1,5 @@
 import { RECEIVE_USER } from '../actions/profile_actions';
-import {  RECEIVE_USER_IMAGES, RECEIVE_IMAGE } from '../actions/image_actions';
+import { RECEIVE_USER_IMAGES, RECEIVE_IMAGE, RECEIVE_PROFILE_IMAGE} from '../actions/image_actions';
 import { RECEIVE_FOLLOWER, REMOVE_FOLLOWER } from '../actions/following_actions';
 import { RECEIVE_IMAGE_LIKE, REMOVE_IMAGE_LIKE } from '../actions/like_actions';
 import { RECEIVE_IMAGE_COMMENT, REMOVE_IMAGE_COMMENT } from '../actions/comment_actions';

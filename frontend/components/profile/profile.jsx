@@ -14,8 +14,9 @@ class Profile extends React.Component {
       uploadModalIsOpen: false,
       profilePicModalIsOpen: false,
       followersModalIsOpen: false,
-      followingsModalIsOpen: false
-    }
+      followingsModalIsOpen: false,
+      profileImageFile: this.props.currentUser.profile_pic
+    };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openUploadModal = this.openUploadModal.bind(this);
@@ -28,7 +29,8 @@ class Profile extends React.Component {
     this.closeFollowingsModal = this.closeFollowingsModal.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
-    this.redirectAndLogout = this.redirectAndLogout.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -83,11 +85,27 @@ class Profile extends React.Component {
     this.setState({followingsModalIsOpen: false});
   }
 
+  handleChange(e) {
+    const file = e.currentTarget.files[0];
+    this.setState({profileImageFile: file});
+    // debugger
+    this.closeProfilePicModal();
+    setTimeout(this.handleSubmit,0);
+  }
+
+  handleSubmit(e) {
+    // debugger
+    let formData = new FormData();
+    formData.append("user[profile_pic]", this.state.profileImageFile);
+    // formData.append("user[username]", this.props.currentUser.username);
+    this.props.updateUserProfilePic(this.props.currentUser.username, formData);
+  }
+
   renderProfilePic() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
         <button onClick={this.openProfilePicModal} className="profile-pic-button">
-          <img className="curr-user-pic" src={this.props.user.profile_pic_url}/>
+          <img className="profile-pic" src={this.props.user.profile_pic_url}/>
         </button>
       );
     } else {
@@ -144,10 +162,6 @@ class Profile extends React.Component {
     }
   }
 
-  redirectAndLogout() {
-    this.props.logout().then(() => hashHistory.push('/'));
-  }
-
   renderLogoutButton() {
     if (this.props.currentUser.username === this.props.user.username) {
       return (
@@ -194,10 +208,16 @@ class Profile extends React.Component {
                         <span className="no-click">Change Profile Picture</span>
                       </li>
                       <li>
-                        <button className="button-modal">Upload Photo</button>
+                        <div className="button-modal">
+                          <label htmlFor='file'>
+                            Upload Photo
+                          </label>
+                          <input id='file' type='file' onChange={this.handleChange}/>
+                        </div>
                       </li>
                       <li>
-                        <button className="button-modal" onClick={this.closeProfilePicModal}>Cancel</button>
+                        <button className="button-modal"
+                           onClick={this.closeProfilePicModal}>Cancel</button>
                       </li>
                     </ul>
                     <button className="exit" onClick={this.closeProfilePicModal}>
@@ -225,7 +245,7 @@ class Profile extends React.Component {
                     contentLabel="logout">
                     <ul>
                       <li>
-                        <button className="button-modal" onClick={this.redirectAndLogout}>Log out</button>
+                        <button className="button-modal" onClick={this.props.logout}>Log out</button>
                       </li>
                       <li>
                         <button className="button-modal" onClick={this.closeModal}>Cancel</button>

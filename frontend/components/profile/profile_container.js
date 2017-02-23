@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/profile_actions';
-import { fetchUserImages, createImage } from '../../actions/image_actions';
+import { fetchUserImages, createImage, updateUserProfilePic } from '../../actions/image_actions';
 import { createFollowing, deleteFollowing } from '../../actions/following_actions';
 import { selectAllImages } from '../../reducers/selectors';
 import { createImageLike, deleteImageLike } from '../../actions/like_actions';
@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteImageLike: (imageId) => dispatch(deleteImageLike(imageId)),
     createImageComment: (comment) => dispatch(createImageComment(comment)),
     deleteImageComment: (commentId) => dispatch(deleteImageComment(commentId)),
+    updateUserProfilePic: (username, image) => dispatch(updateUserProfilePic(username, image)),
     logout: () => dispatch(logout())
   });
 };

@@ -22,10 +22,11 @@ export const createImage = formData => {
   });
 };
 
-export const updateUserProfilePic = formData => {
+export const updateUserProfilePic = (username, formData) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/users/${formData.get("user[username]")}`,
+    url: `api/users/${username}`,
+    dataType: 'json',
     contentType: false,
     processData: false,
     data: formData
