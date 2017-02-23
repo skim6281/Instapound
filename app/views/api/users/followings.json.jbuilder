@@ -5,7 +5,7 @@ json.partial! "api/users/user", user: @user
     json.set! follower.id do
       json.id follower.id
       json.username follower.username
-      json.profile_pic_url follower.profile_pic.url
+      json.profile_pic_url asset_path(follower.profile_pic.url)
     end
   end
 end
