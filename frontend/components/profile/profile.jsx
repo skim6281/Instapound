@@ -285,8 +285,13 @@ class Profile extends React.Component {
                       followings={this.props.currentUser.followings}>
                       <FollowingModal
                         users={this.props.user.followers}
+                        user={this.props.user}
                         currentUser={this.props.currentUser}
                         closeModal={this.closeFollowersModal}
+                        receiveFollowingId={this.receiveFollowerId}
+                        removeFollowingId={this.removeFollowerId}
+                        createFollowing={this.props.createFollowing}
+                        deleteFollowing={this.props.deleteFollowing}
                         type="Follower"/>
                     </Modal>
                   </li>
@@ -307,10 +312,12 @@ class Profile extends React.Component {
                       contentLabel="follow">
                       <FollowingModal
                         users={this.props.user.followings}
+                        user={this.props.user}
                         currentUser={this.props.currentUser}
                         closeModal={this.closeFollowingsModal}
                         type="Following"
-                        followings={this.props.currentUser.followings}/>
+                        createFollowing={this.props.createFollowing}
+                        deleteFollowing={this.props.deleteFollowing}/>
                     </Modal>
                   </li>
                 </ul>

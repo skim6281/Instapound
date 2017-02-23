@@ -63,7 +63,7 @@ class Image extends React.Component {
           </div>
         </li>
       );
-    })
+    });
   }
 
   handleDeleteComment(commentId) {

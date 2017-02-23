@@ -7,21 +7,46 @@ class FollowingModal extends React.Component {
     super(props);
   }
 
+  handleFollow(user) {
+  
+  }
+
+  handleUnfollow(user) {
+
+  }
+
   renderFollowButton(user) {
-    if (userIncluded(this.prop.currentUser.followings, user.id)) {
+    // debugger
+    if (userIncluded(this.props.currentUser.followings, user.id)) {
       return (
-        <button className="follow-button">
+        <button
+          className="follow-button"
+        >
           Following
         </button>
       );
     } else {
+      // debugger
       return (
-        <button className="follow-button follow">
+        <button
+          className="follow-button follow"
+        >
           Follow
         </button>
       )
     }
   }
+
+  // renderFollows(user) {
+  //   let otherUsers;
+  //   if (this.props.type === "Following") {
+  //     otherUsers = user.followings;
+  //   } else {
+  //     otherUsers = user.followers;
+  //   }
+  //   debugger
+  //   this.renderUsers(otherUsers);
+  // }
 
   renderUsers(users) {
     return users.map(user => {
@@ -33,16 +58,14 @@ class FollowingModal extends React.Component {
               <a>{user.username}</a>
             </div>
           </div>
-          <button className="follow-button">
-            Following
-          </button>
+          {this.renderFollowButton(user)}
         </li>
       );
     });
   }
 
   render() {
-    const { users, currentUser, closeModal, type } = this.props;
+    const { user, users, currentUser, closeModal, type } = this.props;
     return (
       <main className="follow-modal-main">
         <header className="follow-modal-header">

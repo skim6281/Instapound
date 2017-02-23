@@ -2,6 +2,10 @@ import * as FollowingAPIUtil from '../util/following_api_util';
 
 export const RECEIVE_FOLLOWER = 'RECEIVE_FOLLOWER';
 export const REMOVE_FOLLOWER = 'REMOVE_FOLLOWER';
+export const RECEIVE_FOLLOWER_ID = 'RECEIVE_FOLLOWER_ID';
+export const RECEIVE_FOLLOWING_ID = 'RECEIVE_FOLLOWING_ID';
+export const REMOVE_FOLLOWER_ID = 'REMOVE_FOLLOWER_ID';
+export const REMOVE_FOLLOWING_ID = 'REMOVE_FOLLOWING_ID';
 
 export const receiveFollower = follower => {
   return {
@@ -16,6 +20,36 @@ export const removeFollower = follower => {
     follower
   };
 };
+
+// export const receiveFollowingId = id => {
+//   return {
+//     type: RECEIVE_FOLLOWING_ID,
+//     id
+//   }
+// };
+
+// export const removeFollowingId = id => {
+//   return {
+//     type: REMOVE_FOLLOWING_ID,
+//     id
+//   }
+// };
+//
+// export const removeFollowerId = id => {
+//   return {
+//     type: REMOVE_FOLLOWER_ID,
+//     id
+//   };
+// };
+
+// export const receiveFollowerId = followerId => {
+//   return {
+//     type: RECEIVE_FOLLOWER_ID,
+//     followerId
+//   };
+// };
+
+//
 
 export const createFollowing = (followeeId) => dispatch => {
   return FollowingAPIUtil.createFollowing(followeeId)
