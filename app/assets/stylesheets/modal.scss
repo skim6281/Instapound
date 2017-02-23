@@ -18,9 +18,20 @@
   color: #999;
 }
 
+.upload-photo-div {
+  position: relative;
+}
+
 #file {
+  bottom: 0;
+  right: 0;
   position: absolute;
-  width: 80%;
+  width: 100%;
+  opacity: 0;
+}
+
+#file:hover {
+  cursor: pointer;
 }
 
 .logut-modal {
@@ -37,6 +48,7 @@
   font-size: 16px;
   line-height: 50px;
   width: 510px;
+  position: relative;
 }
 
 .button-modal {

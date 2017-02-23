@@ -209,9 +209,9 @@ class Profile extends React.Component {
                       </li>
                       <li>
                         <div className="button-modal">
-                          <label htmlFor='file'>
+                          <div className="upload-photo-label">
                             Upload Photo
-                          </label>
+                          </div>
                           <input id='file' type='file' onChange={this.handleChange}/>
                         </div>
                       </li>
