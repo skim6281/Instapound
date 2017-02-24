@@ -72,6 +72,7 @@ class Post extends React.Component {
             <img className="post-author-profile-pic" src={image.author_profile_pic_url}/>
             <div className="post-author-name">
               <Link to={`${image.author_name}/`} className="author-name text">{image.author_name}</Link>
+              <span className="location text">{image.location}</span>
             </div>
           </div>
           <a className="time-ago">

@@ -112,8 +112,9 @@ class Image extends React.Component {
               <div className="image-modal-fields">
                 <header className="image-modal-header">
                   <img className="post-author-profile-pic" src={user.profile_pic_url}/>
-                  <div>
+                  <div className="post-author-name-location">
                     <a className="author-name" >{image.author_name}</a>
+                    <span className="location text">{image.location}</span>
                   </div>
                 </header>
                 <section className="image-comments-body">
