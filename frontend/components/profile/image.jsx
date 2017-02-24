@@ -15,7 +15,7 @@ class Image extends React.Component {
     this.handleImageLike = this.handleImageLike.bind(this);
     this.handleImageUnlike = this.handleImageUnlike.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
-    // this.linkToAuthor = this.linkToAuthor.bind(this);
+    this.redirectToUser = this.redirectToUser.bind(this);
   }
 
   openModal() {
@@ -50,12 +50,27 @@ class Image extends React.Component {
     }
   }
 
+  redirectToUser(username) {
+    if (username === this.props.user.username) {
+      return e => this.closeModal();
+    } else {
+      return e => {
+        this.closeModal();
+        hashHistory.push(`${username}`);
+      }
+    }
+  }
+
   renderComments() {
     return this.props.image.comments.map(comment => {
       return (
         <li key={comment.id}>
           <h2 className="image-comment-head">
-            <span className="comment-name name text">{comment.author_name}</span>
+            <span className="comment-name name text">
+              <a className="link" onClick={this.redirectToUser(comment.author_name)}>
+                {comment.author_name}
+              </a>
+            </span>
             <span className="caption text">{comment.body}</span>
           </h2>
           <div>
@@ -91,7 +106,9 @@ class Image extends React.Component {
     if (image.caption) {
       return (
         <h1 className="modal-caption-head">
-          <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
+          <a onClick={this.closeModal} className="comment-name name text link">
+            {image.author_name}
+          </a>
           <span className="caption text">{image.caption}</span>
         </h1>
       )
