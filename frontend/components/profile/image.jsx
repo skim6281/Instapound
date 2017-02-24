@@ -138,7 +138,7 @@ class Image extends React.Component {
                 <header className="image-modal-header">
                   <img className="modal-post-author-profile-pic" src={user.profile_pic_url}/>
                   <div className="post-author-name-location">
-                    <a className="author-name" >{image.author_name}</a>
+                    <a onClick={this.closeModal} className="author-name link" >{image.author_name}</a>
                     <span className="location text">{image.location}</span>
                   </div>
                 </header>
