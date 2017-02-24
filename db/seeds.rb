@@ -31,8 +31,8 @@ naruto = User.create!(profile_pic: File.open('app/assets/images/naruto/naruto_pr
 
 Image.destroy_all
 
-Image.create!(photo: File.open('app/assets/images/garfield/lasagna_1.jpg'),
-caption:"mmm...lasagna", location:"Muncie, Indiana", user:garfield)
+Image.create!(photo: File.open('app/assets/images/guest/food-11.jpg'),
+caption:"tasty", user:guest);
 Image.create!(photo: File.open('app/assets/images/homer/donuts_1.jpg'),
 caption:"mmmm....donuts..", location:"Springfield, Oregon", user: homer)
 Image.create!(photo: File.open('app/assets/images/cookiemonster/cookies_1.jpg'),
@@ -78,7 +78,8 @@ Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_2.jpg'),
 caption:"When I eat. It is the food that is scared.", location:"Pawnee, Indiana", user:ron_swanson)
 Image.create!(photo: File.open('app/assets/images/naruto/ramen_2.jpg'),
 caption:"that's my ninja way",location:"Konoha", user:naruto)
-
+Image.create!(photo: File.open('app/assets/images/guest/food-12.jpg'),
+caption:"tasty", user:guest);
 Image.create!(photo: File.open('app/assets/images/guest/food-5.jpg'),
 caption:"tasty", user:guest);
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_3.jpg'),
@@ -126,8 +127,7 @@ Image.create!(photo: File.open('app/assets/images/pooh/honey_4.jpg'),
 caption:"Hunny!", location:"Hundred Acre Wood", user:pooh)
 Image.create!(photo: File.open('app/assets/images/guest/food-8.jpg'),
 caption:"tasty", user:guest);
-Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_4.jpg'),
-caption:"mm", location:"Pawnee, Indiana", user:ron_swanson)
+
 
 Image.create!(photo: File.open('app/assets/images/spongebob/burger_5.jpg'),
 caption:"mmmm...krabby patty", location:"Bikini Bottom", user:spongebob)
@@ -141,16 +141,17 @@ Image.create!(photo: File.open('app/assets/images/spongebob/burger_6.jpg'),
 caption:"I love krabby patties!", location:"Bikini Bottom", user:spongebob)
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_5.jpg'),
 caption:"Keep calm and eat pizza",location:"NYC", user:mikey)
-Image.create!(photo: File.open('app/assets/images/guest/food-11.jpg'),
-caption:"tasty", user:guest);
+
+Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_4.jpg'),
+caption:"mm", location:"Pawnee, Indiana", user:ron_swanson)
 Image.create!(photo: File.open('app/assets/images/pooh/honey_5.jpg'),
 caption:"Hunny factory! Bees wanted!", location:"Hundred Acre Wood", user:pooh)
 Image.create!(photo: File.open('app/assets/images/po/dumplings_5.jpg'),
 caption:"give meee",location:"Valley of Peace", user:po)
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_6.jpg'),
 caption:"Wise man say, 'Forgiveness is divine, but never pay full price for late pizza'",location:"NYC", user:mikey)
-Image.create!(photo: File.open('app/assets/images/guest/food-12.jpg'),
-caption:"tasty", user:guest);
+Image.create!(photo: File.open('app/assets/images/garfield/lasagna_1.jpg'),
+caption:"mmm...lasagna", location:"Muncie, Indiana", user:garfield)
 
 Following.destroy_all
 
@@ -168,3 +169,9 @@ Following.create!(followee: guest, follower: mikey)
 Following.create!(followee: guest, follower: homer)
 Following.create!(followee: guest, follower: garfield)
 Following.create!(followee: guest, follower: ron_swanson)
+Following.create!(followee: guest, follower: po)
+Following.create!(followee: mikey, follower: homer)
+Following.create!(followee: mikey, follower: naruto)
+Following.create!(followee: mikey, follower: spongebob)
+Following.create!(followee: mikey, follower: garfield)
+Following.create!(followee: garfield, follower: homer)
