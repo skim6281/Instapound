@@ -8,7 +8,7 @@ class FollowingModal extends React.Component {
   }
 
   handleFollow(user) {
-  
+
   }
 
   handleUnfollow(user) {
@@ -16,7 +16,10 @@ class FollowingModal extends React.Component {
   }
 
   renderFollowButton(user) {
-    // debugger
+    if (user.id === this.props.currentUser.id) {
+      return;
+    }
+
     if (userIncluded(this.props.currentUser.followings, user.id)) {
       return (
         <button
@@ -48,6 +51,13 @@ class FollowingModal extends React.Component {
   //   this.renderUsers(otherUsers);
   // }
 
+  redirectToUser(user) {
+    return e => {
+      this.props.closeModal();
+      hashHistory.push(`${user.username}`)
+    }
+  }
+
   renderUsers(users) {
     return users.map(user => {
       return(
@@ -55,7 +65,7 @@ class FollowingModal extends React.Component {
           <div className="follow-modal-user-details">
             <img className="post-author-profile-pic" src={user.profile_pic_url}/>
             <div className="follow-name">
-              <a>{user.username}</a>
+              <a className="link" onClick={this.redirectToUser(user)}>{user.username}</a>
             </div>
           </div>
           {this.renderFollowButton(user)}
