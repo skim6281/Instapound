@@ -10,7 +10,7 @@ window.createLike = createLike;
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
+    const preloadedState = { session: { currentUser: window.currentUser, formType: 'Log in' } };
     store = configureStore(preloadedState);
   } else {
     store = configureStore();

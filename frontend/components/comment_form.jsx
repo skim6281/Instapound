@@ -18,24 +18,20 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = this.state;
-    e.which = e.which || e.keyCode;
-    if (e.which == 13) {
-      this.props.createComment(comment);
-      document.getElementById("comment-form-input").value = "";
-    }
+    this.props.createComment(this.state);
+    this.setState({body: ""});
   }
 
   render() {
     return (
-      <form className="comment-form">
+      <form onSubmit={this.handleSubmit} className="comment-form">
         <input
           id="comment-form-input"
           className="comment-input"
           type="text"
-          onKeyUp={this.handleSubmit}
           onChange={this.update}
-          placeholder="Add a comment..."/>
+          placeholder="Add a comment..."
+          value={this.state.body}/>
       </form>
     )
   }

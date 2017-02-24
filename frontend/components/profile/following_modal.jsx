@@ -29,7 +29,6 @@ class FollowingModal extends React.Component {
         </button>
       );
     } else {
-      // debugger
       return (
         <button
           className="follow-button follow"
