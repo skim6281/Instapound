@@ -71,11 +71,19 @@ body{
   margin-right: .3em;
 }
 
+.post-author-name-location {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .post-author-name {
   display: block;
   flex-grow: 1;
   flex-shrink: 1;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .author-name {
@@ -85,8 +93,9 @@ body{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-left: 10px;
-  padding-top: 5px;
+  // padding-left: 10px;
+  // padding-top: 5px;
+  padding-bottom: 17px;
   font-weight: 600;
 }
 
