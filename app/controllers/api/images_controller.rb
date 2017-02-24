@@ -3,15 +3,15 @@ class Api::ImagesController < ApplicationController
 
   def index
     if params[:user_username]
-      user = User.find_by(username: params[:user_username])
+      user = User.includes(:images, :followers, :followees).find_by(username: params[:user_username])
       if user
-        @images = user.images.order('created_at DESC')
+        @images = user.images.includes(:comments, :likes).order(created_at: :desc)
       else
         @images = []
       end
     else
       users = [current_user] + current_user.followees
-      @images = Image.includes(:user).where(user: users).order('created_at DESC')
+      @images = Image.includes(:user, :comments, :likes).where(user: users).order(created_at: :desc)
     end
     render 'api/images/index'
   end

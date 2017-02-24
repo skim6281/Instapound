@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:username])
+    @user = User.includes(:images, :followers, :followees).find_by(username: params[:username])
     if @user
       if @user == current_user
         render 'api/users/show_current_user'
