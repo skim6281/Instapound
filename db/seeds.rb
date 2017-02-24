@@ -31,8 +31,9 @@ naruto = User.create!(profile_pic: File.open('app/assets/images/naruto/naruto_pr
 
 Image.destroy_all
 
-Image.create!(photo: File.open('app/assets/images/guest/food-11.jpg'),
-caption:"tasty", user:guest);
+
+Image.create!(photo: File.open('app/assets/images/guest/food-9.jpg'),
+user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/homer/donuts_1.jpg'),
 caption:"mmmm....donuts..", location:"Springfield, Oregon", user: homer)
 Image.create!(photo: File.open('app/assets/images/cookiemonster/cookies_1.jpg'),
@@ -50,18 +51,17 @@ caption:"If everything is honey, and I am what I eat, I must be made of honey..a
 Image.create!(photo: File.open('app/assets/images/naruto/ramen_1.jpg'),
 caption:"mmmm...ramen...",location:"Konoha", user:naruto)
 Image.create!(photo: File.open('app/assets/images/guest/food-1.jpg'),
-caption:"so tasty", user:guest);
+caption:"so tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/skim/food_1.jpg'),
 caption:"Who's Bobby Flay?", location:"Paramus, New Jersey", user:skim)
 
 Image.create!(photo: File.open('app/assets/images/guest/food-2.jpg'),
-caption:"tasty", user:guest);
+caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/cookiemonster/cookies_2.jpg'),
 caption:"Today I will live in the moment unless it's unpleasant in which case I will eat a cookie", location:"Sesame Street", user:cookiemonster)
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_2.jpg'),
 caption:"Pizza!",location:"NYC", user:mikey)
-Image.create!(photo: File.open('app/assets/images/guest/food-3.jpg'),
-caption:"delicious", user:guest);
+
 Image.create!(photo: File.open('app/assets/images/pooh/honey_2.jpg'),
 caption:"I love honey", location:"Hundred Acre Wood", user:pooh)
 Image.create!(photo: File.open('app/assets/images/garfield/lasagna_2.jpg'),
@@ -73,15 +73,15 @@ caption:"Donuts...is there anything they can't do",location:"Springfield, Oregon
 Image.create!(photo: File.open('app/assets/images/po/dumplings_2.jpg'),
 caption:"I eat when I'm upset, okay",location:"Valley of Peace", user:po)
 Image.create!(photo: File.open('app/assets/images/guest/food-4.jpg'),
-caption:"amazing", user:guest);
+caption:"amazing", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_2.jpg'),
 caption:"When I eat. It is the food that is scared.", location:"Pawnee, Indiana", user:ron_swanson)
 Image.create!(photo: File.open('app/assets/images/naruto/ramen_2.jpg'),
 caption:"that's my ninja way",location:"Konoha", user:naruto)
 Image.create!(photo: File.open('app/assets/images/guest/food-12.jpg'),
-caption:"tasty", user:guest);
+caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/guest/food-5.jpg'),
-caption:"tasty", user:guest);
+caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_3.jpg'),
 caption:"Pizza party!",location:"NYC", user:mikey)
 Image.create!(photo: File.open('app/assets/images/garfield/lasagna_3.jpg'),
@@ -99,14 +99,16 @@ caption:"C is for cookie and cookie is for me!", location:"Sesame Street", user:
 Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_3.jpg'),
 caption:"Turf and turf", location:"Pawnee, Indiana", user:ron_swanson)
 Image.create!(photo: File.open('app/assets/images/guest/food-6.jpg'),
-caption:"tasty", user:guest);
+caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/pooh/honey_3.jpg'),
 caption:"A day without a friend is like a pot without a single drop of honey left inside", location:"Hundred Acre Wood", user:pooh)
 Image.create!(photo: File.open('app/assets/images/homer/donuts_6.jpg'),
 caption:"Carpe Diem. Seize the donut",location:"Springfield, Oregon", user: homer)
 
 Image.create!(photo: File.open('app/assets/images/guest/food-7.jpg'),
-caption:"aaaamazing", user:guest);
+caption:"aaaamazing", user:guest, location:"NYC");
+Image.create!(photo: File.open('app/assets/images/guest/food-3.jpg'),
+caption:"delicious", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/garfield/lasagna_4.jpg'),
 caption:"LASGNA!!!", location:"Muncie, Indiana", user:garfield)
 Image.create!(photo: File.open('app/assets/images/homer/donuts_4.jpg'),
@@ -126,22 +128,22 @@ caption:"Gimme da cookies!", location:"Sesame Street", user:cookiemonster)
 Image.create!(photo: File.open('app/assets/images/pooh/honey_4.jpg'),
 caption:"Hunny!", location:"Hundred Acre Wood", user:pooh)
 Image.create!(photo: File.open('app/assets/images/guest/food-8.jpg'),
-caption:"tasty", user:guest);
+caption:"tasty", user:guest, location:"NYC");
 
 
 Image.create!(photo: File.open('app/assets/images/spongebob/burger_5.jpg'),
 caption:"mmmm...krabby patty", location:"Bikini Bottom", user:spongebob)
-Image.create!(photo: File.open('app/assets/images/guest/food-9.jpg'),
-user:guest);
+
 Image.create!(photo: File.open('app/assets/images/guest/food-10.jpg'),
-user:guest);
+user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/cookiemonster/cookies_5.jpg'),
 caption:"Cookies?", location:"Sesame Street", user:cookiemonster)
 Image.create!(photo: File.open('app/assets/images/spongebob/burger_6.jpg'),
 caption:"I love krabby patties!", location:"Bikini Bottom", user:spongebob)
 Image.create!(photo: File.open('app/assets/images/mikey/pizza_5.jpg'),
 caption:"Keep calm and eat pizza",location:"NYC", user:mikey)
-
+Image.create!(photo: File.open('app/assets/images/guest/food-11.jpg'),
+caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/ron_swanson/meat_4.jpg'),
 caption:"mm", location:"Pawnee, Indiana", user:ron_swanson)
 Image.create!(photo: File.open('app/assets/images/pooh/honey_5.jpg'),
