@@ -2,7 +2,14 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
 class NavBar extends React.Component{
-  renderProfileButton() {
+  constructor(props) {
+    super(props);
+    this.renderProfileButton = this.renderProfileButton.bind(this);
+  }
+
+  renderProfileButton(e) {
+    e.preventDefault();
+    hashHistory.replace(`${this.props.currentUser.username}`);
   }
 
   render(){
@@ -17,9 +24,9 @@ class NavBar extends React.Component{
           <div className='nav-icons'>
             <ul className='icon-list'>
               <li className='icon'>
-                <Link to={`${currentUser.username}`}>
+                <a className="link" onClick={this.renderProfileButton}>
                   <img src={window.images.navUser}/>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
