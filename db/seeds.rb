@@ -107,8 +107,8 @@ caption:"Carpe Diem. Seize the donut",location:"Springfield, Oregon", user: home
 
 Image.create!(photo: File.open('app/assets/images/guest/food-7.jpg'),
 caption:"aaaamazing", user:guest, location:"NYC");
-Image.create!(photo: File.open('app/assets/images/guest/food-3.jpg'),
-caption:"delicious", user:guest, location:"NYC");
+Image.create!(photo: File.open('app/assets/images/guest/food-10.jpg'),
+user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/garfield/lasagna_4.jpg'),
 caption:"LASGNA!!!", location:"Muncie, Indiana", user:garfield)
 Image.create!(photo: File.open('app/assets/images/homer/donuts_4.jpg'),
@@ -134,8 +134,9 @@ caption:"tasty", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/spongebob/burger_5.jpg'),
 caption:"mmmm...krabby patty", location:"Bikini Bottom", user:spongebob)
 
-Image.create!(photo: File.open('app/assets/images/guest/food-10.jpg'),
-user:guest, location:"NYC");
+
+Image.create!(photo: File.open('app/assets/images/guest/food-3.jpg'),
+caption:"delicious", user:guest, location:"NYC");
 Image.create!(photo: File.open('app/assets/images/cookiemonster/cookies_5.jpg'),
 caption:"Cookies?", location:"Sesame Street", user:cookiemonster)
 Image.create!(photo: File.open('app/assets/images/spongebob/burger_6.jpg'),
