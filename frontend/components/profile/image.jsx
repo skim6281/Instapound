@@ -85,10 +85,18 @@ class Image extends React.Component {
       )
     }
   }
-  // linkToAuthor() {
-  //   hashHistory.push(`${this.props.image.author_name}`);
-  //   this.closeModal();
-  // }
+
+  renderCaption() {
+    const image = this.props.image
+    if (image.caption) {
+      return (
+        <h1 className="modal-caption-head">
+          <Link to={`${image.author_name}/`} className="comment-name name text">{image.author_name}</Link>
+          <span className="caption text">{image.caption}</span>
+        </h1>
+      )
+    }
+  }
 
   render() {
     const { image, user, currentUser, createImageLike, deleteImageLike, createImageComment, deleteImageComment } = this.props;
@@ -111,7 +119,7 @@ class Image extends React.Component {
               </div>
               <div className="image-modal-fields">
                 <header className="image-modal-header">
-                  <img className="post-author-profile-pic" src={user.profile_pic_url}/>
+                  <img className="modal-post-author-profile-pic" src={user.profile_pic_url}/>
                   <div className="post-author-name-location">
                     <a className="author-name" >{image.author_name}</a>
                     <span className="location text">{image.location}</span>
@@ -126,6 +134,7 @@ class Image extends React.Component {
                   </div>
                   <section className="image-comments-section">
                     <div className="image-comments-list-container">
+                      {this.renderCaption()}
                       <ul className="image-comments-list">
                         {this.renderComments()}
                       </ul>

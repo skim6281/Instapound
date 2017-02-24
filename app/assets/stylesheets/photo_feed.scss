@@ -71,12 +71,6 @@ body{
   margin-right: .3em;
 }
 
-.post-author-name-location {
-  display: flex;
-  flex-direction: column;
-
-}
-
 .post-author-name {
   display: block;
   flex-grow: 1;
@@ -95,8 +89,12 @@ body{
   white-space: nowrap;
   // padding-left: 10px;
   // padding-top: 5px;
-  padding-bottom: 17px;
+  padding-bottom: 19px;
   font-weight: 600;
+}
+
+.location {
+  font-size: 14px;
 }
 
 .caption-head {
