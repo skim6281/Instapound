@@ -7,7 +7,6 @@ class PhotoFeed extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
     this.props.fetchImages();
   }
 

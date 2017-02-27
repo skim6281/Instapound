@@ -1,62 +1,57 @@
 # Instapound
 
-[Heroku link][heroku]
-
-[Trello link][trello]
+[Instapound Live][heroku]
 
 [heroku]: https://instalb.herokuapp.com/#/
-[trello]: https://trello.com/b/YThFg8b8/instapound
 
-##Minimum Viable Product
+Inspired by Instagram, Instapound is a food themed, picture sharing app.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
-Instapound is a web application for foodies inspired by Instagram built using Ruby on Rail and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+## Features
 
-- [x] New account creation, login, and guest/demo login
-- [x] Production README [sample](docs/production_readme.md)
-- [x] Hosting on Heroku
-- [ ] Images
-- [ ] Likes
-- [ ] Commenting on Images
-- [ ] Following & Photo Feed
+* Authentication
+  - A user cannot view pictures unless logged in.
+* Post pictures or upload profile pictures.
+* Like pictures
+* Comment on pictures.
+  - The owner of a picture can remove any comments made on the picture.
+* Follow other users.
+* Photofeed shows pictures of the user and all users the current user is following.
+* User's profile page shows all pictures posted by user.
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [Sample State][sample-state]
-* [DB Schema][schema]
-* [API Endpoints][api-endpoints]
+## Code Guide
+* [instapound.jsx](./frontend/instapound.jsx)
+* [React components](./frontend/components)
+* [Rails controllers](./app/controllers/api)
+* [API Util](./frontend/util/)
+* [DB Schema](./db/schema.rb)
+* [Rails Routes](./config/routes.rb)
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[schema]: docs/schema.md
-[api-endpoints]: docs/api-endpoints.md
+## Technologies
 
-## Implementation Timeline
+* Ruby on Rails
+* PostgreSQL
+* React
+* Redux
+* jQuery
+* Gems
+  - Paperclip
+  - Jbuilder
+  - BCrypt
+  - AWS
+  - Figaro
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+## Screenshots
+Login page:
+![login page](./screenshots/login-page.png)
 
-**Objective:** Functioning rails project with front-end Authentication
+Photofeed:
+![photofeed](./screenshots/photo-feed.png)
 
-### Phase 2: Images Model, API, and components (2 days)
+Profile page:
+![profile page](./screenshots/profile-page.png)
 
-**Objective:** Images can be created and destroyed through the API
+Picture upload:
+![picture upload](./screenshots/picture-upload.png)
 
-### Phase 3: Following & Photo Feed (2 days)
-
-**Objective:** User can have a photo feed and many followings that can be created and destroyed through the API.
-
-
-### Phase 4: Likes (1 day)
-
-**Objective:** Images can have many likes that can be created and destroyed through the API
-
-### Phase 5: Comments (1 day)
-
-**Objective:** Images can have many comments that can be created and destroyed through the API
-
-
-
-### Bonus Features (TBD)
-- [ ] Direct Messaging
-- [ ] Hashtags
+Picture:
+![picture](./screenshots/image-modal.png)

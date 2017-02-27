@@ -88,7 +88,6 @@ class Profile extends React.Component {
   handleChange(e) {
     const file = e.currentTarget.files[0];
     this.setState({profileImageFile: file});
-    // debugger
     this.closeProfilePicModal();
     setTimeout(this.handleSubmit,0);
   }

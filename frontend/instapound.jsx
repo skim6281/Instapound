@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import Root from './components/root';
 import configureStore from './store/store';
-import { createLike } from './util/like_api_util';
-
-window.createLike = createLike;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -15,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body)
