@@ -21,36 +21,6 @@ export const removeFollower = follower => {
   };
 };
 
-// export const receiveFollowingId = id => {
-//   return {
-//     type: RECEIVE_FOLLOWING_ID,
-//     id
-//   }
-// };
-
-// export const removeFollowingId = id => {
-//   return {
-//     type: REMOVE_FOLLOWING_ID,
-//     id
-//   }
-// };
-//
-// export const removeFollowerId = id => {
-//   return {
-//     type: REMOVE_FOLLOWER_ID,
-//     id
-//   };
-// };
-
-// export const receiveFollowerId = followerId => {
-//   return {
-//     type: RECEIVE_FOLLOWER_ID,
-//     followerId
-//   };
-// };
-
-//
-
 export const createFollowing = (followeeId) => dispatch => {
   return FollowingAPIUtil.createFollowing(followeeId)
     .then(follower => dispatch(receiveFollower(follower)));
