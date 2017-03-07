@@ -44,7 +44,6 @@ class ImageForm extends React.Component {
     formData.append("image[photo]", this.state.imageFile);
     this.props.createImage(formData);
     this.props.closeUploadModal();
-    // this.props.hashHistory.push(`${this.currentUser.username}`);
   }
 
   render() {
@@ -58,7 +57,7 @@ class ImageForm extends React.Component {
             <input
               className="choose-file"
               type="file"
-              value="lkjadf"
+          
               onChange={this.updateFile} />
             <input className="upload-modal-text-input" type="text" onChange={this.updateCaption} placeholder="Write a caption..."/>
             <input className="upload-modal-text-input" type="text" onChange={this.updateLocation}placeholder="Add a location..."/>

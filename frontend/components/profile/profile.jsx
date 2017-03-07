@@ -329,7 +329,7 @@ class Profile extends React.Component {
       );
     } else {
       return (
-        <div>Loading...</div>
+        <div> Loading...</div>
       )
     }
   }
