@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_attached_file :profile_pic,
                     styles: { thumb: "100x100>", croppable: "600x600>" },
                     processors: [:thumbnail, :paperclip_optimizer],
+                    s3_protocol: :https,
                     default_url: "user.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 

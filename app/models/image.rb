@@ -20,6 +20,7 @@ class Image < ApplicationRecord
   has_attached_file :photo,
                     styles: { thumb: "100x100>", croppable: "600x600>", big: "1000x1000" },
                     processors: [:thumbnail, :paperclip_optimizer],
+                    s3_protocol: :https,
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
