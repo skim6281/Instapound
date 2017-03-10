@@ -1,5 +1,7 @@
 .upload-modal{
-  height: 750px;
+  // height: 750px;
+  height: 80%;
+  max-width: 10000px;
   background-color: #fff;
   display: flex;
   box-sizing: border-box;
@@ -10,8 +12,8 @@
 
 .image-form {
   display: flex;
-  height: 750px;
-  width: 1000px;
+
+  height: 100%;
 }
 
 .image-field {
@@ -20,7 +22,9 @@
   justify-content: center;
   overflow: hidden;
   width: 600px;
-  max-height: 750px;
+  max-width: 600px;
+  // max-height: 750px;
+  max-height: 100%;
   background-color: #dbdbdb;
 }
 
