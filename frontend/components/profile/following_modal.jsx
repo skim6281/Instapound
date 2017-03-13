@@ -7,14 +7,6 @@ class FollowingModal extends React.Component {
     super(props);
   }
 
-  handleFollow(user) {
-
-  }
-
-  handleUnfollow(user) {
-
-  }
-
   renderFollowButton(user) {
     if (user.id === this.props.currentUser.id) {
       return;
@@ -38,17 +30,6 @@ class FollowingModal extends React.Component {
       )
     }
   }
-
-  // renderFollows(user) {
-  //   let otherUsers;
-  //   if (this.props.type === "Following") {
-  //     otherUsers = user.followings;
-  //   } else {
-  //     otherUsers = user.followers;
-  //   }
-  //   debugger
-  //   this.renderUsers(otherUsers);
-  // }
 
   redirectToUser(user) {
     return e => {
