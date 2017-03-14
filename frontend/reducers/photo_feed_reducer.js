@@ -14,19 +14,19 @@ const PhotoFeedReducer = (state = initialState, action) => {
     case RECEIVE_IMAGES:
       return Object.assign({}, state, {images: action.images});
     case RECEIVE_LIKE:
-      let newRecLikeImages = state.images.slice();
-      let i = getIndex(newRecLikeImages, action.like.imageId);
+      const newRecLikeImages = state.images.slice();
+      const i = getIndex(newRecLikeImages, action.like.imageId);
       newRecLikeImages[i].likes.push(action.like.userId);
       return Object.assign({}, state, {images: newRecLikeImages});
     case REMOVE_LIKE:
-      let newRemLikeImages = state.images.slice();
-      let ind = getIndex(newRemLikeImages, action.like.imageId);
-      let likeIndex = newRemLikeImages[ind].likes.indexOf(action.like.userId);
+      const newRemLikeImages = state.images.slice();
+      const ind = getIndex(newRemLikeImages, action.like.imageId);
+      const likeIndex = newRemLikeImages[ind].likes.indexOf(action.like.userId);
       newRemLikeImages[ind].likes.splice(likeIndex, 1);
       return Object.assign({}, state, {images: newRemLikeImages});
     case RECEIVE_COMMENT:
-      let newRecCommentImages = state.images.slice();
-      let j = getIndex(newRecCommentImages, action.comment.imageId);
+      const newRecCommentImages = state.images.slice();
+      const j = getIndex(newRecCommentImages, action.comment.imageId);
       newRecCommentImages[j].comments.push(action.comment);
       return Object.assign({}, state, {images: newRecCommentImages});
     default:
