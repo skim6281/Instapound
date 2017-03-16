@@ -1,5 +1,3 @@
-
-
 body{
   background-color: #fafafa;
   width: 100%;
@@ -13,7 +11,6 @@ body{
   box-sizing: border-box;
   flex-direction: column;
   font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
-  // position: relative;
 }
 
 .post-container {
@@ -87,8 +84,6 @@ body{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  // padding-left: 10px;
-  // padding-top: 5px;
   padding-bottom: 19px;
   font-weight: 600;
 }
@@ -104,11 +99,9 @@ body{
 
 .comment-name{
   text-decoration: none;
-  // display: inline-block;
 }
 
 .post-image {
-  // min-height: 600px;
   max-height: 750px;
 }
 
@@ -141,7 +134,6 @@ body{
 }
 
 .comments-list > li > span {
-  // width: 92%;
   word-wrap: break-word;
 }
 
