@@ -19,7 +19,7 @@ const ProfileReducer = (state = initialState, action) => {
     case RECEIVE_USER_IMAGES:
       return Object.assign({}, state, {images: action.images});
     case RECEIVE_IMAGE:
-      let newImages = state.images.slice();
+      const newImages = state.images.slice();
       newImages.unshift(action.image);
       return Object.assign({}, state, {images: newImages});
     case RECEIVE_FOLLOWER:

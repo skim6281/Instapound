@@ -93,7 +93,7 @@ class Profile extends React.Component {
   }
 
   handleSubmit(e) {
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append("user[profile_pic]", this.state.profileImageFile);
     this.props.updateUserProfilePic(this.props.currentUser.username, formData);
   }

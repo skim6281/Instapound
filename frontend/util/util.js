@@ -21,7 +21,7 @@ export const time_ago = (upload_date) => {
 };
 
 export const userIncluded = (users, userId) => {
-  let userIds = users.map(user => user.id);
+  const userIds = users.map(user => user.id);
   if (userIds.includes(userId)) {
     return true;
   } else {
