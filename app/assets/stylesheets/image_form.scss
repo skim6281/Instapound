@@ -11,7 +11,6 @@
 
 .image-form {
   display: flex;
-
   height: 100%;
 }
 
@@ -34,15 +33,10 @@
   width: 400px;
 }
 
-.image-input-fields {
+.image-inputs {
   display: flex;
   flex-direction: column;
   margin: 5px;
-}
-
-.choose-file {
-  margin: 10px 0;
-  width: 100%;
 }
 
 .upload-modal-text-input {

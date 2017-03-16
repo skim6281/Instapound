@@ -54,13 +54,20 @@ class ImageForm extends React.Component {
         </section>
         <section className="image-form-inputs">
           <div className="image-input-fields">
-            <input
-              className="choose-file"
-              type="file"
-          
-              onChange={this.updateFile} />
-            <input className="upload-modal-text-input" type="text" onChange={this.updateCaption} placeholder="Write a caption..."/>
-            <input className="upload-modal-text-input" type="text" onChange={this.updateLocation}placeholder="Add a location..."/>
+            <div className="choose-photo">
+              <div className="share-button upload-photo-button">
+                Choose Photo
+              </div>
+              <input
+                className="choose-file"
+                type="file"
+                id="chosen-file"
+                onChange={this.updateFile} />
+            </div>
+            <div className="image-inputs">
+              <input className="upload-modal-text-input" type="text" onChange={this.updateCaption} placeholder="Write a caption..."/>
+              <input className="upload-modal-text-input" type="text" onChange={this.updateLocation}placeholder="Add a location..."/>
+            </div>
           </div>
           <div>
             <button className="share-button" onClick={this.handleSubmit}>Share</button>

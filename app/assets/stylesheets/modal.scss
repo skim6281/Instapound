@@ -22,7 +22,11 @@
   position: relative;
 }
 
-#file {
+.choose-photo {
+  position: relative;
+}
+
+#file, #chosen-file {
   bottom: 0;
   right: 0;
   position: absolute;
@@ -30,7 +34,11 @@
   opacity: 0;
 }
 
-#file:hover {
+#chosen-file {
+  height: 100%;
+}
+
+#file, #chosen-file:hover {
   cursor: pointer;
 }
 
