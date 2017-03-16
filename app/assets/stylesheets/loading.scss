@@ -1,0 +1,54 @@
+@import "compass/css3";
+
+@import "compass/css3";
+
+$spinnerElementColor: #000;
+$startOpacity: 1;
+$stopOpacity: 0.2;
+$loading_duration: 0.75s;
+$loading_numberOfBars: 12;
+$loading_lDelay: $loading_duration / $loading_numberOfBars;
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// @include keyframes(fade) {
+//   from { @include opacity($startOpacity); }
+//   to { @include opacity($stopOpacity); }
+// }
+
+.spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+
+  .se {
+    width: 7%;
+    height: 25%;
+    background: $spinnerElementColor;
+    position: absolute;
+    left: 33.3%;
+    top: 37%;
+    @include opacity(0);
+    @include border-radius(50px);
+    @include box-shadow(0 0 3px rgba(0,0,0,0.2));
+  }
+
+  @for $i from 1 through $loading_numberOfBars {
+    .b#{$i} {
+      @include transform(rotate(#{($i - 1) * 30}deg) translate(0, -142%));
+      @include animation(fade $loading_duration infinite
+       ($loading_lDelay * ($i - 1)));
+    }
+  }
+}
