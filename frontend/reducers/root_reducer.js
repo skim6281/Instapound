@@ -8,7 +8,7 @@ const RootReducer = combineReducers({
   session: SessionReducer,
   photoFeed: PhotoFeedReducer,
   profile: ProfileReducer,
-  loading: LoaingReducer
+  loading: LoadingReducer
 });
 
 export default RootReducer;

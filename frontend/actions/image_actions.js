@@ -4,6 +4,7 @@ import { receiveUser } from './profile_actions';
 export const RECEIVE_IMAGES = 'RECEIVE_IMAGES';
 export const RECEIVE_USER_IMAGES = 'RECEIVE_USER_IMAGES';
 export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
+export const LOAD_IMAGE = 'LOAD_IMAGE';
 
 export const receiveImages = images => ({
   type: RECEIVE_IMAGES,
@@ -22,17 +23,25 @@ export const receiveImage = image => {
   }
 };
 
+export const loadImage = () => {
+  return{
+    type: LOAD_IMAGE
+  }
+};
+
 export const fetchImages = () => dispatch => {
   return ImageAPIUtil.fetchImages()
     .then(images => dispatch(receiveImages(images)));
 };
 
 export const fetchUserImages = (username) => dispatch => {
+  dispatch(loadImage());
   return ImageAPIUtil.fetchUserImages(username)
     .then(images => dispatch(receiveUserImages(images)));
 };
 
 export const createImage = (image) => dispatch => {
+  dispatch(loadImage());
   return ImageAPIUtil.createImage(image)
     .then(image => dispatch(receiveImage(image)));
 }
