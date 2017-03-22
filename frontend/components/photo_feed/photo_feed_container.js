@@ -8,7 +8,8 @@ import { createComment } from '../../actions/comment_actions';
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
-    images: selectAllImages(state.photoFeed.images)
+    images: selectAllImages(state.photoFeed.images),
+    loading: state.loading.indexLoading
   });
 };
 
