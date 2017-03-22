@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from './post';
+import LoadingIcon from '../loading_icon';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -27,7 +28,8 @@ class PhotoFeed extends React.Component {
   }
 
   render() {
-    return(
+    return this.props.loading ?
+      <LoadingIcon /> :
       <div>
         <div className='photo-feed-container'>
           <div>
@@ -35,8 +37,7 @@ class PhotoFeed extends React.Component {
           </div>
         </div>
       </div>
-    );
-  }
+  };
 }
 
 export default PhotoFeed;

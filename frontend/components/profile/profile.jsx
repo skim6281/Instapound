@@ -5,6 +5,7 @@ import ImageForm from './image_form';
 import FollowingModal from './following_modal';
 import { userIncluded } from '../../util/util';
 import { hashHistory } from 'react-router';
+import LoadingIcon from '../loading_icon';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -327,7 +328,7 @@ class Profile extends React.Component {
       );
     } else {
       return (
-        <div> Loading...</div>
+        <LoadingIcon />
       )
     }
   }
