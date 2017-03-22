@@ -14,15 +14,14 @@ import { selectAllImages } from '../../reducers/selectors';
 import { createImageLike, deleteImageLike } from '../../actions/like_actions';
 import { createImageComment, deleteImageComment } from '../../actions/comment_actions';
 
-
-
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
     user: state.profile.user,
     images: selectAllImages(state.profile.images),
     followers: state.session.followers,
-    followings: state.session.followings
+    followings: state.session.followings,
+    loading: state.loading.imageLoading
   });
 };
 

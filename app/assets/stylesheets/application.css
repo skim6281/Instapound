@@ -19,5 +19,6 @@
  *= require image_modal
  *= require follow_modal
  *= require modal
+ *= require loading
  *= require_self
  */
