@@ -14,6 +14,7 @@
 #  profile_pic_file_size    :integer
 #  profile_pic_updated_at   :datetime
 #  bio                      :string
+#  name                     :string
 #
 
 class User < ApplicationRecord
