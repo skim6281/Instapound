@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-guest = User.create!(username: "guest", password: "go_guest_go")
+guest = User.create!(username: "guest", password: "go_guest_go", bio: "hi i'm guest!")
 skim = User.create!(username: "skim", password: "go_skim_go")
 spongebob = User.create!(profile_pic: File.open('app/assets/images/spongebob/spongebob_profile.jpg'),
               username: "spongebob", password: "go_spongebob_go")
