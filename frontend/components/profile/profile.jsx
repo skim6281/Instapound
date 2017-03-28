@@ -319,6 +319,9 @@ class Profile extends React.Component {
                     </Modal>
                   </li>
                 </ul>
+                <div className="user-info-row-2">
+                  <span>{this.props.user.bio}</span>
+                </div>
               </div>
             </header>
             <content className="profile-image-section">
