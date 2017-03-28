@@ -8,14 +8,14 @@
 
 User.destroy_all
 
-guest = User.create!(username: "guest", password: "go_guest_go", bio: "hi i'm guest!")
-skim = User.create!(username: "skim", password: "go_skim_go")
+guest = User.create!(username: "guest", password: "go_guest_go", bio: "hi i'm guest!", name: "guest")
+skim = User.create!(username: "skim", password: "go_skim_go", name:"sam")
 spongebob = User.create!(profile_pic: File.open('app/assets/images/spongebob/spongebob_profile.jpg'),
-              username: "spongebob", password: "go_spongebob_go")
+              username: "spongebob", password: "go_spongebob_go", name: "SpongeBob SquarePants", bio:"I'm ready!")
 mikey = User.create!(profile_pic: File.open('app/assets/images/mikey/mikey_profile.png'),
-          username: "mikey", password: "go_mikey_go")
+          username: "mikey", password: "go_mikey_go", name:"Michelangelo", bio: "the funny one")
 homer = User.create!(profile_pic: File.open('app/assets/images/homer/homer_profile.png'),
-          username: "homer", password: "go_homer_go")
+          username: "homer", password: "go_homer_go", name:"homer")
 garfield = User.create!(profile_pic: File.open('app/assets/images/garfield/garfield_profile.png'),
             username: "garfield", password: "go_garfield_go")
 cookiemonster = User.create!(profile_pic: File.open('app/assets/images/cookiemonster/cookiemonster_profile.jpg'),
@@ -25,7 +25,7 @@ pooh = User.create!(profile_pic: File.open('app/assets/images/pooh/pooh_profile.
 ron_swanson = User.create!(profile_pic: File.open('app/assets/images/ron_swanson/ron_swanson_profile.jpg'),
                 username: "ron_swanson", password: "go_ron_swonson_go")
 po = User.create!(profile_pic: File.open('app/assets/images/po/po_profile.jpg'),
-      username: "po", password: "go_po_go")
+      username: "po", password: "go_po_go", name: "po", bio: "Dragon Warrior")
 naruto = User.create!(profile_pic: File.open('app/assets/images/naruto/naruto_profile.jpg'),
           username: "naruto", password: "go_naruto_go")
 

@@ -319,8 +319,9 @@ class Profile extends React.Component {
                     </Modal>
                   </li>
                 </ul>
-                <div className="user-info-row-2">
-                  <span>{this.props.user.bio}</span>
+                <div className="user-info-row-3">
+                  <h2 className="name">{this.props.user.name}</h2>
+                  <span className="bio">{this.props.user.bio}</span>
                 </div>
               </div>
             </header>
