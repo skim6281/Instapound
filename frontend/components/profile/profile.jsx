@@ -127,7 +127,9 @@ class Profile extends React.Component {
 
     if (currentUser.username === user.username) {
       return (
-        <button className="profile-button">Edit Profile</button>
+        <button
+          className="profile-button"
+          onClick={() => hashHistory.push('accounts/edit')}>Edit Profile</button>
       );
     }else {
       if (userIncluded(user.followers, currentUser.id)) {
