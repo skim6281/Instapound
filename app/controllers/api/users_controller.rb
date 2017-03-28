@@ -27,7 +27,7 @@ class Api::UsersController < ApplicationController
     if @user.update(user_params)
       render 'api/users/show_current_user'
     else
-      render json: ["User not found"], status: 422
+      render json: ["Not logged in"], status: 422
     end
   end
 
