@@ -16,7 +16,7 @@ const ProfileReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
-      return Object.assign({}, state, {user: action.user});
+      return Object.assign({}, state, {user: action.user, success: null});
     case RECEIVE_USER_SUCCESS:
       return Object.assign({}, state, {user: action.user, success: "Profile saved!"});
     case RECEIVE_USER_IMAGES:
