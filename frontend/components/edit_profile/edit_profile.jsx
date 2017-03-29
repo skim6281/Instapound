@@ -21,7 +21,6 @@ class EditProfile extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.updateUser(user);
@@ -32,9 +31,9 @@ class EditProfile extends React.Component {
     return (
       <main className="edit-profile-container">
         <div className="edit-user-header">
-          <div>
+          <aside className="edit-label">
             <img className="edit-profile-pic" src={currentUser.profile_pic_url}/>
-          </div>
+          </aside>
           <h1>{currentUser.username}</h1>
         </div>
         <form className="edit-user-form" onSubmit={this.handleSubmit}>
@@ -58,7 +57,12 @@ class EditProfile extends React.Component {
               id="editBio"
             />
           </div>
-          <button className="submit-form">Submit</button>
+          <div className="edit-row">
+            <aside className="edit-label">
+              <label>&nbsp;</label>
+            </aside>
+            <button className="submit-form edit-submit">Submit</button>
+          </div>
           <p className="edit-success">
             {success}
           </p>
