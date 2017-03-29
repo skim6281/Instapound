@@ -4,7 +4,8 @@ import EditProfile from './edit_profile';
 
 const mapStateToProps = (state) => {
   return ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    success: state.profile.success
   });
 };
 
@@ -18,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditProfile)
+)(EditProfile);
