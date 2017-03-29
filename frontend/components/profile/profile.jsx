@@ -32,6 +32,7 @@ class Profile extends React.Component {
     this.handleUnfollow = this.handleUnfollow.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectToEditProfile = this.redirectToEditProfile.bind(this);
   }
 
   componentDidMount() {
@@ -121,6 +122,11 @@ class Profile extends React.Component {
     this.props.deleteFollowing(this.props.user.id);
   }
 
+  redirectToEditProfile() {
+    window.location.reload();
+    hashHistory.push('accounts/edit');
+  }
+
   renderProfileFollowButton() {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
@@ -129,7 +135,7 @@ class Profile extends React.Component {
       return (
         <button
           className="profile-button"
-          onClick={() => hashHistory.push('accounts/edit')}>Edit Profile</button>
+          onClick={this.redirectToEditProfile}>Edit Profile</button>
       );
     }else {
       if (userIncluded(user.followers, currentUser.id)) {

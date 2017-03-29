@@ -5,8 +5,7 @@ class EditProfile extends React.Component {
     super(props);
     this.state = {
       name: this.props.currentUser.name,
-      bio: this.props.currentUser.bio,
-      email: this.props.currentUser.email
+      bio: this.props.currentUser.bio
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,6 +21,7 @@ class EditProfile extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.updateUser(user);
@@ -56,17 +56,6 @@ class EditProfile extends React.Component {
               onChange={this.update('bio')}
               className="lb-input"
               id="editBio"
-            />
-          </div>
-          <div>PRIVATE INFORMATION</div>
-          <div className="edit-row">
-            <aside className="edit-label">
-              <label for="editEmail">Email</label></aside>
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="lb-input"
-              id="editEmail"
             />
           </div>
           <button className="submit-form">Submit</button>
