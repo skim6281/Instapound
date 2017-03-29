@@ -17,6 +17,8 @@
   border-radius: 50%;
   box-sizing: border-box;
   object-fit: cover;
+  position: absolute;
+  right: 32px;
 }
 
 .edit-user-header {
@@ -35,7 +37,7 @@
   min-width: 194px;
   box-sizing: border-box;
   line-height: 37px;
-  justify-content: flex-end;
+  position: relative;
 }
 
 .edit-submit {
