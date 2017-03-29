@@ -1,8 +1,8 @@
 # Instapound
 
-[Instapound Live][heroku]
+[Instapound Live][instalb]
 
-[heroku]: www.instalb.com
+[instalb]: https://www.instalb.com/
 
 Inspired by Instagram, Instapound is a food themed, picture sharing app.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
