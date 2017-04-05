@@ -120,7 +120,7 @@ class Image extends React.Component {
     return (
       <div className="profile-image">
         <a onClick={this.openModal}>
-          <img src={image.photo_url}/>
+          <img src={image.photo_url_thumb}/>
         </a>
         <Modal
           isOpen={this.state.modalIsOpen}
