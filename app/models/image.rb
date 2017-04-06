@@ -18,7 +18,7 @@ class Image < ApplicationRecord
   validates :user, presence: true
 
   has_attached_file :photo,
-                    styles: { thumb: "600x600>" },
+                    styles: { thumb: "300x300>" },
                     processors: [:thumbnail, :paperclip_optimizer],
                     s3_protocol: :https,
                     default_url: "/images/:style/missing.png"
