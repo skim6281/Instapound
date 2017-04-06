@@ -25,7 +25,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_attached_file :profile_pic,
-                    styles: { thumb: "150x150>", croppable: "600x600>" },
+                    styles: { thumb: "300x300>" },
                     processors: [:thumbnail, :paperclip_optimizer],
                     s3_protocol: :https,
                     default_url: "user.png"
