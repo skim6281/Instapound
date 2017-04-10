@@ -193,7 +193,8 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (this.props.user) {
+    const { user, logout, images, currentUser, createImage, createFollowing, deleteFollowing } = this.props;
+    if (user) {
       return (
         <div className="profile-container">
             <header className="user-details">
@@ -202,7 +203,7 @@ class Profile extends React.Component {
               </div>
               <div className="user-info">
                 <div className="user-info-row-1">
-                  <h1 id="username-header-1">{this.props.user.username}</h1>
+                  <h1 id="username-header-1">{user.username}</h1>
                   {this.renderProfileFollowButton()}
                   <Modal
                     isOpen={this.state.profilePicModalIsOpen}
@@ -239,9 +240,9 @@ class Profile extends React.Component {
                     overlayClassName="overlay"
                     contentLabel="upload">
                     <ImageForm
-                      currentUser={this.props.currentUser}
+                      currentUser={currentUser}
                       closeUploadModal={this.closeUploadModal}
-                      createImage={this.props.createImage} />
+                      createImage={createImage} />
                   </Modal>
                   {this.renderLogoutButton()}
                   <Modal
@@ -252,7 +253,7 @@ class Profile extends React.Component {
                     contentLabel="logout">
                     <ul>
                       <li>
-                        <button className="button-modal" onClick={this.props.logout}>Log out</button>
+                        <button className="button-modal" onClick={logout}>Log out</button>
                       </li>
                       <li>
                         <button className="button-modal" onClick={this.closeModal}>Cancel</button>
@@ -267,7 +268,7 @@ class Profile extends React.Component {
                 <ul className="user-info-row-2">
                   <li>
                     <span className="bold">
-                      {this.props.images.length}
+                      {images.length}
                     </span>
                     <span>
                       posts
@@ -276,7 +277,7 @@ class Profile extends React.Component {
                   <li>
                     <a onClick={this.openFollowersModal}>
                       <span className="bold">
-                        {this.props.user.followers.length}
+                        {user.followers.length}
                       </span>
                       <span>
                         followers
@@ -288,23 +289,23 @@ class Profile extends React.Component {
                       className="follow-modal"
                       overlayClassName="overlay"
                       contentLabel="follow"
-                      followings={this.props.currentUser.followings}>
+                      followings={currentUser.followings}>
                       <FollowingModal
-                        users={this.props.user.followers}
-                        user={this.props.user}
-                        currentUser={this.props.currentUser}
+                        users={user.followers}
+                        user={user}
+                        currentUser={currentUser}
                         closeModal={this.closeFollowersModal}
                         receiveFollowingId={this.receiveFollowerId}
                         removeFollowingId={this.removeFollowerId}
-                        createFollowing={this.props.createFollowing}
-                        deleteFollowing={this.props.deleteFollowing}
+                        createFollowing={createFollowing}
+                        deleteFollowing={deleteFollowing}
                         type="Follower"/>
                     </Modal>
                   </li>
                   <li>
                     <a onClick={this.openFollowingsModal}>
                       <span className="bold">
-                        {this.props.user.followings.length}
+                        {user.followings.length}
                       </span>
                       <span>
                         followings
@@ -317,19 +318,19 @@ class Profile extends React.Component {
                       overlayClassName="overlay"
                       contentLabel="follow">
                       <FollowingModal
-                        users={this.props.user.followings}
-                        user={this.props.user}
-                        currentUser={this.props.currentUser}
+                        users={user.followings}
+                        user={user}
+                        currentUser={currentUser}
                         closeModal={this.closeFollowingsModal}
                         type="Following"
-                        createFollowing={this.props.createFollowing}
-                        deleteFollowing={this.props.deleteFollowing}/>
+                        createFollowing={createFollowing}
+                        deleteFollowing={deleteFollowing}/>
                     </Modal>
                   </li>
                 </ul>
                 <div className="user-info-row-3">
-                  <h2 className="name">{this.props.user.name}</h2>
-                  <span className="bio">{this.props.user.bio}</span>
+                  <h2 className="name">{user.name}</h2>
+                  <span className="bio">{user.bio}</span>
                 </div>
               </div>
             </header>
