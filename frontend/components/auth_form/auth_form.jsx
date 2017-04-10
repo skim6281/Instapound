@@ -21,12 +21,13 @@ class AuthForm extends React.Component {
 	}
 
 	handleSubmit(e) {
+		const { formType, login, signup } = this.props;
 		e.preventDefault();
 		const user = this.state;
-		if (this.props.formType === 'Log in') {
-			this.props.login(user);
-		} else if (this.props.formType === 'Sign up'){
-			this.props.signup(user);
+		if (formType === 'Log in') {
+			login(user);
+		} else if (formType === 'Sign up'){
+			signup(user);
 		}
 	}
 

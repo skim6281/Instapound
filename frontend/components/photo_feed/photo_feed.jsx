@@ -12,16 +12,17 @@ class PhotoFeed extends React.Component {
   }
 
   renderPosts() {
-    return this.props.images.map(image => {
+    const { images, currentUser, createLike, deleteLike, createComment, deleteComment } = this.props;
+    return images.map(image => {
       return (
         <Post
           key={image.id}
           image={image}
-          currentUser={this.props.currentUser}
-          createLike={this.props.createLike}
-          deleteLike={this.props.deleteLike}
-          createComment={this.props.createComment}
-          deleteComment={this.props.deleteComment}
+          currentUser={currentUser}
+          createLike={createLike}
+          deleteLike={deleteLike}
+          createComment={createComment}
+          deleteComment={deleteComment}
         />
       )
     });
