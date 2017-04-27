@@ -5,12 +5,17 @@ class NavBar extends React.Component{
   constructor(props) {
     super(props);
     this.state = { search: "" };
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderProfileButton = this.renderProfileButton.bind(this);
   }
 
   renderProfileButton(e) {
     e.preventDefault();
     hashHistory.replace(`${this.props.currentUser.username}`);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   render(){
