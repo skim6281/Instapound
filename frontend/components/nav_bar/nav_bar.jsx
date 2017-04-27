@@ -21,6 +21,12 @@ class NavBar extends React.Component{
             <img className="logo-image" src={window.images.logo}/>
             <img className="logo-text" src={window.images.logoText}/>
           </Link>
+          <div className='box'>
+            <div className='container'>
+              <span className='search-icon'><i className="fa fa-search"></i></span>
+              <input type='search' id='search' placeholder="Search"/>
+            </div>
+          </div>
           <div className='nav-icons'>
             <ul className='icon-list'>
               <li className='icon'>
