@@ -4,7 +4,7 @@ import { Link, hashHistory } from 'react-router';
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { search: "" };
+    this.state = { searchInput: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderProfileButton = this.renderProfileButton.bind(this);
   }
