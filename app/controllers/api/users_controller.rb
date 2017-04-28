@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+  def index
+    @users = User.search_by_username(user_params[:username])
+    render 'api/users/index' if @users
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
