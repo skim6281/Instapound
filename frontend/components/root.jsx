@@ -8,13 +8,6 @@ import EditProfileContainer from './edit_profile/edit_profile_container';
 import App from './App';
 
 const Root = ({ store }) => {
-  const _ensureLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-  };
-
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-  };
 
   return (
     <Provider store={store}>
