@@ -8,7 +8,6 @@ import EditProfileContainer from './edit_profile/edit_profile_container';
 import App from './App';
 
 const Root = ({ store }) => {
-
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
