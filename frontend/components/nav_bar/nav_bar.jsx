@@ -1,21 +1,17 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import SearchBar from '../search_bar';
 
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
     this.state = { searchInput: "" };
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderProfileButton = this.renderProfileButton.bind(this);
   }
 
   renderProfileButton(e) {
     e.preventDefault();
     hashHistory.replace(`${this.props.currentUser.username}`);
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
   }
 
   render(){
@@ -27,12 +23,7 @@ class NavBar extends React.Component{
             <img className="logo-image" src={window.images.logo}/>
             <img className="logo-text" src={window.images.logoText}/>
           </Link>
-          <div className='box'>
-            <form className='container' >
-              <span className='search-icon'><i className="fa fa-search"></i></span>
-              <input type='search' id='search' placeholder="Search"/>
-            </form>
-          </div>
+          <SearchBar/>
           <div className='nav-icons'>
             <ul className='icon-list'>
               <li className='icon'>
