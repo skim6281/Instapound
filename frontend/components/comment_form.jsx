@@ -29,8 +29,8 @@ class CommentForm extends React.Component {
           id="comment-form-input"
           className="comment-input"
           type="text"
-          onChange={this.update}
           placeholder="Add a comment..."
+          onChange={this.update}
           value={this.state.body}/>
       </form>
     )
