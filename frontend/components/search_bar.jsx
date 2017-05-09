@@ -3,7 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: ""};
+    this.state = {searchInput: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
             type='search'
             placeholder="Search"
             onChange={this.update}
-            value={this.state.username}/>
+            value={this.state.searchInput}/>
         </form>
       </div>
     )
