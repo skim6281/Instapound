@@ -3,7 +3,7 @@ import SessionReducer from './session_reducer';
 import PhotoFeedReducer from './photo_feed_reducer';
 import ProfileReducer from './profile_reducer';
 import LoadingReducer from './loading_reducer';
-import SearchReducer from './SearchReducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
