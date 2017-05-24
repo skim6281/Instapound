@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.search_by_username(user_params[:username])
+    @users = User.search_by_username(params[:userName])
     render 'api/users/index' if @users
   end
 
