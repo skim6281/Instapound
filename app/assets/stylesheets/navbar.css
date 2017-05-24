@@ -22,6 +22,7 @@
   min-width: 125px;
   height: 28px;
   margin-right: 180px;
+  position: relative;
 }
 
 .container {
@@ -54,6 +55,15 @@
   padding: 3px 10px 3px 26px;
   box-sizing: border-box;
   color: #262626
+}
+
+.users-list-div {
+  position: absolute;
+  display: block;
+  background: white;
+  border: 1px solid #000;
+  height: 300px;
+  width: 400px;
 }
 
 .logo-image{
