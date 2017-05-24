@@ -15,6 +15,19 @@ class SearchBar extends React.Component {
     e.preventDefault();
   }
 
+  renderUsers() {
+    if (this.state.searchInput !== "") {
+      return this.props.users.map(user => {
+        return (
+          <li key={user.id}>
+            <img></img>
+            <span>{user.username}</span>
+          </li>
+        )
+      });
+    }
+  }
+
   render() {
     return (
       <div className='box'>
@@ -26,6 +39,11 @@ class SearchBar extends React.Component {
             placeholder="Search"
             onChange={this.update}
             value={this.state.searchInput}/>
+          <div>
+            <ul>
+              {this.renderUsers()}
+            </ul>
+          </div>
         </form>
       </div>
     )
