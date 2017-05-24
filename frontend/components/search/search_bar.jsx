@@ -3,24 +3,29 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchInput: ""};
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {query: "", active: false};
+    this.update = this.update.bind(this);
+    this.clearQuery = this.clearQuery.bind(this);
   }
 
   update(e) {
-    this.setState({username: e.currentTarget.value})
-  }
-
-  handleSubmit(e) {
     e.preventDefault();
+    if(e.target.value === "") {
+      this.clearQuery();
+      this.props.removeUsers();
+      this.setState({active: false});
+    } else {
+      this.setState({query: e.target.value, active: true},
+        () => this.props.fetchUsers(this.state.query));
+    }
   }
 
   renderUsers() {
-    if (this.state.searchInput !== "") {
+    if (this.state.query !== "") {
       return this.props.users.map(user => {
         return (
-          <li key={user.id}>
-            <img></img>
+          <li className= 'user-li' key={user.id}>
+            <img src={user.profile_pic_url}/>
             <span>{user.username}</span>
           </li>
         )
@@ -28,23 +33,26 @@ class SearchBar extends React.Component {
     }
   }
 
+  clearQuery() {
+    this.setState({query: ""});
+  }
+
   render() {
     return (
       <div className='box'>
-        <form onSubmit={this.handleSubmit} className='container'>
+        <form className='container' autoComplete="off">
           <span className='search-icon'><i className="fa fa-search"></i></span>
           <input
             id='search'
-            type='search'
             placeholder="Search"
             onChange={this.update}
-            value={this.state.searchInput}/>
-          <div>
-            <ul>
-              {this.renderUsers()}
-            </ul>
-          </div>
+            value={this.state.query}/>
         </form>
+        <div className='users-list-div'>
+          <ul className='users-list'>
+            {this.renderUsers()}
+          </ul>
+        </div>
       </div>
     )
   }
