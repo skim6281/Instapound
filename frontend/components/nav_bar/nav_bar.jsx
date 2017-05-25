@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import SearchContainer from '../search/search_container';
 
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
+    this.state = { searchInput: "" };
     this.renderProfileButton = this.renderProfileButton.bind(this);
   }
 
@@ -21,6 +23,7 @@ class NavBar extends React.Component{
             <img className="logo-image" src={window.images.logo}/>
             <img className="logo-text" src={window.images.logoText}/>
           </Link>
+          <SearchContainer/>
           <div className='nav-icons'>
             <ul className='icon-list'>
               <li className='icon'>
