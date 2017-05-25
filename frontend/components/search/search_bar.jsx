@@ -1,17 +1,23 @@
 import React from 'react';
+import UserRow from './user_row';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {query: ""};
     this.update = this.update.bind(this);
+    this.clearQuery = this.clearQuery.bind(this);
+  }
+
+  clearQuery() {
+    this.setState({query: ""});
   }
 
   update(e) {
     e.preventDefault();
     if(e.target.value === "") {
       this.props.removeUsers();
-      this.setState({query: ""});
+      this.clearQuery();
     } else {
       this.setState({query: e.target.value},
         () => this.props.fetchUsers(this.state.query));
@@ -21,10 +27,12 @@ class SearchBar extends React.Component {
   renderUsers() {
     return this.props.users.map(user => {
       return (
-        <li className= 'user-li' key={user.id}>
-          <img src={user.profile_pic_url}/>
-          <span>{user.username}</span>
-        </li>
+        <UserRow
+          clearQuery = {this.clearQuery}
+          id = {user.id}
+          username = {user.username}
+          name = {user.name}
+          profilePicUrl = {user.profile_pic_url} />
       )
     });
   }
