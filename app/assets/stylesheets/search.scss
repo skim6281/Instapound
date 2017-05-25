@@ -5,6 +5,7 @@
   height: 28px;
   margin-right: 180px;
   position: relative;
+  font-family: 'Montserrat','proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
 }
 
 .search-icon {
@@ -15,7 +16,6 @@
 }
 
 #search {
-  font-family: 'Montserrat','proxima-nova', 'Helvitica Neue', Arial, Helvetica, sans-serif;
   width: 100%;
   height: 100%;
   border: 1px solid #dbdbdb;
@@ -27,11 +27,39 @@
   color: #262626
 }
 
-.users-list-div {
+.query-result {
   position: absolute;
   display: block;
-  background: white;
-  border: 1px solid #000;
-  height: 300px;
-  width: 400px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,.0975);
+  left: 3%;
+  top: 45px;
+  width: 243px;
+}
+.arrow {
+  position: absolute;
+
+}
+
+.users-list-div {
+  display: flex;
+  flex-direction: column;
+  max-height: 362px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.user-row {
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  position: relative;
+  align-items: center;
+  padding: 8px 14px;
+  height: 50px;
+}
+
+.user-row:hover {
+  background: #fafafa;
 }
