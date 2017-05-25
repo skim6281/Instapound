@@ -40,10 +40,13 @@ class SearchBar extends React.Component {
   renderUsersList() {
     if (this.state.query !== "") {
       return (
-        <div className='users-list-div'>
-          <ul className='users-list'>
-            {this.renderUsers()}
-          </ul>
+        <div className='query-result'>
+          <div className='arrow'></div>
+          <div className='users-list-div'>
+            <ul className='users-list'>
+              {this.renderUsers()}
+            </ul>
+          </div>
         </div>
       )
     }
