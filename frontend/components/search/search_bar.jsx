@@ -3,7 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {query: "", active: false};
+    this.state = {query: ""};
     this.update = this.update.bind(this);
   }
 
@@ -11,9 +11,9 @@ class SearchBar extends React.Component {
     e.preventDefault();
     if(e.target.value === "") {
       this.props.removeUsers();
-      this.setState({query: "", active: false});
+      this.setState({query: ""});
     } else {
-      this.setState({query: e.target.value, active: true},
+      this.setState({query: e.target.value},
         () => this.props.fetchUsers(this.state.query));
     }
   }
