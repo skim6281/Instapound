@@ -13,6 +13,7 @@
  *= require reset
  *= require api/sessions
  *= require navbar
+ *= require search
  *= require photo_feed
  *= require profile
  *= require image_form

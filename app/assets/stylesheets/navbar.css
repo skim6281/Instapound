@@ -16,6 +16,13 @@
   display: flex;
 }
 
+.container {
+  position: relative;
+  width: 215px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .logo-image{
   margin-top: 6px;
   max-height: 31px;
