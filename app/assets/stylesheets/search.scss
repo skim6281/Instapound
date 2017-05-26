@@ -37,18 +37,33 @@
   left: 3%;
   top: 45px;
   width: 243px;
+  z-index: 2;
 }
 .arrow {
   position: absolute;
   background: #fff;
   display: block;
-  box-shadow: 0 0 5px rgba(0,0,0,.0975);
+  // box-shadow: inset 0 0 1em rgba(0,0,0,.0975);
+  // box-shadow: 0 1px 1px 1em rgba(0,0,0,.0975);
+  // box-shadow: 0 -5 5px rgba(0,0,0,.0975);
   transform: rotate(45deg);
-  
   height: 15px;
   width: 15px;
-  left: 45%;
-  top: -7%;
+  left: 55%;
+  top: 134%;
+  z-index: 3;
+}
+
+.arrow-shadow {
+  position: absolute;
+  transform: rotate(45deg);
+  display: block;
+  height: 15px;
+  width: 15px;
+  left: 55%;
+  top: 134%;
+  box-shadow: 0 0 12px rgba(0,0,0,.0975);
+  z-index: 1;
 }
 
 .users-list-div {
