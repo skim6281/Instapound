@@ -17,7 +17,7 @@ class UserRow extends React.Component {
     return (
       <li key={id} className="user-row" onClick={this.redirectToUser}>
         <img className="post-author-profile-pic" src={profilePicUrl} />
-        <span className="author-name text">{username}</span>
+        <span className="username">{username}</span>
       </li>
     )
   }
