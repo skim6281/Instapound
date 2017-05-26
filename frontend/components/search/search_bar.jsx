@@ -25,16 +25,24 @@ class SearchBar extends React.Component {
   }
 
   renderUsers() {
-    return this.props.users.map(user => {
+    if (this.props.users.length === 0) {
       return (
-        <UserRow
-          clearQuery = {this.clearQuery}
-          id = {user.id}
-          username = {user.username}
-          name = {user.name}
-          profilePicUrl = {user.profile_pic_url} />
+        <li className="no-result-row">
+          <div className="no-result-text">No results found.</div>
+        </li>
       )
-    });
+    } else{
+      return this.props.users.map(user => {
+        return (
+          <UserRow
+            clearQuery = {this.clearQuery}
+            id = {user.id}
+            username = {user.username}
+            name = {user.name}
+            profilePicUrl = {user.profile_pic_url} />
+        )
+      });
+    }
   }
 
   renderUsersList() {
