@@ -70,6 +70,7 @@
   display: flex;
   flex-direction: column;
   max-height: 362px;
+  min-height: 50px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -85,4 +86,23 @@
 
 .user-row:hover {
   background: #fafafa;
+}
+
+.username {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.no-result-row {
+  align-items: center;
+  padding: 0;
+  height: 30px;
+}
+
+.no-result-text {
+  display: block;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+  padding: 15px;
 }
