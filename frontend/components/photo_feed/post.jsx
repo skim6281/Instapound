@@ -49,7 +49,7 @@ class Post extends React.Component {
       const lastComments = allComments.slice(allComments.length - 4, allComments.length);
       return(
         <div>
-          <button className="loadMoreComments" onClick={this.loadMore}>load more comments</button>
+          <button className="load-more-comments" onClick={this.loadMore}>load more comments</button>
           <ul>
             {this.showComments(lastComments)}
           </ul>
