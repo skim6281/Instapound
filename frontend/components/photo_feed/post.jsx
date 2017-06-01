@@ -7,7 +7,7 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loadMoreComments: false;
+      loadMoreComments: false
     }
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
