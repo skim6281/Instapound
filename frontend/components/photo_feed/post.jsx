@@ -11,6 +11,7 @@ class Post extends React.Component {
     }
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
 
   handleLike(){
@@ -39,15 +40,16 @@ class Post extends React.Component {
 
   loadMore() {
     this.setState({loadMoreComments: true});
+    this.renderComments();
   }
 
   renderComments() {
     const allComments = this.props.image.comments;
     if (allComments.length > 4 && !this.state.loadMoreComments) {
-      const lastComments = allComments.slice(allComments.length - 5, allComments.length);
+      const lastComments = allComments.slice(allComments.length - 4, allComments.length);
       return(
         <div>
-          <span className="loadMoreComments" onClick={this.loadMore}>load more comments</span>
+          <button className="loadMoreComments" onClick={this.loadMore}>load more comments</button>
           <ul>
             {this.showComments(lastComments)}
           </ul>
