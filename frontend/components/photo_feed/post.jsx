@@ -6,6 +6,9 @@ import CommentForm from '../comment_form';
 class Post extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loadMoreComments: false;
+    }
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
   }
@@ -34,8 +37,33 @@ class Post extends React.Component {
     }
   }
 
+  loadMore() {
+    this.setState({loadMoreComments: true});
+  }
+
   renderComments() {
-    return this.props.image.comments.map(comment => {
+    const allComments = this.props.image.comments;
+    if (allComments.length > 4 && !this.state.loadMoreComments) {
+      const lastComments = allComments.slice(allComments.length - 5, allComments.length);
+      return(
+        <div>
+          <span className="loadMoreComments" onClick={this.loadMore}>load more comments</span>
+          <ul>
+            {this.showComments(lastComments)}
+          </ul>
+        </div>
+      )
+    } else {
+      return (
+        <ul>
+          {this.showComments(allComments)}
+        </ul>
+      )
+    }
+  }
+
+  showComments(comments) {
+    return comments.map(comment => {
       return (
         <li key={comment.id}>
           <h2 className="comment-head">
