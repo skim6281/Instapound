@@ -145,11 +145,23 @@ div.profile-image:nth-child(3n+3) {
 .image-likes-comments {
   position: absolute;
   display: flex;
-  top: 0;
-  left: 0;
+  top: 135px;
+  left: 105px;
   opacity: 0;
+  width: 110px;
+  justify-content: space-between;
+  font-style: inherit;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .image-likes-comments > div {
   display: flex;
+}
+
+.image-likes-comments > div > div {
+  width: 25px;
+  height: auto;
+  margin-right: 5px;
 }
