@@ -122,6 +122,16 @@ class Image extends React.Component {
         <a onClick={this.openModal}>
           <img src={image.photo_url_thumb}/>
         </a>
+        <content className="image-likes-comments">
+          <div className="image-likes">
+            <img src={window.images.like}/>
+            <span>{image.likes.length}</span>
+          </div>
+          <div className="image-comments">
+            <img src={window.images.comment}/>
+            <span>{image.comments.length}</span>
+          </div>
+        </content>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
