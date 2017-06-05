@@ -137,3 +137,19 @@ div.profile-image:nth-child(3n+3) {
   cursor: pointer;
   opacity: .75;
 }
+
+.profile-image > a:hover + .image-likes-comments {
+  opacity: 1.0;
+}
+
+.image-likes-comments {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-likes-comments > div {
+  display: flex;
+}
