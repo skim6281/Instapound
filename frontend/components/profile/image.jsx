@@ -124,11 +124,16 @@ class Image extends React.Component {
         </a>
         <content className="image-likes-comments">
           <div className="image-likes">
-            <img src={window.images.like}/>
+            <div>
+              <img src={window.images.like}/>
+            </div>
             <span>{image.likes.length}</span>
           </div>
           <div className="image-comments">
-            <img src={window.images.comment}/>
+            <div>
+              <img src={window.images.comment}/>
+
+            </div>
             <span>{image.comments.length}</span>
           </div>
         </content>
