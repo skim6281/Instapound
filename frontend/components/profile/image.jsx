@@ -132,7 +132,6 @@ class Image extends React.Component {
           <div className="image-comments">
             <div>
               <img src={window.images.comment}/>
-
             </div>
             <span>{image.comments.length}</span>
           </div>
