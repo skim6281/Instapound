@@ -36,11 +36,11 @@ export const deleteLike = (imageId) => dispatch => {
 };
 
 export const createImageLike = (imageId) => dispatch => {
-  return LikeAPIUtil.createImageLike(imageId)
+  return LikeAPIUtil.createLike(imageId)
     .then(like => dispatch(receiveImageLike(like)));
 };
 
 export const deleteImageLike = (imageId) => dispatch => {
-  return LikeAPIUtil.deleteImageLike(imageId)
+  return LikeAPIUtil.deleteLike(imageId)
     .then(like => dispatch(removeImageLike(like)));
 };
