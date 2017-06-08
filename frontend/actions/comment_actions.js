@@ -36,11 +36,11 @@ export const deleteComment = (commentId) => dispatch => {
 };
 
 export const createImageComment = (comment) => dispatch => {
-  return CommentAPIUtil.createImageComment(comment)
+  return CommentAPIUtil.createComment(comment)
     .then(comment => dispatch(receiveImageComment(comment)));
 };
 
 export const deleteImageComment = (commentId) => dispatch => {
-  return CommentAPIUtil.deleteImageComment(commentId)
+  return CommentAPIUtil.deleteComment(commentId)
     .then(comment => dispatch(removeImageComment(comment)));
 };
