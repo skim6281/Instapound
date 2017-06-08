@@ -1,4 +1,4 @@
-import * as ProfileAPIUtil from '../util/profile_api_util';
+import * as UserAPIUtil from '../util/user_api_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USER_SUCCESS = 'RECEIVE_USER_SUCCESS';
@@ -14,11 +14,11 @@ export const receiveUserSuccess = user => ({
 });
 
 export const fetchUser = (username) => dispatch => {
-  return ProfileAPIUtil.fetchUser(username)
+  return UserAPIUtil.fetchUser(username)
     .then(user => dispatch(receiveUser(user)));
 };
 
 export const updateUser = (user) => dispatch => {
-  return ProfileAPIUtil.updateUser(user)
+  return UserAPIUtil.updateUser(user)
     .then(user => dispatch(receiveUserSuccess(user)));
 };
