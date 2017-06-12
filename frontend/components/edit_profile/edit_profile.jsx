@@ -29,10 +29,10 @@ class EditProfile extends React.Component {
   render() {
     const { currentUser, success } = this.props;
     return (
-      <main className="edit-profile-container">
+      <main className="edit-profile-container grey-border">
         <div className="edit-user-header">
           <aside className="edit-label">
-            <img className="edit-profile-pic" src={currentUser.profile_pic_url}/>
+            <img className="edit-profile-pic grey-border" src={currentUser.profile_pic_url}/>
           </aside>
           <h1>{currentUser.username}</h1>
         </div>
