@@ -66,7 +66,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 335px;
-  height: 454px;
+  // height: 454px;
 }
 
 .modal-caption-head {
@@ -78,6 +78,9 @@
 
 .image-comments-section {
   height: 430px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .image-comments-list-container {
@@ -88,9 +91,10 @@
 .image-comments-list {
   padding-right: 24px;
   margin-top: 7px;
-  overflow-y: scroll;
-  width: 93%;
-  height: 90%;
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+  // width: 93%;
+  // height: 90%;
 }
 
 .image-comments-list > li {
@@ -112,6 +116,7 @@
   width: 84%;
   padding-top: 20px;
   z-index: 1;
+  top: 100%;
 }
 
 .delete-comment {
