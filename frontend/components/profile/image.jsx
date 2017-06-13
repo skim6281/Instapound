@@ -171,18 +171,18 @@ class Image extends React.Component {
                       </ul>
                     </div>
                   </section>
-                  <footer className="image-comment-footer">
-                    <div className="heart">
-                      {this.renderImageLikeButton()}
-                    </div>
-                    <div className="comment-div">
-                      <CommentForm
-                        imageId={image.id}
-                        currentUserId={currentUser.id}
-                        createComment={createImageComment}/>
-                    </div>
-                  </footer>
                 </section>
+                <footer className="image-comment-footer">
+                  <div className="heart">
+                    {this.renderImageLikeButton()}
+                  </div>
+                  <div className="comment-div">
+                    <CommentForm
+                      imageId={image.id}
+                      currentUserId={currentUser.id}
+                      createComment={createImageComment}/>
+                  </div>
+                </footer>
               </div>
             </section>
             <button className="exit" onClick={this.closeModal}>
