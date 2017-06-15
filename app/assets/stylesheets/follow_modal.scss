@@ -61,20 +61,18 @@
 
 .follow-modal-section {
   height: 550px;
-}
-
-.follow-modal-section > div {
-  height: 100%;
+  div {
+    height: 100%;
+  }
 }
 
 .follow-modal-list {
   height: 100%;
   overflow-y: scroll;
-}
-
-.follow-modal-list > li {
-  display: flex;
-  justify-content: space-between;
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .follow-modal-user-details{
