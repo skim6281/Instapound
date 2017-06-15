@@ -50,11 +50,14 @@
   box-sizing: border-box;
   line-height: 37px;
   position: relative;
+  label {
+    font-weight: 500;
+  }
 }
 
-.edit-label label {
-  font-weight: 500;
-}
+// .edit-label label {
+//   font-weight: 500;
+// }
 
 .edit-submit {
   width: 100px;
