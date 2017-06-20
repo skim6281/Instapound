@@ -151,14 +151,22 @@ div.profile-image:nth-child(3n+3) {
   color: #fff;
   font-size: 18px;
   font-weight: 400;
+  div {
+    display: flex;
+    div {
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+    }
+  }
 }
 
-.image-likes-comments > div {
-  display: flex;
-}
-
-.image-likes-comments > div > div {
-  width: 25px;
-  height: auto;
-  margin-right: 5px;
-}
+// .image-likes-comments > div {
+//   display: flex;
+// }
+//
+// .image-likes-comments > div > div {
+//   width: 25px;
+//   height: auto;
+//   margin-right: 5px;
+// }
