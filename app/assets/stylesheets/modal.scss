@@ -32,14 +32,13 @@
   position: absolute;
   width: 100%;
   opacity: 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #chosen-file {
   height: 100%;
-}
-
-#file, #chosen-file:hover {
-  cursor: pointer;
 }
 
 .logut-modal {
