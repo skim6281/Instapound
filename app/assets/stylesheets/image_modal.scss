@@ -91,15 +91,22 @@
 .image-comments-list {
   padding-right: 24px;
   margin-top: 7px;
+  li {
+    display: flex;
+    margin-bottom: 7px;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+  }
 }
 
-.image-comments-list > li {
-  display: flex;
-  margin-bottom: 7px;
-  position: relative;
-  word-wrap: break-word;
-  width: 100%;
-}
+// .image-comments-list > li {
+//   display: flex;
+//   margin-bottom: 7px;
+//   position: relative;
+//   word-wrap: break-word;
+//   width: 100%;
+// }
 
 .image-comment-head {
   width: 92%;
