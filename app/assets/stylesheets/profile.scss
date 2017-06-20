@@ -83,21 +83,21 @@ body{
   display: flex;
   li {
     margin-right: 40px;
+
+    a:hover {
+      cursor:pointer;
+    }
   }
 }
-
-// .user-info-row-2 > li {
-//   margin-right: 40px;
-// }
 
 .bold {
   font-weight: 500;
   margin-right: 5px;
 }
 
-.user-info-row-2 > li > a:hover {
-  cursor: pointer;
-}
+// .user-info-row-2 > li > a:hover {
+//   cursor: pointer;
+// }
 
 .user-info-row-3 {
   margin-top:20px;
