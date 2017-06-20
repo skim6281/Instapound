@@ -26,16 +26,19 @@
   position: relative;
 }
 
-#chosen-file {
+#file, #chosen-file {
   bottom: 0;
   right: 0;
   position: absolute;
   width: 100%;
-  height: 100%;
   opacity: 0;
   &:hover {
     cursor: pointer;
   }
+}
+
+#chosen-file {
+  height: 100%;
 }
 
 .logut-modal {
@@ -56,15 +59,18 @@
 
 .button-modal {
   color: #262626;
+  &:hover {
+    background-color: #efefef;
+  }
 }
 
 .logout-modal > ul > li:first-child{
   border-bottom: 1px solid #dbdbdb;
 }
 
-.button-modal:hover {
-  background-color: #efefef
-}
+// .button-modal:hover {
+//   background-color: #efefef
+// }
 
 .exit {
   position: absolute;
