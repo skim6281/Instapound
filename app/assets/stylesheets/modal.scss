@@ -40,12 +40,16 @@
 
 .logut-modal {
   height: 100px;
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.logout-modal > ul {
-  display: flex;
-  flex-direction: column;
-}
+// .logout-modal > ul {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .button-modal, .no-click{
   text-align: center;
