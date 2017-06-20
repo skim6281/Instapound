@@ -74,11 +74,14 @@ body{
 
 .logout-button {
   width: 44px;
+  img {
+    width: 75%;
+  }
 }
 
-.logout-button > img {
-  width: 75%;
-}
+// .logout-button > img {
+//   width: 75%;
+// }
 
 .user-info-row-2 {
   display: flex;
