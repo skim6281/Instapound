@@ -81,11 +81,14 @@ body{
 
 .user-info-row-2 {
   display: flex;
+  li {
+    margin-right: 40px;
+  }
 }
 
-.user-info-row-2 > li {
-  margin-right: 40px;
-}
+// .user-info-row-2 > li {
+//   margin-right: 40px;
+// }
 
 .bold {
   font-weight: 500;
