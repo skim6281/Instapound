@@ -124,21 +124,34 @@ div.profile-image:nth-child(3n+3) {
   position: relative;
   overflow: hidden;
   margin: 0 28px 28px 0;
+  a {
+    img {
+      height: 100%;
+      object-fit: cover;
+      &:hover {
+        cursor: pointer;
+        opacity: .75;
+      }
+    }
+    &:hover + .image-likes-comments {
+      opacity: 1.0;
+    }
+  }
 }
 
-.profile-image > a > img{
-  height: 100%;
-  object-fit: cover;
-}
+// .profile-image > a > img{
+//   height: 100%;
+//   object-fit: cover;
+// }
+//
+// .profile-image > a > img:hover {
+//   cursor: pointer;
+//   opacity: .75;
+// }
 
-.profile-image > a > img:hover {
-  cursor: pointer;
-  opacity: .75;
-}
-
-.profile-image > a:hover + .image-likes-comments {
-  opacity: 1.0;
-}
+// .profile-image > a:hover + .image-likes-comments {
+//   opacity: 1.0;
+// }
 
 .image-likes-comments {
   position: absolute;
