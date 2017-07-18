@@ -3,13 +3,13 @@ var webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/instapound.jsx",
+  entry: './frontend/instapound.jsx',
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   resolve: {
-    extensions: [".js", ".jsx" ]
+    extensions: ['.js', '.jsx' ]
   },
   module: {
     loaders: [
