@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/profile_actions';
+import { fetchCurrentUser, updateUser } from '../../actions/profile_actions';
 import EditProfile from './edit_profile';
 
 const mapStateToProps = (state) => {
   return ({
-    currentUser: state.session.currentUser,
+    currentUser: state.profile.currentUser,
     success: state.profile.success
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchUser: (username) => dispatch(fetchUser(username)),
+    fetchCurrentUser: (username) => dispatch(fetchCurrentUser(username)),
     updateUser: (user) => dispatch(updateUser(user))
   });
 };
