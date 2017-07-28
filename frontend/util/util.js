@@ -1,6 +1,9 @@
 export const time_ago = (upload_date) => {
-  const seconds = Math.floor(new Date() - new Date(upload_date))/1000;
-
+  const splitDate = upload_date.split(" ");
+  const date = splitDate[0];
+  const time = splitDate[1];
+  const parsedDate = `${date}T${time}Z`;
+  const seconds = Math.floor(new Date() - new Date(parsedDate))/1000;
   if (seconds > 604800){
     const weeks = Math.floor(seconds/604800);
     return weeks + "w";
@@ -16,8 +19,6 @@ export const time_ago = (upload_date) => {
   } else {
     return Math.ceil(seconds) + "s";
   }
-
-  return(upload_date);
 };
 
 export const userIncluded = (users, userId) => {
