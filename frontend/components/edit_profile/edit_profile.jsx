@@ -11,7 +11,7 @@ class EditProfile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUser.username);
+    this.props.fetchCurrentUser(this.props.currentUser.username);
   }
 
   update(field) {
