@@ -3,10 +3,12 @@ import { RECEIVE_USER_IMAGES, RECEIVE_IMAGE } from '../actions/image_actions';
 import { RECEIVE_FOLLOWER, REMOVE_FOLLOWER } from '../actions/following_actions';
 import { RECEIVE_IMAGE_LIKE, REMOVE_IMAGE_LIKE } from '../actions/like_actions';
 import { RECEIVE_IMAGE_COMMENT, REMOVE_IMAGE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { getIndex } from '../util/util';
 import merge from 'lodash/merge';
 
 const initialState = {
+  currentUser: null,
   user: null,
   images: [],
   success: null
@@ -17,8 +19,10 @@ const ProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return Object.assign({}, state, {user: action.user, success: null});
+    case RECEIVE_CURRENT_USER:
+      return Object.assign({}, state, {currentUser: action.currentUser, success: null})
     case RECEIVE_USER_SUCCESS:
-      return Object.assign({}, state, {user: action.user, success: "Profile saved!"});
+      return Object.assign({}, state, {currentUser: action.user, success: "Profile saved!"});
     case RECEIVE_USER_IMAGES:
       return Object.assign({}, state, {images: action.images});
     case RECEIVE_IMAGE:
