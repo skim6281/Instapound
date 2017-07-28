@@ -123,7 +123,6 @@ class Profile extends React.Component {
   }
 
   redirectToEditProfile() {
-    window.location.reload();
     hashHistory.push('accounts/edit');
   }
 
