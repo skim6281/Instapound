@@ -5,7 +5,6 @@ import { RECEIVE_IMAGE_LIKE, REMOVE_IMAGE_LIKE } from '../actions/like_actions';
 import { RECEIVE_IMAGE_COMMENT, REMOVE_IMAGE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { getIndex } from '../util/util';
-import merge from 'lodash/merge';
 
 const initialState = {
   currentUser: null,
