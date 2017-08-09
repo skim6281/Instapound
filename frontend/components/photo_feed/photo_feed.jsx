@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from './post';
 import LoadingIcon from '../loading_icon';
+import Waypoint from 'react-waypoint';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -8,16 +9,15 @@ class PhotoFeed extends React.Component {
     this.state = {
       page: 1
     }
+    this.getPosts = this.getPosts.bind(this);
   }
 
   componentDidMount(){
-    // this.props.fetchImages();
     this.getPosts();
   }
 
   getPosts() {
-    this.props.fetchImages(this.state.page);
-    this.setState = ({ page: this.state.page++ })
+    this.props.fetchImages(this.state.page).then(this.setState({page: this.state.page + 1}));
   }
 
   renderPosts() {
@@ -37,17 +37,28 @@ class PhotoFeed extends React.Component {
     });
   }
 
+  renderWaypoint(){
+    return(
+      <div>Loading Images...
+      <Waypoint onEnter={this.getPosts}/>
+      </div>
+    )
+  }
+
   render() {
-    return this.props.loading ?
-      <LoadingIcon /> :
+    // return this.props.loading ?
+    //   <LoadingIcon /> :
+    return(
       <div>
         <div className='photo-feed-container'>
           <div>
             {this.renderPosts()}
           </div>
+          {this.renderWaypoint()}
         </div>
       </div>
-  };
+    )
+  }
 }
 
 export default PhotoFeed;
