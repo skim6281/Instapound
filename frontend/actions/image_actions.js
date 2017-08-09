@@ -7,10 +7,13 @@ export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 export const LOAD_IMAGE = 'LOAD_IMAGE';
 export const LOAD_IMAGES = 'LOAD_IMAGES';
 
-export const receiveImages = images => ({
-  type: RECEIVE_IMAGES,
-  images
-});
+export const receiveImages = images => {
+  return {
+    type: RECEIVE_IMAGES,
+    images
+
+  }
+};
 
 export const receiveUserImages = images => ({
   type: RECEIVE_USER_IMAGES,
@@ -36,9 +39,9 @@ export const loadImages = () => {
   }
 }
 
-export const fetchImages = () => dispatch => {
+export const fetchImages = (page) => dispatch => {
   dispatch(loadImages());
-  return ImageAPIUtil.fetchImages()
+  return ImageAPIUtil.fetchImages(page)
     .then(images => dispatch(receiveImages(images)));
 };
 

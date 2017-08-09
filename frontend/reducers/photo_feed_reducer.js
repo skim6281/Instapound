@@ -12,7 +12,8 @@ const PhotoFeedReducer = (state = initialState, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_IMAGES:
-      return Object.assign({}, state, {images: action.images});
+      const newImages = [...state.images, ...action.images];
+      return Object.assign({}, state, {images: newImages});
     case RECEIVE_LIKE:
       const newRecLikeImages = state.images.slice();
       const i = getIndex(newRecLikeImages, action.like.imageId);

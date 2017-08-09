@@ -8,14 +8,14 @@ import { createComment } from '../../actions/comment_actions';
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
-    images: selectAllImages(state.photoFeed.images),
+    images: state.photoFeed.images,
     loading: state.loading.indexLoading
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchImages: () => dispatch(fetchImages()),
+    fetchImages: (page) => dispatch(fetchImages(page)),
     createLike: (imageId) => dispatch(createLike(imageId)),
     deleteLike: (imageId) => dispatch(deleteLike(imageId)),
     createComment: (comment) => dispatch(createComment(comment))

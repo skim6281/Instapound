@@ -1,7 +1,8 @@
-export const fetchImages = () => {
+export const fetchImages = page => {
   return $.ajax({
     method: 'GET',
-    url: '/api/images'
+    url: '/api/images',
+    data: { page }
   });
 };
 

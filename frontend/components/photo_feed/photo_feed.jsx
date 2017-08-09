@@ -5,10 +5,19 @@ import LoadingIcon from '../loading_icon';
 class PhotoFeed extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      page: 1
+    }
   }
 
   componentDidMount(){
-    this.props.fetchImages();
+    // this.props.fetchImages();
+    this.getPosts();
+  }
+
+  getPosts() {
+    this.props.fetchImages(this.state.page);
+    this.setState = ({ page: this.state.page++ })
   }
 
   renderPosts() {
