@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'annotate'
 
+gem 'kaminari'
+
 gem 'pg_search'
 
 gem 'paperclip', '~> 5.0.0.beta1'
