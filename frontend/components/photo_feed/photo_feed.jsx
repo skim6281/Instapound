@@ -39,7 +39,7 @@ class PhotoFeed extends React.Component {
 
   renderWaypoint(){
     return(
-      <div>Loading Images...
+      <div className="loader">
       <Waypoint onEnter={this.getPosts}/>
       </div>
     )
