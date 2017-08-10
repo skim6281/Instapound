@@ -37,7 +37,7 @@ class PhotoFeed extends React.Component {
     });
   }
 
-  renderWaypoint(){
+  renderMorePosts(){
     return(
       <div className="loader">
       <Waypoint onEnter={this.getPosts}/>
@@ -52,7 +52,7 @@ class PhotoFeed extends React.Component {
           <div>
             {this.renderPosts()}
           </div>
-          {this.renderWaypoint()}
+          {this.renderMorePosts()}
         </div>
       </div>
     )
