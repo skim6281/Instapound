@@ -46,8 +46,6 @@ class PhotoFeed extends React.Component {
   }
 
   render() {
-    // return this.props.loading ?
-    //   <LoadingIcon /> :
     return(
       <div>
         <div className='photo-feed-container'>
