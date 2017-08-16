@@ -2,7 +2,6 @@ import { RECEIVE_IMAGES } from '../actions/image_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { getIndex } from '../util/util';
-import merge from 'lodash/merge';
 
 const initialState = {
   images: []
