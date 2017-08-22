@@ -3,7 +3,6 @@ import {
   RECEIVE_ERRORS,
   REMOVE_ERRORS,
   RECEIVE_FORM_TYPE} from '../actions/session_actions';
-import merge from 'lodash/merge';
 
 const initialState = {
   currentUser: null,
