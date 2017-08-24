@@ -7,6 +7,7 @@ json.uploaded_at image.created_at.to_s
 json.photo_url image.photo.url
 json.photo_url_thumb image.photo.url(:thumb)
 json.likes image.likes.pluck(:user_id)
+json.created_at image.created_at
 json.comments image.comments.each do |comment|
   json.partial! "api/comments/comment", comment: comment
 end

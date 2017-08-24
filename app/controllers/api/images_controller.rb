@@ -11,7 +11,7 @@ class Api::ImagesController < ApplicationController
       end
     else
       users = [current_user] + current_user.followees
-      @images = Image.page(params[:page]).per(5).includes(:user, :comments, :likes).where(user: users).order(created_at: :desc)
+      @images = Image.includes(:user, :comments, :likes).where(user: users).order(created_at: :desc).page(params[:page]).per(5)
     end
     render 'api/images/index'
   end
