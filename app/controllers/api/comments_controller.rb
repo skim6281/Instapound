@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
   def index
     image = Image.find(params[:image_id])
     if image
-      @comments = Comment.where(image: image)
+      @comments = Comment.where(image: image).order(created_at: :asc)
     else
       @comments = []
     end
