@@ -22,6 +22,9 @@ class PhotoFeed extends React.Component {
 
   renderPosts() {
     const { images, currentUser, createLike, deleteLike, createComment, deleteComment } = this.props;
+    images.sort((a,b) => {
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
     return images.map(image => {
       return (
         <Post
