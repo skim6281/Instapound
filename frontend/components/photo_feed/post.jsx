@@ -45,6 +45,9 @@ class Post extends React.Component {
 
   renderComments() {
     const allComments = this.props.image.comments;
+    allComments.sort((a,b) => {
+      return new Date(a.created_at) - new Date(b.created_at);
+    });
     if (allComments.length > 4 && !this.state.loadMoreComments) {
       const lastComments = allComments.slice(allComments.length - 4, allComments.length);
       return(
