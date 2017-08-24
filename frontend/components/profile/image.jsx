@@ -62,6 +62,9 @@ class Image extends React.Component {
   }
 
   renderComments() {
+    this.props.image.comments.sort((a,b) => {
+      return new Date(a.created_at) - new Date(b.created_at);
+    });
     return this.props.image.comments.map(comment => {
       return (
         <li key={comment.id}>
