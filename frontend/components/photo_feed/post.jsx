@@ -45,9 +45,9 @@ class Post extends React.Component {
 
   renderComments() {
     const allComments = this.props.image.comments;
-    allComments.sort((a,b) => {
-      return new Date(a.created_at) - new Date(b.created_at);
-    });
+    // allComments.sort((a,b) => {
+    //   return new Date(a.created_at) - new Date(b.created_at);
+    // });
     if (allComments.length > 4 && !this.state.loadMoreComments) {
       const lastComments = allComments.slice(allComments.length - 4, allComments.length);
       return(
@@ -61,13 +61,15 @@ class Post extends React.Component {
     } else {
       return (
         <ul>
-          {this.showComments(allComments)}
+          {this.showComments(this.props.image.comments)}
         </ul>
       )
     }
   }
 
   showComments(comments) {
+    console.log('comments');
+    console.log(comments);
     return comments.map(comment => {
       return (
         <li key={comment.id}>

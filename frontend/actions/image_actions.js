@@ -42,8 +42,7 @@ export const loadImages = () => {
 export const fetchImages = (limit, offset) => dispatch => {
   dispatch(loadImages());
   return ImageAPIUtil.fetchImages(limit, offset)
-    .then(images => dispatch(receiveImages(images)))
-      .then(console.log(images));
+    .then(images => dispatch(receiveImages(images)));
 };
 
 export const fetchUserImages = (username) => dispatch => {

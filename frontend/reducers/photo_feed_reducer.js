@@ -1,6 +1,6 @@
 import { RECEIVE_IMAGES } from '../actions/image_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { getIndex } from '../util/util';
 
 const initialState = {
@@ -12,7 +12,6 @@ const PhotoFeedReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_IMAGES:
       const newImages = [...state.images, ...action.images];
-      console.log(newImages);
       return Object.assign({}, state, {images: newImages});
     case RECEIVE_LIKE:
       const newRecLikeImages = state.images.slice();
@@ -30,6 +29,12 @@ const PhotoFeedReducer = (state = initialState, action) => {
       const j = getIndex(newRecCommentImages, action.comment.imageId);
       newRecCommentImages[j].comments.push(action.comment);
       return Object.assign({}, state, {images: newRecCommentImages});
+    case REMOVE_COMMENT:
+      const newRemCommentImages = state.images.slice();
+      const remComImageInd = getIndex(newRemCommentImages, action.comment.imageId);
+      const commentIndex = getIndex(newRemCommentImages[remComImageInd].comments, action.comment.id);
+      newRemCommentImages[remComImageInd].comments.splice(commentIndex, 1);
+      return Object.assign({}, state, {images: newRemCommentImages });
     default:
       return state;
   };

@@ -18,7 +18,6 @@ class PhotoFeed extends React.Component {
   }
 
   getPosts() {
-    console.log(this.state.offset);
     this.setState({offset: this.state.offset + this.state.limit});
     this.props.fetchImages(this.state.limit, this.state.offset);
   }

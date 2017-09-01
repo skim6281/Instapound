@@ -187,7 +187,8 @@ class Profile extends React.Component {
                 createImageLike={this.props.createImageLike}
                 deleteImageLike={this.props.deleteImageLike}
                 createImageComment={this.props.createImageComment}
-                deleteImageComment={this.props.deleteImageComment}/>
+                deleteImageComment={this.props.deleteImageComment}
+                deleteComment={this.props.deleteComment}/>
     });
   }
 
