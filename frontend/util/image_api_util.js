@@ -1,8 +1,8 @@
-export const fetchImages = page => {
+export const fetchImages = (limit, offset) => {
   return $.ajax({
     method: 'GET',
     url: '/api/images',
-    data: { page }
+    data: { limit, offset }
   });
 };
 

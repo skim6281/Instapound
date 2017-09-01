@@ -39,10 +39,11 @@ export const loadImages = () => {
   }
 }
 
-export const fetchImages = (page) => dispatch => {
+export const fetchImages = (limit, offset) => dispatch => {
   dispatch(loadImages());
-  return ImageAPIUtil.fetchImages(page)
-    .then(images => dispatch(receiveImages(images)));
+  return ImageAPIUtil.fetchImages(limit, offset)
+    .then(images => dispatch(receiveImages(images)))
+      .then(console.log(images));
 };
 
 export const fetchUserImages = (username) => dispatch => {

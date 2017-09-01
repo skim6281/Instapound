@@ -7,17 +7,20 @@ class PhotoFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 1
+      limit: 5,
+      offset: 0
     }
     this.getPosts = this.getPosts.bind(this);
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.getPosts();
   }
 
   getPosts() {
-    this.props.fetchImages(this.state.page).then(this.setState({page: this.state.page + 1}));
+    console.log(this.state.offset);
+    this.setState({offset: this.state.offset + this.state.limit});
+    this.props.fetchImages(this.state.limit, this.state.offset);
   }
 
   renderPosts() {

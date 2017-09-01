@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchImages: (page) => dispatch(fetchImages(page)),
+    fetchImages: (limit, offset) => dispatch(fetchImages(limit, offset)),
     createLike: (imageId) => dispatch(createLike(imageId)),
     deleteLike: (imageId) => dispatch(deleteLike(imageId)),
     createComment: (comment) => dispatch(createComment(comment))
