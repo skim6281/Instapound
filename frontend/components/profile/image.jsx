@@ -87,6 +87,7 @@ class Image extends React.Component {
   handleDeleteComment(commentId) {
     return e => {
       this.props.deleteImageComment(commentId);
+      this.props.deleteComment(commentId);
     }
   }
 

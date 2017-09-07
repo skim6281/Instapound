@@ -2,16 +2,24 @@ class Api::ImagesController < ApplicationController
   before_action :require_login!
 
   def index
-    if params[:user_username]
-      user = User.includes(:images, :followers, :followees).find_by(username: params[:user_username])
+    if params[:user_username] #profile page
+      user =
+        User.includes(:images, :followers, :followees)
+          .find_by(username: params[:user_username])
       if user
-        @images = user.images.includes(:comments, :likes).order(created_at: :desc)
+        @images =
+          user.images.includes(:comments, :likes).order(created_at: :desc)
       else
         @images = []
       end
-    else
+    else #photofeed
       users = [current_user] + current_user.followees
-      @images = Image.includes(:user, :comments, :likes).where(user: users).order(created_at: :desc).page(params[:page]).per(5)
+      @images =
+        Image.includes(:user, :comments, :likes)
+          .where(user: users)
+          .order(created_at: :desc)
+          .limit(params[:limit])
+          .offset(params[:offset])
     end
     render 'api/images/index'
   end

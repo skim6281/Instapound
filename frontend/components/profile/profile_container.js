@@ -12,7 +12,7 @@ import {
   removeFollowerId } from '../../actions/following_actions';
 import { selectAllImages } from '../../reducers/selectors';
 import { createImageLike, deleteImageLike } from '../../actions/like_actions';
-import { createImageComment, deleteImageComment } from '../../actions/comment_actions';
+import { createImageComment, deleteImageComment, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -40,6 +40,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteImageLike: (imageId) => dispatch(deleteImageLike(imageId)),
     createImageComment: (comment) => dispatch(createImageComment(comment)),
     deleteImageComment: (commentId) => dispatch(deleteImageComment(commentId)),
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
     updateUserProfilePic: (username, image) => dispatch(updateUserProfilePic(username, image)),
     logout: () => dispatch(logout())
   });

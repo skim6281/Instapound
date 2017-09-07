@@ -27,7 +27,8 @@ export const removeImageComment = comment => ({
 
 export const createComment = (comment) => dispatch => {
   return CommentAPIUtil.createComment(comment)
-    .then(comment => dispatch(receiveComment(comment)));
+    .then(comment => dispatch(receiveComment(comment)))
+      .then(() => console.log('photofeed'));
 };
 
 export const deleteComment = (commentId) => dispatch => {
@@ -37,7 +38,8 @@ export const deleteComment = (commentId) => dispatch => {
 
 export const createImageComment = (comment) => dispatch => {
   return CommentAPIUtil.createComment(comment)
-    .then(comment => dispatch(receiveImageComment(comment)));
+    .then(comment => dispatch(receiveImageComment(comment)))
+      .then(() => console.log('profile'));
 };
 
 export const deleteImageComment = (commentId) => dispatch => {
